@@ -1,0 +1,835 @@
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[35m (7.5ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[35m (6.2ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+Migrating to CreateTests (20220220095946)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "tests" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "level" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20220220095946_create_tests.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20220220095946"]]
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[35m (3.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+Migrating to CreateQuestions (20220220100147)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "questions" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "body" varchar, "test_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20220220100147_create_questions.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20220220100147"]]
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[35m (3.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+Migrating to CreateAnswers (20220220100644)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "answers" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "body" varchar, "correct" boolean, "question_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20220220100644_create_answers.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20220220100644"]]
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[35m (4.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+Migrating to CreateUsers (20220220100843)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "pass" varchar, "admin" boolean, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20220220100843_create_users.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20220220100843"]]
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[35m (4.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+Migrating to CreateCategories (20220220101058)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE TABLE "categories" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20220220101058_create_categories.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20220220101058"]]
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[35m (2.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[36mActiveRecord::InternalMetadata Create (0.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2022-02-20 18:01:19.967028"], ["updated_at", "2022-02-20 18:01:19.967028"]]
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[35m (2.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+Migrating to AddCategoriesTitleNullConstraint (20220220182337)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/migrate/20220220182337_add_categories_title_null_constraint.rb:3
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TEMPORARY TABLE "acategories" ("id" integer NOT NULL PRIMARY KEY, "title" varchar DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20220220182337_add_categories_title_null_constraint.rb:3
+  [1m[35m (0.0ms)[0m  [1m[32mINSERT INTO "acategories" ("id","title","created_at","updated_at")
+                     SELECT "id","title","created_at","updated_at" FROM "categories"[0m
+  ↳ db/migrate/20220220182337_add_categories_title_null_constraint.rb:3
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE "categories"[0m
+  ↳ db/migrate/20220220182337_add_categories_title_null_constraint.rb:3
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "categories" ("id" integer NOT NULL PRIMARY KEY, "title" varchar NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20220220182337_add_categories_title_null_constraint.rb:3
+  [1m[35m (0.0ms)[0m  [1m[32mINSERT INTO "categories" ("id","title","created_at","updated_at")
+                     SELECT "id","title","created_at","updated_at" FROM "acategories"[0m
+  ↳ db/migrate/20220220182337_add_categories_title_null_constraint.rb:3
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "acategories"[0m
+  ↳ db/migrate/20220220182337_add_categories_title_null_constraint.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20220220182337"]]
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[35m (2.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+Migrating to AddTestsTitleCategoryIdNullConstraint (20220220182357)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TEMPORARY TABLE "atests" ("id" integer NOT NULL PRIMARY KEY, "title" varchar DEFAULT NULL, "level" integer DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20220220182357_add_tests_title_category_id_null_constraint.rb:3
+  [1m[35m (0.0ms)[0m  [1m[32mINSERT INTO "atests" ("id","title","level","created_at","updated_at")
+                     SELECT "id","title","level","created_at","updated_at" FROM "tests"[0m
+  ↳ db/migrate/20220220182357_add_tests_title_category_id_null_constraint.rb:3
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE "tests"[0m
+  ↳ db/migrate/20220220182357_add_tests_title_category_id_null_constraint.rb:3
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "tests" ("id" integer NOT NULL PRIMARY KEY, "title" varchar NOT NULL, "level" integer DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20220220182357_add_tests_title_category_id_null_constraint.rb:3
+  [1m[35m (0.0ms)[0m  [1m[32mINSERT INTO "tests" ("id","title","level","created_at","updated_at")
+                     SELECT "id","title","level","created_at","updated_at" FROM "atests"[0m
+  ↳ db/migrate/20220220182357_add_tests_title_category_id_null_constraint.rb:3
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "atests"[0m
+  ↳ db/migrate/20220220182357_add_tests_title_category_id_null_constraint.rb:3
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TEMPORARY TABLE "atests" ("id" integer NOT NULL PRIMARY KEY, "title" varchar NOT NULL, "level" integer DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20220220182357_add_tests_title_category_id_null_constraint.rb:4
+  [1m[35m (0.2ms)[0m  [1m[32mINSERT INTO "atests" ("id","title","level","created_at","updated_at")
+                     SELECT "id","title","level","created_at","updated_at" FROM "tests"[0m
+  ↳ db/migrate/20220220182357_add_tests_title_category_id_null_constraint.rb:4
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "tests"[0m
+  ↳ db/migrate/20220220182357_add_tests_title_category_id_null_constraint.rb:4
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+Migrating to AddTestsTitleCategoryIdNullConstraint (20220220182357)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "tests" ADD "category_id" integer[0m
+  ↳ db/migrate/20220220182357_add_tests_title_category_id_null_constraint.rb:3
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/migrate/20220220182357_add_tests_title_category_id_null_constraint.rb:4
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TEMPORARY TABLE "atests" ("id" integer NOT NULL PRIMARY KEY, "title" varchar DEFAULT NULL, "level" integer DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "category_id" integer DEFAULT NULL)[0m
+  ↳ db/migrate/20220220182357_add_tests_title_category_id_null_constraint.rb:4
+  [1m[35m (0.0ms)[0m  [1m[32mINSERT INTO "atests" ("id","title","level","created_at","updated_at","category_id")
+                     SELECT "id","title","level","created_at","updated_at","category_id" FROM "tests"[0m
+  ↳ db/migrate/20220220182357_add_tests_title_category_id_null_constraint.rb:4
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "tests"[0m
+  ↳ db/migrate/20220220182357_add_tests_title_category_id_null_constraint.rb:4
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "tests" ("id" integer NOT NULL PRIMARY KEY, "title" varchar NOT NULL, "level" integer DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "category_id" integer DEFAULT NULL)[0m
+  ↳ db/migrate/20220220182357_add_tests_title_category_id_null_constraint.rb:4
+  [1m[35m (0.0ms)[0m  [1m[32mINSERT INTO "tests" ("id","title","level","created_at","updated_at","category_id")
+                     SELECT "id","title","level","created_at","updated_at","category_id" FROM "atests"[0m
+  ↳ db/migrate/20220220182357_add_tests_title_category_id_null_constraint.rb:4
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "atests"[0m
+  ↳ db/migrate/20220220182357_add_tests_title_category_id_null_constraint.rb:4
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TEMPORARY TABLE "atests" ("id" integer NOT NULL PRIMARY KEY, "title" varchar NOT NULL, "level" integer DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "category_id" integer DEFAULT NULL)[0m
+  ↳ db/migrate/20220220182357_add_tests_title_category_id_null_constraint.rb:5
+  [1m[35m (0.0ms)[0m  [1m[32mINSERT INTO "atests" ("id","title","level","created_at","updated_at","category_id")
+                     SELECT "id","title","level","created_at","updated_at","category_id" FROM "tests"[0m
+  ↳ db/migrate/20220220182357_add_tests_title_category_id_null_constraint.rb:5
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "tests"[0m
+  ↳ db/migrate/20220220182357_add_tests_title_category_id_null_constraint.rb:5
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "tests" ("id" integer NOT NULL PRIMARY KEY, "title" varchar NOT NULL, "level" integer DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "category_id" integer NOT NULL)[0m
+  ↳ db/migrate/20220220182357_add_tests_title_category_id_null_constraint.rb:5
+  [1m[35m (0.0ms)[0m  [1m[32mINSERT INTO "tests" ("id","title","level","created_at","updated_at","category_id")
+                     SELECT "id","title","level","created_at","updated_at","category_id" FROM "atests"[0m
+  ↳ db/migrate/20220220182357_add_tests_title_category_id_null_constraint.rb:5
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "atests"[0m
+  ↳ db/migrate/20220220182357_add_tests_title_category_id_null_constraint.rb:5
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20220220182357"]]
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[35m (2.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+Migrating to AddQuestionsBodyTestIdNullConstraint (20220220182416)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aquestions" ("id" integer NOT NULL PRIMARY KEY, "body" varchar DEFAULT NULL, "test_id" integer DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20220220182416_add_questions_body_test_id_null_constraint.rb:3
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "aquestions" ("id","body","test_id","created_at","updated_at")
+                     SELECT "id","body","test_id","created_at","updated_at" FROM "questions"[0m
+  ↳ db/migrate/20220220182416_add_questions_body_test_id_null_constraint.rb:3
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE "questions"[0m
+  ↳ db/migrate/20220220182416_add_questions_body_test_id_null_constraint.rb:3
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "questions" ("id" integer NOT NULL PRIMARY KEY, "body" varchar NOT NULL, "test_id" integer DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20220220182416_add_questions_body_test_id_null_constraint.rb:3
+  [1m[35m (0.0ms)[0m  [1m[32mINSERT INTO "questions" ("id","body","test_id","created_at","updated_at")
+                     SELECT "id","body","test_id","created_at","updated_at" FROM "aquestions"[0m
+  ↳ db/migrate/20220220182416_add_questions_body_test_id_null_constraint.rb:3
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "aquestions"[0m
+  ↳ db/migrate/20220220182416_add_questions_body_test_id_null_constraint.rb:3
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aquestions" ("id" integer NOT NULL PRIMARY KEY, "body" varchar NOT NULL, "test_id" integer DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20220220182416_add_questions_body_test_id_null_constraint.rb:4
+  [1m[35m (0.0ms)[0m  [1m[32mINSERT INTO "aquestions" ("id","body","test_id","created_at","updated_at")
+                     SELECT "id","body","test_id","created_at","updated_at" FROM "questions"[0m
+  ↳ db/migrate/20220220182416_add_questions_body_test_id_null_constraint.rb:4
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "questions"[0m
+  ↳ db/migrate/20220220182416_add_questions_body_test_id_null_constraint.rb:4
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "questions" ("id" integer NOT NULL PRIMARY KEY, "body" varchar NOT NULL, "test_id" integer NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20220220182416_add_questions_body_test_id_null_constraint.rb:4
+  [1m[35m (0.0ms)[0m  [1m[32mINSERT INTO "questions" ("id","body","test_id","created_at","updated_at")
+                     SELECT "id","body","test_id","created_at","updated_at" FROM "aquestions"[0m
+  ↳ db/migrate/20220220182416_add_questions_body_test_id_null_constraint.rb:4
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "aquestions"[0m
+  ↳ db/migrate/20220220182416_add_questions_body_test_id_null_constraint.rb:4
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20220220182416"]]
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[35m (3.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+Migrating to AddAnswersBodyQuestionIdNullConstraint (20220220182440)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+Migrating to AddAnswersBodyQuestionIdNullConstraint (20220220182440)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/migrate/20220220182440_add_answers_body_question_id_null_constraint.rb:3
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aanswers" ("id" integer NOT NULL PRIMARY KEY, "body" varchar DEFAULT NULL, "correct" boolean DEFAULT NULL, "question_id" integer DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20220220182440_add_answers_body_question_id_null_constraint.rb:3
+  [1m[35m (0.0ms)[0m  [1m[32mINSERT INTO "aanswers" ("id","body","correct","question_id","created_at","updated_at")
+                     SELECT "id","body","correct","question_id","created_at","updated_at" FROM "answers"[0m
+  ↳ db/migrate/20220220182440_add_answers_body_question_id_null_constraint.rb:3
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE "answers"[0m
+  ↳ db/migrate/20220220182440_add_answers_body_question_id_null_constraint.rb:3
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "answers" ("id" integer NOT NULL PRIMARY KEY, "body" varchar NOT NULL, "correct" boolean DEFAULT NULL, "question_id" integer DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20220220182440_add_answers_body_question_id_null_constraint.rb:3
+  [1m[35m (0.0ms)[0m  [1m[32mINSERT INTO "answers" ("id","body","correct","question_id","created_at","updated_at")
+                     SELECT "id","body","correct","question_id","created_at","updated_at" FROM "aanswers"[0m
+  ↳ db/migrate/20220220182440_add_answers_body_question_id_null_constraint.rb:3
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "aanswers"[0m
+  ↳ db/migrate/20220220182440_add_answers_body_question_id_null_constraint.rb:3
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aanswers" ("id" integer NOT NULL PRIMARY KEY, "body" varchar NOT NULL, "correct" boolean DEFAULT NULL, "question_id" integer DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20220220182440_add_answers_body_question_id_null_constraint.rb:4
+  [1m[35m (0.0ms)[0m  [1m[32mINSERT INTO "aanswers" ("id","body","correct","question_id","created_at","updated_at")
+                     SELECT "id","body","correct","question_id","created_at","updated_at" FROM "answers"[0m
+  ↳ db/migrate/20220220182440_add_answers_body_question_id_null_constraint.rb:4
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "answers"[0m
+  ↳ db/migrate/20220220182440_add_answers_body_question_id_null_constraint.rb:4
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "answers" ("id" integer NOT NULL PRIMARY KEY, "body" varchar NOT NULL, "correct" boolean DEFAULT NULL, "question_id" integer NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20220220182440_add_answers_body_question_id_null_constraint.rb:4
+  [1m[35m (0.0ms)[0m  [1m[32mINSERT INTO "answers" ("id","body","correct","question_id","created_at","updated_at")
+                     SELECT "id","body","correct","question_id","created_at","updated_at" FROM "aanswers"[0m
+  ↳ db/migrate/20220220182440_add_answers_body_question_id_null_constraint.rb:4
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "aanswers"[0m
+  ↳ db/migrate/20220220182440_add_answers_body_question_id_null_constraint.rb:4
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20220220182440"]]
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[35m (2.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+Migrating to AddUsersNamePassNullConstraint (20220220182452)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TEMPORARY TABLE "ausers" ("id" integer NOT NULL PRIMARY KEY, "name" varchar DEFAULT NULL, "pass" varchar DEFAULT NULL, "admin" boolean DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20220220182452_add_users_name_pass_null_constraint.rb:3
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "ausers" ("id","name","pass","admin","created_at","updated_at")
+                     SELECT "id","name","pass","admin","created_at","updated_at" FROM "users"[0m
+  ↳ db/migrate/20220220182452_add_users_name_pass_null_constraint.rb:3
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE "users"[0m
+  ↳ db/migrate/20220220182452_add_users_name_pass_null_constraint.rb:3
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer NOT NULL PRIMARY KEY, "name" varchar NOT NULL, "pass" varchar DEFAULT NULL, "admin" boolean DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20220220182452_add_users_name_pass_null_constraint.rb:3
+  [1m[35m (0.0ms)[0m  [1m[32mINSERT INTO "users" ("id","name","pass","admin","created_at","updated_at")
+                     SELECT "id","name","pass","admin","created_at","updated_at" FROM "ausers"[0m
+  ↳ db/migrate/20220220182452_add_users_name_pass_null_constraint.rb:3
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "ausers"[0m
+  ↳ db/migrate/20220220182452_add_users_name_pass_null_constraint.rb:3
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TEMPORARY TABLE "ausers" ("id" integer NOT NULL PRIMARY KEY, "name" varchar NOT NULL, "pass" varchar DEFAULT NULL, "admin" boolean DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20220220182452_add_users_name_pass_null_constraint.rb:4
+  [1m[35m (0.0ms)[0m  [1m[32mINSERT INTO "ausers" ("id","name","pass","admin","created_at","updated_at")
+                     SELECT "id","name","pass","admin","created_at","updated_at" FROM "users"[0m
+  ↳ db/migrate/20220220182452_add_users_name_pass_null_constraint.rb:4
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "users"[0m
+  ↳ db/migrate/20220220182452_add_users_name_pass_null_constraint.rb:4
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer NOT NULL PRIMARY KEY, "name" varchar NOT NULL, "pass" varchar NOT NULL, "admin" boolean DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20220220182452_add_users_name_pass_null_constraint.rb:4
+  [1m[35m (0.0ms)[0m  [1m[32mINSERT INTO "users" ("id","name","pass","admin","created_at","updated_at")
+                     SELECT "id","name","pass","admin","created_at","updated_at" FROM "ausers"[0m
+  ↳ db/migrate/20220220182452_add_users_name_pass_null_constraint.rb:4
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "ausers"[0m
+  ↳ db/migrate/20220220182452_add_users_name_pass_null_constraint.rb:4
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20220220182452"]]
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[35m (3.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+Migrating to AddTestsLevelDefaultValue (20220220185451)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/migrate/20220220185451_add_tests_level_default_value.rb:3
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TEMPORARY TABLE "atests" ("id" integer NOT NULL PRIMARY KEY, "title" varchar NOT NULL, "level" integer DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "category_id" integer NOT NULL)[0m
+  ↳ db/migrate/20220220185451_add_tests_level_default_value.rb:3
+  [1m[35m (0.0ms)[0m  [1m[32mINSERT INTO "atests" ("id","title","level","created_at","updated_at","category_id")
+                     SELECT "id","title","level","created_at","updated_at","category_id" FROM "tests"[0m
+  ↳ db/migrate/20220220185451_add_tests_level_default_value.rb:3
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "tests"[0m
+  ↳ db/migrate/20220220185451_add_tests_level_default_value.rb:3
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "tests" ("id" integer NOT NULL PRIMARY KEY, "title" varchar NOT NULL, "level" integer DEFAULT 0, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "category_id" integer NOT NULL)[0m
+  ↳ db/migrate/20220220185451_add_tests_level_default_value.rb:3
+  [1m[35m (0.0ms)[0m  [1m[32mINSERT INTO "tests" ("id","title","level","created_at","updated_at","category_id")
+                     SELECT "id","title","level","created_at","updated_at","category_id" FROM "atests"[0m
+  ↳ db/migrate/20220220185451_add_tests_level_default_value.rb:3
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "atests"[0m
+  ↳ db/migrate/20220220185451_add_tests_level_default_value.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20220220185451"]]
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[35m (2.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+Migrating to AddAnsewrsCorrectDefaultValue (20220220190130)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/migrate/20220220190130_add_ansewrs_correct_default_value.rb:3
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aanswers" ("id" integer NOT NULL PRIMARY KEY, "body" varchar NOT NULL, "correct" boolean DEFAULT NULL, "question_id" integer NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20220220190130_add_ansewrs_correct_default_value.rb:3
+  [1m[35m (0.0ms)[0m  [1m[32mINSERT INTO "aanswers" ("id","body","correct","question_id","created_at","updated_at")
+                     SELECT "id","body","correct","question_id","created_at","updated_at" FROM "answers"[0m
+  ↳ db/migrate/20220220190130_add_ansewrs_correct_default_value.rb:3
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "answers"[0m
+  ↳ db/migrate/20220220190130_add_ansewrs_correct_default_value.rb:3
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "answers" ("id" integer NOT NULL PRIMARY KEY, "body" varchar NOT NULL, "correct" boolean DEFAULT 0, "question_id" integer NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20220220190130_add_ansewrs_correct_default_value.rb:3
+  [1m[35m (0.0ms)[0m  [1m[32mINSERT INTO "answers" ("id","body","correct","question_id","created_at","updated_at")
+                     SELECT "id","body","correct","question_id","created_at","updated_at" FROM "aanswers"[0m
+  ↳ db/migrate/20220220190130_add_ansewrs_correct_default_value.rb:3
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "aanswers"[0m
+  ↳ db/migrate/20220220190130_add_ansewrs_correct_default_value.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20220220190130"]]
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[35m (2.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+Migrating to AddAnsewrsCorrectDefaultValue (20220220190130)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aanswers" ("id" integer NOT NULL PRIMARY KEY, "body" varchar NOT NULL, "correct" boolean DEFAULT 0, "question_id" integer NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[35m (0.2ms)[0m  [1m[32mINSERT INTO "aanswers" ("id","body","correct","question_id","created_at","updated_at")
+                     SELECT "id","body","correct","question_id","created_at","updated_at" FROM "answers"[0m
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE "answers"[0m
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "answers" ("id" integer NOT NULL PRIMARY KEY, "body" varchar NOT NULL, "correct" boolean DEFAULT NULL, "question_id" integer NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[35m (0.0ms)[0m  [1m[32mINSERT INTO "answers" ("id","body","correct","question_id","created_at","updated_at")
+                     SELECT "id","body","correct","question_id","created_at","updated_at" FROM "aanswers"[0m
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "aanswers"[0m
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[36mActiveRecord::SchemaMigration Destroy (0.1ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = ?[0m  [["version", "20220220190130"]]
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[35m (6.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+Migrating to AddTestsLevelDefaultValue (20220220185451)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TEMPORARY TABLE "atests" ("id" integer NOT NULL PRIMARY KEY, "title" varchar NOT NULL, "level" integer DEFAULT 0, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "category_id" integer NOT NULL)[0m
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[35m (0.2ms)[0m  [1m[32mINSERT INTO "atests" ("id","title","level","created_at","updated_at","category_id")
+                     SELECT "id","title","level","created_at","updated_at","category_id" FROM "tests"[0m
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[35m (0.6ms)[0m  [1m[35mDROP TABLE "tests"[0m
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "tests" ("id" integer NOT NULL PRIMARY KEY, "title" varchar NOT NULL, "level" integer DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "category_id" integer NOT NULL)[0m
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[35m (0.4ms)[0m  [1m[32mINSERT INTO "tests" ("id","title","level","created_at","updated_at","category_id")
+                     SELECT "id","title","level","created_at","updated_at","category_id" FROM "atests"[0m
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE "atests"[0m
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[36mActiveRecord::SchemaMigration Destroy (0.7ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = ?[0m  [["version", "20220220185451"]]
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[35m (3.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+Migrating to AddUsersNamePassNullConstraint (20220220182452)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TEMPORARY TABLE "ausers" ("id" integer NOT NULL PRIMARY KEY, "name" varchar NOT NULL, "pass" varchar NOT NULL, "admin" boolean DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "ausers" ("id","name","pass","admin","created_at","updated_at")
+                     SELECT "id","name","pass","admin","created_at","updated_at" FROM "users"[0m
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE "users"[0m
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer NOT NULL PRIMARY KEY, "name" varchar NOT NULL, "pass" varchar DEFAULT NULL, "admin" boolean DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "users" ("id","name","pass","admin","created_at","updated_at")
+                     SELECT "id","name","pass","admin","created_at","updated_at" FROM "ausers"[0m
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "ausers"[0m
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TEMPORARY TABLE "ausers" ("id" integer NOT NULL PRIMARY KEY, "name" varchar NOT NULL, "pass" varchar DEFAULT NULL, "admin" boolean DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "ausers" ("id","name","pass","admin","created_at","updated_at")
+                     SELECT "id","name","pass","admin","created_at","updated_at" FROM "users"[0m
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "users"[0m
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer NOT NULL PRIMARY KEY, "name" varchar DEFAULT NULL, "pass" varchar DEFAULT NULL, "admin" boolean DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "users" ("id","name","pass","admin","created_at","updated_at")
+                     SELECT "id","name","pass","admin","created_at","updated_at" FROM "ausers"[0m
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "ausers"[0m
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[36mActiveRecord::SchemaMigration Destroy (0.2ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = ?[0m  [["version", "20220220182452"]]
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[35m (2.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+Migrating to AddAnswersBodyQuestionIdNullConstraint (20220220182440)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aanswers" ("id" integer NOT NULL PRIMARY KEY, "body" varchar NOT NULL, "correct" boolean DEFAULT NULL, "question_id" integer NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "aanswers" ("id","body","correct","question_id","created_at","updated_at")
+                     SELECT "id","body","correct","question_id","created_at","updated_at" FROM "answers"[0m
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "answers"[0m
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "answers" ("id" integer NOT NULL PRIMARY KEY, "body" varchar NOT NULL, "correct" boolean DEFAULT NULL, "question_id" integer DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "answers" ("id","body","correct","question_id","created_at","updated_at")
+                     SELECT "id","body","correct","question_id","created_at","updated_at" FROM "aanswers"[0m
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "aanswers"[0m
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aanswers" ("id" integer NOT NULL PRIMARY KEY, "body" varchar NOT NULL, "correct" boolean DEFAULT NULL, "question_id" integer DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "aanswers" ("id","body","correct","question_id","created_at","updated_at")
+                     SELECT "id","body","correct","question_id","created_at","updated_at" FROM "answers"[0m
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "answers"[0m
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "answers" ("id" integer NOT NULL PRIMARY KEY, "body" varchar DEFAULT NULL, "correct" boolean DEFAULT NULL, "question_id" integer DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "answers" ("id","body","correct","question_id","created_at","updated_at")
+                     SELECT "id","body","correct","question_id","created_at","updated_at" FROM "aanswers"[0m
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "aanswers"[0m
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[36mActiveRecord::SchemaMigration Destroy (0.1ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = ?[0m  [["version", "20220220182440"]]
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[35m (2.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+Migrating to AddQuestionsBodyTestIdNullConstraint (20220220182416)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aquestions" ("id" integer NOT NULL PRIMARY KEY, "body" varchar NOT NULL, "test_id" integer NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[35m (0.3ms)[0m  [1m[32mINSERT INTO "aquestions" ("id","body","test_id","created_at","updated_at")
+                     SELECT "id","body","test_id","created_at","updated_at" FROM "questions"[0m
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[35m (0.6ms)[0m  [1m[35mDROP TABLE "questions"[0m
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "questions" ("id" integer NOT NULL PRIMARY KEY, "body" varchar NOT NULL, "test_id" integer DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "questions" ("id","body","test_id","created_at","updated_at")
+                     SELECT "id","body","test_id","created_at","updated_at" FROM "aquestions"[0m
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE "aquestions"[0m
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aquestions" ("id" integer NOT NULL PRIMARY KEY, "body" varchar NOT NULL, "test_id" integer DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "aquestions" ("id","body","test_id","created_at","updated_at")
+                     SELECT "id","body","test_id","created_at","updated_at" FROM "questions"[0m
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE "questions"[0m
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "questions" ("id" integer NOT NULL PRIMARY KEY, "body" varchar DEFAULT NULL, "test_id" integer DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "questions" ("id","body","test_id","created_at","updated_at")
+                     SELECT "id","body","test_id","created_at","updated_at" FROM "aquestions"[0m
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "aquestions"[0m
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[36mActiveRecord::SchemaMigration Destroy (0.2ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = ?[0m  [["version", "20220220182416"]]
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[35m (2.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+Migrating to AddTestsTitleCategoryIdNullConstraint (20220220182357)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TEMPORARY TABLE "atests" ("id" integer NOT NULL PRIMARY KEY, "title" varchar NOT NULL, "level" integer DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "category_id" integer NOT NULL)[0m
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "atests" ("id","title","level","created_at","updated_at","category_id")
+                     SELECT "id","title","level","created_at","updated_at","category_id" FROM "tests"[0m
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE "tests"[0m
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "tests" ("id" integer NOT NULL PRIMARY KEY, "title" varchar NOT NULL, "level" integer DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "category_id" integer DEFAULT NULL)[0m
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "tests" ("id","title","level","created_at","updated_at","category_id")
+                     SELECT "id","title","level","created_at","updated_at","category_id" FROM "atests"[0m
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE "atests"[0m
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TEMPORARY TABLE "atests" ("id" integer NOT NULL PRIMARY KEY, "title" varchar NOT NULL, "level" integer DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "category_id" integer DEFAULT NULL)[0m
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "atests" ("id","title","level","created_at","updated_at","category_id")
+                     SELECT "id","title","level","created_at","updated_at","category_id" FROM "tests"[0m
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "tests"[0m
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "tests" ("id" integer NOT NULL PRIMARY KEY, "title" varchar DEFAULT NULL, "level" integer DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "category_id" integer DEFAULT NULL)[0m
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "tests" ("id","title","level","created_at","updated_at","category_id")
+                     SELECT "id","title","level","created_at","updated_at","category_id" FROM "atests"[0m
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "atests"[0m
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TEMPORARY TABLE "atests" ("id" integer NOT NULL PRIMARY KEY, "title" varchar DEFAULT NULL, "level" integer DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "category_id" integer DEFAULT NULL)[0m
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "atests" ("id","title","level","created_at","updated_at","category_id")
+                     SELECT "id","title","level","created_at","updated_at","category_id" FROM "tests"[0m
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "tests"[0m
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "tests" ("id" integer NOT NULL PRIMARY KEY, "title" varchar DEFAULT NULL, "level" integer DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "tests" ("id","title","level","created_at","updated_at")
+                     SELECT "id","title","level","created_at","updated_at" FROM "atests"[0m
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "atests"[0m
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[36mActiveRecord::SchemaMigration Destroy (0.1ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = ?[0m  [["version", "20220220182357"]]
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[35m (2.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+Migrating to AddCategoriesTitleNullConstraint (20220220182337)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TEMPORARY TABLE "acategories" ("id" integer NOT NULL PRIMARY KEY, "title" varchar NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "acategories" ("id","title","created_at","updated_at")
+                     SELECT "id","title","created_at","updated_at" FROM "categories"[0m
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE "categories"[0m
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "categories" ("id" integer NOT NULL PRIMARY KEY, "title" varchar DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[35m (0.0ms)[0m  [1m[32mINSERT INTO "categories" ("id","title","created_at","updated_at")
+                     SELECT "id","title","created_at","updated_at" FROM "acategories"[0m
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "acategories"[0m
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[36mActiveRecord::SchemaMigration Destroy (0.1ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = ?[0m  [["version", "20220220182337"]]
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[35m (2.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+Migrating to CreateCategories (20220220101058)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "categories"[0m
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[36mActiveRecord::SchemaMigration Destroy (0.1ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = ?[0m  [["version", "20220220101058"]]
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[35m (2.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+Migrating to CreateUsers (20220220100843)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE "users"[0m
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[36mActiveRecord::SchemaMigration Destroy (0.1ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = ?[0m  [["version", "20220220100843"]]
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[35m (2.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+Migrating to CreateAnswers (20220220100644)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE "answers"[0m
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[36mActiveRecord::SchemaMigration Destroy (0.3ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = ?[0m  [["version", "20220220100644"]]
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[35m (2.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+Migrating to CreateQuestions (20220220100147)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE "questions"[0m
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[36mActiveRecord::SchemaMigration Destroy (0.1ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = ?[0m  [["version", "20220220100147"]]
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[35m (3.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+Migrating to CreateTests (20220220095946)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE "tests"[0m
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[36mActiveRecord::SchemaMigration Destroy (0.1ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = ?[0m  [["version", "20220220095946"]]
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[35m (3.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+Migrating to CreateTests (20220220095946)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/migrate/20220220095946_create_tests.rb:3
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "tests" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar NOT NULL, "level" integer DEFAULT 0, "category_id" integer, "user_id" integer, "category_id_id" integer NOT NULL, "user_id_id" integer NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, CONSTRAINT "fk_rails_d4a1dc7b39"
+FOREIGN KEY ("category_id_id")
+  REFERENCES "category_ids" ("id")
+, CONSTRAINT "fk_rails_e2777af174"
+FOREIGN KEY ("user_id_id")
+  REFERENCES "user_ids" ("id")
+)[0m
+  ↳ db/migrate/20220220095946_create_tests.rb:3
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_tests_on_category_id_id" ON "tests" ("category_id_id")[0m
+  ↳ db/migrate/20220220095946_create_tests.rb:3
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_tests_on_user_id_id" ON "tests" ("user_id_id")[0m
+  ↳ db/migrate/20220220095946_create_tests.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20220220095946"]]
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[35m (3.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+Migrating to CreateQuestions (20220220100147)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "questions" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "body" varchar NOT NULL, "test_id" integer, "test_id_id" integer NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, CONSTRAINT "fk_rails_93dc6fdc08"
+FOREIGN KEY ("test_id_id")
+  REFERENCES "test_ids" ("id")
+)[0m
+  ↳ db/migrate/20220220100147_create_questions.rb:3
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_questions_on_test_id_id" ON "questions" ("test_id_id")[0m
+  ↳ db/migrate/20220220100147_create_questions.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20220220100147"]]
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[35m (2.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+Migrating to CreateAnswers (20220220100644)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "answers" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "body" varchar NOT NULL, "correct" boolean DEFAULT 0, "question_id" integer, "question_id_id" integer NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, CONSTRAINT "fk_rails_6577d06edf"
+FOREIGN KEY ("question_id_id")
+  REFERENCES "question_ids" ("id")
+)[0m
+  ↳ db/migrate/20220220100644_create_answers.rb:3
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_answers_on_question_id_id" ON "answers" ("question_id_id")[0m
+  ↳ db/migrate/20220220100644_create_answers.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20220220100644"]]
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[35m (4.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+Migrating to CreateUsers (20220220100843)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar NOT NULL, "email" varchar, "admin" boolean DEFAULT 0, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20220220100843_create_users.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20220220100843"]]
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[35m (3.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+Migrating to CreateCategories (20220220101058)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "categories" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20220220101058_create_categories.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20220220101058"]]
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[35m (3.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+Migrating to CreateCategories (20220220101058)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE "categories"[0m
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[36mActiveRecord::SchemaMigration Destroy (0.1ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = ?[0m  [["version", "20220220101058"]]
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[35m (3.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+Migrating to CreateUsers (20220220100843)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE "users"[0m
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[36mActiveRecord::SchemaMigration Destroy (0.1ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = ?[0m  [["version", "20220220100843"]]
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[35m (3.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+Migrating to CreateAnswers (20220220100644)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE "answers"[0m
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[36mActiveRecord::SchemaMigration Destroy (0.2ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = ?[0m  [["version", "20220220100644"]]
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[35m (2.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+Migrating to CreateQuestions (20220220100147)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE "questions"[0m
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[36mActiveRecord::SchemaMigration Destroy (0.1ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = ?[0m  [["version", "20220220100147"]]
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[35m (2.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+Migrating to CreateTests (20220220095946)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE "tests"[0m
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[36mActiveRecord::SchemaMigration Destroy (0.1ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = ?[0m  [["version", "20220220095946"]]
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[35m (2.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+Migrating to CreateTests (20220220095946)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+Migrating to CreateTests (20220220095946)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/migrate/20220220095946_create_tests.rb:3
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "tests" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar NOT NULL, "level" integer DEFAULT 0 NOT NULL, "category_id" integer NOT NULL, "author_id" integer NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, CONSTRAINT "fk_rails_cda342dc0a"
+FOREIGN KEY ("category_id")
+  REFERENCES "categories" ("id")
+, CONSTRAINT "fk_rails_d58c5057b2"
+FOREIGN KEY ("author_id")
+  REFERENCES "users" ("id")
+)[0m
+  ↳ db/migrate/20220220095946_create_tests.rb:3
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_tests_on_category_id" ON "tests" ("category_id")[0m
+  ↳ db/migrate/20220220095946_create_tests.rb:3
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_tests_on_author_id" ON "tests" ("author_id")[0m
+  ↳ db/migrate/20220220095946_create_tests.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20220220095946"]]
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[35m (2.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+Migrating to CreateQuestions (20220220100147)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "questions" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "body" varchar NOT NULL, "test_id" integer NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, CONSTRAINT "fk_rails_cb4b358d50"
+FOREIGN KEY ("test_id")
+  REFERENCES "tests" ("id")
+)[0m
+  ↳ db/migrate/20220220100147_create_questions.rb:3
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_questions_on_test_id" ON "questions" ("test_id")[0m
+  ↳ db/migrate/20220220100147_create_questions.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20220220100147"]]
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[35m (2.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+Migrating to CreateAnswers (20220220100644)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "answers" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "body" varchar NOT NULL, "correct" boolean DEFAULT 0 NOT NULL, "question_id" integer NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, CONSTRAINT "fk_rails_3d5ed4418f"
+FOREIGN KEY ("question_id")
+  REFERENCES "questions" ("id")
+)[0m
+  ↳ db/migrate/20220220100644_create_answers.rb:3
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_answers_on_question_id" ON "answers" ("question_id")[0m
+  ↳ db/migrate/20220220100644_create_answers.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20220220100644"]]
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[35m (3.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+Migrating to CreateUsers (20220220100843)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar NOT NULL, "email" varchar, "admin" boolean DEFAULT 0 NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20220220100843_create_users.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20220220100843"]]
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[35m (2.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+Migrating to CreateCategories (20220220101058)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "categories" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20220220101058_create_categories.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20220220101058"]]
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[35m (2.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
