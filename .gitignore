@@ -30,5 +30,8 @@
 # Ignore master key for decrypting credentials and more.
 /config/master.key
 
-#set gemset
+<<<<<<< HEAD
 .rvmrc
+=======
+.rvmrc
+>>>>>>> 741b246 (feat: added model Result, added methods to User & Test)
