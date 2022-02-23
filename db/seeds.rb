@@ -6,7 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-User.create!([{
+users = User.create!([{
   name: "Vasiliy",
   email: "vas@mail.org"
 },
@@ -36,7 +36,7 @@ Category.create!([{
 }])
 p "Created #{Category.count} Categories"
 
-Test.create!([{
+tests = Test.create!([{
   title: "Urals mounains",
   level: 1,
   category_id: 3, 
@@ -44,6 +44,18 @@ Test.create!([{
 },
 {
   title: "Pacific ocean",
+  level: 2,
+  category_id: 1, 
+  author_id: 3
+},
+{
+  title: "Atlantic ocean",
+  level: 2,
+  category_id: 1, 
+  author_id: 3
+},
+{
+  title: "Indian ocean",
   level: 2,
   category_id: 1, 
   author_id: 3
@@ -203,40 +215,8 @@ Answer.create!([{
 }])
 p "Created #{Answer.count} Answers"
 
-Result.create!([{
-  user_id: 1,
-  test_id: 2
-},
-{
-  user_id: 2,
-  test_id: 2
-},
-{
-  user_id: 2,
-  test_id: 1
-},
-{
-  user_id: 2,
-  test_id: 3
-},
-{
-  user_id: 1,
-  test_id: 4
-},
-{
-  user_id: 3,
-  test_id: 1
-},
-{
-  user_id: 3,
-  test_id: 2
-},
-{
-  user_id: 3,
-  test_id: 3
-},
-{
-  user_id: 1,
-  test_id: 4
-}])
+param = []
+tests.each {|test| users.each {|user| param << {user_id: user.id, test_id: rand(tests.first.id..tests.last.id)}}}
+
+Result.create!(param)
 p "Created #{Answer.count} Answers"
