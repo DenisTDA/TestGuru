@@ -32,6 +32,7 @@
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> ff9511d (fix: fix bugs and correct syntax of task3)
@@ -39,3 +40,7 @@
 =======
 .rvmrc
 >>>>>>> 741b246 (feat: added model Result, added methods to User & Test)
+=======
+#set gemset
+.rvmrc
+>>>>>>> 4895a8d (chore: remake .gitignore)
