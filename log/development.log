@@ -13917,3 +13917,121 @@ FOREIGN KEY ("test_id")
   [1m[36mResult Load (0.7ms)[0m  [1m[34mSELECT "results".* FROM "results" JOIN tests ON tests.id = results.test_id WHERE (tests.level = 2 AND results.user_id = 3)[0m
   [1m[36mResult Load (0.7ms)[0m  [1m[34mSELECT "results".* FROM "results" JOIN tests ON tests.id = results.test_id WHERE (tests.level = 1 AND results.user_id = 3)[0m
   [1m[36mResult Load (0.7ms)[0m  [1m[34mSELECT "results".* FROM "results" JOIN tests ON tests.id = results.test_id WHERE (tests.level = 0 AND results.user_id = 3)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[35m (6.0ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[35m (4.3ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+Migrating to CreateTests (20220220095946)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "tests" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar NOT NULL, "level" integer DEFAULT 0 NOT NULL, "category_id" integer NOT NULL, "author_id" integer NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, CONSTRAINT "fk_rails_cda342dc0a"
+FOREIGN KEY ("category_id")
+  REFERENCES "categories" ("id")
+, CONSTRAINT "fk_rails_d58c5057b2"
+FOREIGN KEY ("author_id")
+  REFERENCES "users" ("id")
+)[0m
+  ↳ db/migrate/20220220095946_create_tests.rb:3
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_tests_on_category_id" ON "tests" ("category_id")[0m
+  ↳ db/migrate/20220220095946_create_tests.rb:3
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_tests_on_author_id" ON "tests" ("author_id")[0m
+  ↳ db/migrate/20220220095946_create_tests.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20220220095946"]]
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[35m (3.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+Migrating to CreateQuestions (20220220100147)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE TABLE "questions" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "body" varchar NOT NULL, "test_id" integer NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, CONSTRAINT "fk_rails_cb4b358d50"
+FOREIGN KEY ("test_id")
+  REFERENCES "tests" ("id")
+)[0m
+  ↳ db/migrate/20220220100147_create_questions.rb:3
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_questions_on_test_id" ON "questions" ("test_id")[0m
+  ↳ db/migrate/20220220100147_create_questions.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20220220100147"]]
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[35m (4.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+Migrating to CreateAnswers (20220220100644)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "answers" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "body" varchar NOT NULL, "correct" boolean DEFAULT 0 NOT NULL, "question_id" integer NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, CONSTRAINT "fk_rails_3d5ed4418f"
+FOREIGN KEY ("question_id")
+  REFERENCES "questions" ("id")
+)[0m
+  ↳ db/migrate/20220220100644_create_answers.rb:3
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_answers_on_question_id" ON "answers" ("question_id")[0m
+  ↳ db/migrate/20220220100644_create_answers.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20220220100644"]]
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[35m (4.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+Migrating to CreateUsers (20220220100843)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar NOT NULL, "email" varchar, "admin" boolean DEFAULT 0 NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20220220100843_create_users.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20220220100843"]]
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[35m (4.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+Migrating to CreateCategories (20220220101058)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "categories" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20220220101058_create_categories.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20220220101058"]]
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[35m (3.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+Migrating to CreateResults (20220222185414)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "results" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer NOT NULL, "test_id" integer NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, CONSTRAINT "fk_rails_7f0d5a2cd6"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+, CONSTRAINT "fk_rails_53be79783a"
+FOREIGN KEY ("test_id")
+  REFERENCES "tests" ("id")
+)[0m
+  ↳ db/migrate/20220222185414_create_results.rb:3
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_results_on_user_id" ON "results" ("user_id")[0m
+  ↳ db/migrate/20220222185414_create_results.rb:3
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_results_on_test_id" ON "results" ("test_id")[0m
+  ↳ db/migrate/20220222185414_create_results.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20220222185414"]]
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[35m (3.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[36mActiveRecord::InternalMetadata Create (0.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2022-02-23 12:00:52.550847"], ["updated_at", "2022-02-23 12:00:52.550847"]]
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[35m (2.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
