@@ -833,3 +833,273 @@ Migrating to CreateCategories (20220220101058)
   ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
   [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
   ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+Migrating to CreateResults (20220224143529)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/migrate/20220224143529_create_results.rb:3
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "results" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer NOT NULL, "test_id" integer NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, CONSTRAINT "fk_rails_7f0d5a2cd6"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+, CONSTRAINT "fk_rails_53be79783a"
+FOREIGN KEY ("test_id")
+  REFERENCES "tests" ("id")
+)[0m
+  ↳ db/migrate/20220224143529_create_results.rb:3
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_results_on_user_id" ON "results" ("user_id")[0m
+  ↳ db/migrate/20220224143529_create_results.rb:3
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_results_on_test_id" ON "results" ("test_id")[0m
+  ↳ db/migrate/20220224143529_create_results.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20220224143529"]]
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[35m (4.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/den/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/gems/rake-13.0.6/lib/rake/task.rb:281
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Vasiliy"], ["email", "vas@mail.org"], ["created_at", "2022-02-24 14:51:47.945171"], ["updated_at", "2022-02-24 14:51:47.945171"]]
+  [1m[35m (2.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "admin", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Petr"], ["email", "petr@mail.org"], ["admin", 1], ["created_at", "2022-02-24 14:51:47.950175"], ["updated_at", "2022-02-24 14:51:47.950175"]]
+  [1m[35m (2.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "admin", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Sergey"], ["email", "serg@mail.org"], ["admin", 1], ["created_at", "2022-02-24 14:51:47.953927"], ["updated_at", "2022-02-24 14:51:47.953927"]]
+  [1m[35m (2.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.3ms)[0m  [1m[32mINSERT INTO "categories" ("title", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["title", "Oceans"], ["created_at", "2022-02-24 14:51:47.962174"], ["updated_at", "2022-02-24 14:51:47.962174"]]
+  [1m[35m (3.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.2ms)[0m  [1m[32mINSERT INTO "categories" ("title", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["title", "Deserts"], ["created_at", "2022-02-24 14:51:47.966961"], ["updated_at", "2022-02-24 14:51:47.966961"]]
+  [1m[35m (2.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.1ms)[0m  [1m[32mINSERT INTO "categories" ("title", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["title", "Mountains"], ["created_at", "2022-02-24 14:51:47.970375"], ["updated_at", "2022-02-24 14:51:47.970375"]]
+  [1m[35m (2.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.2ms)[0m  [1m[32mINSERT INTO "categories" ("title", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["title", "Aircrafts"], ["created_at", "2022-02-24 14:51:47.973338"], ["updated_at", "2022-02-24 14:51:47.973338"]]
+  [1m[35m (2.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "categories"[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTest Create (0.2ms)[0m  [1m[32mINSERT INTO "tests" ("title", "level", "category_id", "author_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Urals mounains"], ["level", 1], ["category_id", 3], ["author_id", 2], ["created_at", "2022-02-24 14:51:47.982890"], ["updated_at", "2022-02-24 14:51:47.982890"]]
+  [1m[35m (2.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTest Create (0.2ms)[0m  [1m[32mINSERT INTO "tests" ("title", "level", "category_id", "author_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Pacific ocean"], ["level", 2], ["category_id", 1], ["author_id", 3], ["created_at", "2022-02-24 14:51:47.987042"], ["updated_at", "2022-02-24 14:51:47.987042"]]
+  [1m[35m (2.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTest Create (0.2ms)[0m  [1m[32mINSERT INTO "tests" ("title", "level", "category_id", "author_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Atlantic ocean"], ["level", 2], ["category_id", 1], ["author_id", 3], ["created_at", "2022-02-24 14:51:47.991028"], ["updated_at", "2022-02-24 14:51:47.991028"]]
+  [1m[35m (3.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTest Create (0.2ms)[0m  [1m[32mINSERT INTO "tests" ("title", "level", "category_id", "author_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Indian ocean"], ["level", 2], ["category_id", 1], ["author_id", 3], ["created_at", "2022-02-24 14:51:47.995544"], ["updated_at", "2022-02-24 14:51:47.995544"]]
+  [1m[35m (2.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTest Create (0.2ms)[0m  [1m[32mINSERT INTO "tests" ("title", "level", "category_id", "author_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Paragliders"], ["level", 3], ["category_id", 4], ["author_id", 3], ["created_at", "2022-02-24 14:51:47.999737"], ["updated_at", "2022-02-24 14:51:47.999737"]]
+  [1m[35m (2.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTest Create (0.2ms)[0m  [1m[32mINSERT INTO "tests" ("title", "category_id", "author_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Sahara"], ["category_id", 2], ["author_id", 2], ["created_at", "2022-02-24 14:51:48.003046"], ["updated_at", "2022-02-24 14:51:48.003046"]]
+  [1m[35m (2.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "tests"[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mQuestion Create (0.2ms)[0m  [1m[32mINSERT INTO "questions" ("body", "test_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["body", "Еhe highest point in the Ural Mountains"], ["test_id", 1], ["created_at", "2022-02-24 14:51:48.011548"], ["updated_at", "2022-02-24 14:51:48.011548"]]
+  [1m[35m (3.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mQuestion Create (0.2ms)[0m  [1m[32mINSERT INTO "questions" ("body", "test_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["body", "Average annual temperature of the Pacific Ocean"], ["test_id", 2], ["created_at", "2022-02-24 14:51:48.015747"], ["updated_at", "2022-02-24 14:51:48.015747"]]
+  [1m[35m (3.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mQuestion Create (0.2ms)[0m  [1m[32mINSERT INTO "questions" ("body", "test_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["body", "What average wing area is needed for \n          a pilot weighing 85 kg. with equipment of 15 kg?"], ["test_id", 3], ["created_at", "2022-02-24 14:51:48.020186"], ["updated_at", "2022-02-24 14:51:48.020186"]]
+  [1m[35m (2.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mQuestion Create (0.2ms)[0m  [1m[32mINSERT INTO "questions" ("body", "test_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["body", "What is the average temperature during the day in the sahara desert in summer?"], ["test_id", 4], ["created_at", "2022-02-24 14:51:48.024230"], ["updated_at", "2022-02-24 14:51:48.024230"]]
+  [1m[35m (3.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mQuestion Create (0.2ms)[0m  [1m[32mINSERT INTO "questions" ("body", "test_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["body", "The highest part of the Ural Mountains is located:"], ["test_id", 1], ["created_at", "2022-02-24 14:51:48.028764"], ["updated_at", "2022-02-24 14:51:48.028764"]]
+  [1m[35m (2.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mQuestion Create (0.2ms)[0m  [1m[32mINSERT INTO "questions" ("body", "test_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["body", "Pacific Ocean area"], ["test_id", 2], ["created_at", "2022-02-24 14:51:48.031999"], ["updated_at", "2022-02-24 14:51:48.031999"]]
+  [1m[35m (2.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mQuestion Create (0.2ms)[0m  [1m[32mINSERT INTO "questions" ("body", "test_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["body", "What is the trim speed of the class pgliderg En-B?"], ["test_id", 3], ["created_at", "2022-02-24 14:51:48.035027"], ["updated_at", "2022-02-24 14:51:48.035027"]]
+  [1m[35m (2.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mQuestion Create (0.2ms)[0m  [1m[32mINSERT INTO "questions" ("body", "test_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["body", "What is area Sahara?"], ["test_id", 1], ["created_at", "2022-02-24 14:51:48.038740"], ["updated_at", "2022-02-24 14:51:48.038740"]]
+  [1m[35m (2.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions"[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAnswer Create (0.2ms)[0m  [1m[32mINSERT INTO "answers" ("body", "question_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["body", "1200 m"], ["question_id", 1], ["created_at", "2022-02-24 14:51:48.046993"], ["updated_at", "2022-02-24 14:51:48.046993"]]
+  [1m[35m (2.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAnswer Create (0.2ms)[0m  [1m[32mINSERT INTO "answers" ("body", "correct", "question_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["body", "1895 m"], ["correct", 1], ["question_id", 1], ["created_at", "2022-02-24 14:51:48.051094"], ["updated_at", "2022-02-24 14:51:48.051094"]]
+  [1m[35m (3.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAnswer Create (0.2ms)[0m  [1m[32mINSERT INTO "answers" ("body", "question_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["body", "895 m"], ["question_id", 1], ["created_at", "2022-02-24 14:51:48.055422"], ["updated_at", "2022-02-24 14:51:48.055422"]]
+  [1m[35m (2.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAnswer Create (0.2ms)[0m  [1m[32mINSERT INTO "answers" ("body", "question_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["body", "10°C"], ["question_id", 2], ["created_at", "2022-02-24 14:51:48.058959"], ["updated_at", "2022-02-24 14:51:48.058959"]]
+  [1m[35m (2.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAnswer Create (0.2ms)[0m  [1m[32mINSERT INTO "answers" ("body", "question_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["body", "45°C"], ["question_id", 2], ["created_at", "2022-02-24 14:51:48.062746"], ["updated_at", "2022-02-24 14:51:48.062746"]]
+  [1m[35m (2.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAnswer Create (0.2ms)[0m  [1m[32mINSERT INTO "answers" ("body", "correct", "question_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["body", "19°C"], ["correct", 1], ["question_id", 2], ["created_at", "2022-02-24 14:51:48.066448"], ["updated_at", "2022-02-24 14:51:48.066448"]]
+  [1m[35m (3.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAnswer Create (0.2ms)[0m  [1m[32mINSERT INTO "answers" ("body", "question_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["body", "22"], ["question_id", 3], ["created_at", "2022-02-24 14:51:48.070856"], ["updated_at", "2022-02-24 14:51:48.070856"]]
+  [1m[35m (2.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAnswer Create (0.2ms)[0m  [1m[32mINSERT INTO "answers" ("body", "question_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["body", "32"], ["question_id", 3], ["created_at", "2022-02-24 14:51:48.073811"], ["updated_at", "2022-02-24 14:51:48.073811"]]
+  [1m[35m (2.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAnswer Create (0.2ms)[0m  [1m[32mINSERT INTO "answers" ("body", "correct", "question_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["body", "27"], ["correct", 1], ["question_id", 3], ["created_at", "2022-02-24 14:51:48.077327"], ["updated_at", "2022-02-24 14:51:48.077327"]]
+  [1m[35m (2.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAnswer Create (0.2ms)[0m  [1m[32mINSERT INTO "answers" ("body", "question_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["body", "19°C"], ["question_id", 4], ["created_at", "2022-02-24 14:51:48.081102"], ["updated_at", "2022-02-24 14:51:48.081102"]]
+  [1m[35m (3.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAnswer Create (0.3ms)[0m  [1m[32mINSERT INTO "answers" ("body", "question_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["body", "50°C"], ["question_id", 4], ["created_at", "2022-02-24 14:51:48.085616"], ["updated_at", "2022-02-24 14:51:48.085616"]]
+  [1m[35m (2.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAnswer Create (0.2ms)[0m  [1m[32mINSERT INTO "answers" ("body", "correct", "question_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["body", "28°C"], ["correct", 1], ["question_id", 4], ["created_at", "2022-02-24 14:51:48.089069"], ["updated_at", "2022-02-24 14:51:48.089069"]]
+  [1m[35m (2.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAnswer Create (0.2ms)[0m  [1m[32mINSERT INTO "answers" ("body", "question_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["body", "south"], ["question_id", 5], ["created_at", "2022-02-24 14:51:48.093056"], ["updated_at", "2022-02-24 14:51:48.093056"]]
+  [1m[35m (2.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAnswer Create (0.3ms)[0m  [1m[32mINSERT INTO "answers" ("body", "correct", "question_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["body", "north"], ["correct", 1], ["question_id", 5], ["created_at", "2022-02-24 14:51:48.096536"], ["updated_at", "2022-02-24 14:51:48.096536"]]
+  [1m[35m (3.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAnswer Create (0.2ms)[0m  [1m[32mINSERT INTO "answers" ("body", "question_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["body", "central"], ["question_id", 5], ["created_at", "2022-02-24 14:51:48.101320"], ["updated_at", "2022-02-24 14:51:48.101320"]]
+  [1m[35m (2.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAnswer Create (0.2ms)[0m  [1m[32mINSERT INTO "answers" ("body", "question_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["body", "367 618 km^2"], ["question_id", 6], ["created_at", "2022-02-24 14:51:48.104342"], ["updated_at", "2022-02-24 14:51:48.104342"]]
+  [1m[35m (2.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAnswer Create (0.2ms)[0m  [1m[32mINSERT INTO "answers" ("body", "correct", "question_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["body", "165 200 000 km^2"], ["correct", 1], ["question_id", 6], ["created_at", "2022-02-24 14:51:48.108099"], ["updated_at", "2022-02-24 14:51:48.108099"]]
+  [1m[35m (2.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAnswer Create (0.2ms)[0m  [1m[32mINSERT INTO "answers" ("body", "question_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["body", "256 235 114 km^2"], ["question_id", 6], ["created_at", "2022-02-24 14:51:48.111544"], ["updated_at", "2022-02-24 14:51:48.111544"]]
+  [1m[35m (3.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAnswer Create (0.2ms)[0m  [1m[32mINSERT INTO "answers" ("body", "correct", "question_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["body", "26 km/h"], ["correct", 1], ["question_id", 7], ["created_at", "2022-02-24 14:51:48.115750"], ["updated_at", "2022-02-24 14:51:48.115750"]]
+  [1m[35m (2.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAnswer Create (0.6ms)[0m  [1m[32mINSERT INTO "answers" ("body", "question_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["body", "15 km/h"], ["question_id", 7], ["created_at", "2022-02-24 14:51:48.119298"], ["updated_at", "2022-02-24 14:51:48.119298"]]
+  [1m[35m (2.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAnswer Create (0.2ms)[0m  [1m[32mINSERT INTO "answers" ("body", "question_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["body", "38 km/h"], ["question_id", 7], ["created_at", "2022-02-24 14:51:48.124111"], ["updated_at", "2022-02-24 14:51:48.124111"]]
+  [1m[35m (3.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAnswer Create (0.2ms)[0m  [1m[32mINSERT INTO "answers" ("body", "correct", "question_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["body", "9 200 000 km^2"], ["correct", 1], ["question_id", 8], ["created_at", "2022-02-24 14:51:48.128713"], ["updated_at", "2022-02-24 14:51:48.128713"]]
+  [1m[35m (4.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAnswer Create (0.2ms)[0m  [1m[32mINSERT INTO "answers" ("body", "question_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["body", "15 025 368 km^2"], ["question_id", 8], ["created_at", "2022-02-24 14:51:48.133828"], ["updated_at", "2022-02-24 14:51:48.133828"]]
+  [1m[35m (2.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAnswer Create (0.2ms)[0m  [1m[32mINSERT INTO "answers" ("body", "question_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["body", "3 263 004 km^2"], ["question_id", 8], ["created_at", "2022-02-24 14:51:48.136929"], ["updated_at", "2022-02-24 14:51:48.136929"]]
+  [1m[35m (2.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "answers"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTest Load (0.1ms)[0m  [1m[34mSELECT  "tests".* FROM "tests" WHERE "tests"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mResult Create (0.2ms)[0m  [1m[32mINSERT INTO "results" ("user_id", "test_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["user_id", 1], ["test_id", 5], ["created_at", "2022-02-24 14:51:48.158503"], ["updated_at", "2022-02-24 14:51:48.158503"]]
+  [1m[35m (2.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mTest Load (0.0ms)[0m  [1m[34mSELECT  "tests".* FROM "tests" WHERE "tests"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mResult Create (0.2ms)[0m  [1m[32mINSERT INTO "results" ("user_id", "test_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["user_id", 2], ["test_id", 5], ["created_at", "2022-02-24 14:51:48.162980"], ["updated_at", "2022-02-24 14:51:48.162980"]]
+  [1m[35m (2.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mTest Load (0.0ms)[0m  [1m[34mSELECT  "tests".* FROM "tests" WHERE "tests"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mResult Create (0.2ms)[0m  [1m[32mINSERT INTO "results" ("user_id", "test_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["user_id", 3], ["test_id", 6], ["created_at", "2022-02-24 14:51:48.167745"], ["updated_at", "2022-02-24 14:51:48.167745"]]
+  [1m[35m (2.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTest Load (0.0ms)[0m  [1m[34mSELECT  "tests".* FROM "tests" WHERE "tests"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mResult Create (0.2ms)[0m  [1m[32mINSERT INTO "results" ("user_id", "test_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["user_id", 1], ["test_id", 5], ["created_at", "2022-02-24 14:51:48.172348"], ["updated_at", "2022-02-24 14:51:48.172348"]]
+  [1m[35m (2.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mTest Load (0.0ms)[0m  [1m[34mSELECT  "tests".* FROM "tests" WHERE "tests"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mResult Create (0.2ms)[0m  [1m[32mINSERT INTO "results" ("user_id", "test_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["user_id", 2], ["test_id", 3], ["created_at", "2022-02-24 14:51:48.176987"], ["updated_at", "2022-02-24 14:51:48.176987"]]
+  [1m[35m (3.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mTest Load (0.0ms)[0m  [1m[34mSELECT  "tests".* FROM "tests" WHERE "tests"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mResult Create (0.2ms)[0m  [1m[32mINSERT INTO "results" ("user_id", "test_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["user_id", 3], ["test_id", 2], ["created_at", "2022-02-24 14:51:48.183377"], ["updated_at", "2022-02-24 14:51:48.183377"]]
+  [1m[35m (2.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTest Load (0.0ms)[0m  [1m[34mSELECT  "tests".* FROM "tests" WHERE "tests"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mResult Create (0.2ms)[0m  [1m[32mINSERT INTO "results" ("user_id", "test_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["user_id", 1], ["test_id", 1], ["created_at", "2022-02-24 14:51:48.188202"], ["updated_at", "2022-02-24 14:51:48.188202"]]
+  [1m[35m (2.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mTest Load (0.1ms)[0m  [1m[34mSELECT  "tests".* FROM "tests" WHERE "tests"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mResult Create (0.2ms)[0m  [1m[32mINSERT INTO "results" ("user_id", "test_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["user_id", 2], ["test_id", 1], ["created_at", "2022-02-24 14:51:48.193110"], ["updated_at", "2022-02-24 14:51:48.193110"]]
+  [1m[35m (2.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mTest Load (0.0ms)[0m  [1m[34mSELECT  "tests".* FROM "tests" WHERE "tests"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mResult Create (0.2ms)[0m  [1m[32mINSERT INTO "results" ("user_id", "test_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["user_id", 3], ["test_id", 3], ["created_at", "2022-02-24 14:51:48.197349"], ["updated_at", "2022-02-24 14:51:48.197349"]]
+  [1m[35m (3.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTest Load (0.0ms)[0m  [1m[34mSELECT  "tests".* FROM "tests" WHERE "tests"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mResult Create (0.2ms)[0m  [1m[32mINSERT INTO "results" ("user_id", "test_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["user_id", 1], ["test_id", 4], ["created_at", "2022-02-24 14:51:48.202368"], ["updated_at", "2022-02-24 14:51:48.202368"]]
+  [1m[35m (2.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mTest Load (0.0ms)[0m  [1m[34mSELECT  "tests".* FROM "tests" WHERE "tests"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mResult Create (0.2ms)[0m  [1m[32mINSERT INTO "results" ("user_id", "test_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["user_id", 2], ["test_id", 3], ["created_at", "2022-02-24 14:51:48.207084"], ["updated_at", "2022-02-24 14:51:48.207084"]]
+  [1m[35m (3.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mTest Load (0.0ms)[0m  [1m[34mSELECT  "tests".* FROM "tests" WHERE "tests"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mResult Create (0.4ms)[0m  [1m[32mINSERT INTO "results" ("user_id", "test_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["user_id", 3], ["test_id", 5], ["created_at", "2022-02-24 14:51:48.212485"], ["updated_at", "2022-02-24 14:51:48.212485"]]
+  [1m[35m (2.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTest Load (0.0ms)[0m  [1m[34mSELECT  "tests".* FROM "tests" WHERE "tests"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mResult Create (0.2ms)[0m  [1m[32mINSERT INTO "results" ("user_id", "test_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["user_id", 1], ["test_id", 2], ["created_at", "2022-02-24 14:51:48.217473"], ["updated_at", "2022-02-24 14:51:48.217473"]]
+  [1m[35m (3.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mTest Load (0.0ms)[0m  [1m[34mSELECT  "tests".* FROM "tests" WHERE "tests"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mResult Create (0.2ms)[0m  [1m[32mINSERT INTO "results" ("user_id", "test_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["user_id", 2], ["test_id", 4], ["created_at", "2022-02-24 14:51:48.222214"], ["updated_at", "2022-02-24 14:51:48.222214"]]
+  [1m[35m (3.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mTest Load (0.0ms)[0m  [1m[34mSELECT  "tests".* FROM "tests" WHERE "tests"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mResult Create (0.2ms)[0m  [1m[32mINSERT INTO "results" ("user_id", "test_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["user_id", 3], ["test_id", 1], ["created_at", "2022-02-24 14:51:48.227526"], ["updated_at", "2022-02-24 14:51:48.227526"]]
+  [1m[35m (2.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTest Load (0.0ms)[0m  [1m[34mSELECT  "tests".* FROM "tests" WHERE "tests"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mResult Create (0.2ms)[0m  [1m[32mINSERT INTO "results" ("user_id", "test_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["user_id", 1], ["test_id", 2], ["created_at", "2022-02-24 14:51:48.232070"], ["updated_at", "2022-02-24 14:51:48.232070"]]
+  [1m[35m (2.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mTest Load (0.0ms)[0m  [1m[34mSELECT  "tests".* FROM "tests" WHERE "tests"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mResult Create (0.2ms)[0m  [1m[32mINSERT INTO "results" ("user_id", "test_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["user_id", 2], ["test_id", 6], ["created_at", "2022-02-24 14:51:48.236098"], ["updated_at", "2022-02-24 14:51:48.236098"]]
+  [1m[35m (2.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mTest Load (0.0ms)[0m  [1m[34mSELECT  "tests".* FROM "tests" WHERE "tests"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mResult Create (0.2ms)[0m  [1m[32mINSERT INTO "results" ("user_id", "test_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["user_id", 3], ["test_id", 1], ["created_at", "2022-02-24 14:51:48.241043"], ["updated_at", "2022-02-24 14:51:48.241043"]]
+  [1m[35m (3.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "answers"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "tests"."title" FROM "tests" JOIN categories ON tests.category_id=categories.id WHERE (categories.title = 'Oceans') ORDER BY "tests"."title" DESC[0m
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT tests.title FROM "results" JOIN tests ON tests.id = results.test_id WHERE (tests.level = 2 AND results.user_id = 3)[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT tests.title FROM "results" JOIN tests ON tests.id = results.test_id WHERE (tests.level = 1 AND results.user_id = 3)[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT tests.title FROM "results" JOIN tests ON tests.id = results.test_id WHERE (tests.level = 3 AND results.user_id = 3)[0m
