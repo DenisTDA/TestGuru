@@ -6,12 +6,12 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-# Answer.delete_all
-# Question.delete_all
-# Test.delete_all
-# Category.delete_all
-# Result.delete_all
-# User.delete_all
+Answer.delete_all
+Question.delete_all
+Test.delete_all
+Category.delete_all
+Result.delete_all
+User.delete_all
 
 param = []
 
@@ -23,52 +23,45 @@ users = User.create(param)
 p "Created #{User.count} Users"
 
 param = []
-10.times { |index| param << { title: "Topic_#{index}" } }
+5.times { |index| param << { title: "Topic_#{index}" } }
 
 categories = Category.create(param)
 p "Created #{Category.count} Categories"
 
-param = []
-30.times do |index|
-  param <<
-    { title: "Theme_#{index}",
-      level: rand(5),
-      category_id: categories.sample.id,
-      author_id: users[1..5].sample.id }
+10.times do |index|
+  test = Test.new(title: "Theme_#{index}", level: rand(5))
+  categories[rand(categories.size - 1)].tests.push(test)
+  users[rand(2..4)].tests.push(test)
+  test.save
 end
-
-tests = Test.create(param)
 p "Created #{Test.count} Tests"
 
-param = []
-50.times do |index|
-  param <<
-    { body: "Text_body_question__#{index}",
-      test_id: tests.sample.id }
+tests = Test.all
+tests.each do |test|
+  5.times do |index|
+    question = Question.create(body: "Text_body_question__#{test.id}_#{index}")
+    test.questions.push(question)
+    question.save
+  end
 end
-
-questions = Question.create(param)
 p "Created #{Question.count} Questions"
 
-param = []
-200.times do |index|
-  { body: "Text_body_answer__#{index}",
-    qwestion_id: tests.sample.id,
-    correct: (true if (index / 5).nil?) }
+questions = Question.all
+questions.each do |question|
+  4.times do |index|
+    answer = Answer.new({ body: "Text_body_answer_#{question.id}_#{index}",
+                          correct: (index == 3) })
+    question.answers.push(answer)
+    answer.save
+  end
 end
-
-answers = Answer.create(param)
 p "Created #{Answer.count} Answers"
 
-users_id = User.pluck(:id)
-tests_id = Test.pluck(:id)
-param = []
-
+users = User.all
+tests = Test.all
 20.times do |_index|
-  test = tests_id.sample
-  user = users_id.sample
-  param << { test_id: test, user_id: user }
+  result = Result.new
+  users[rand(users.size)].results.push(result)
+  tests[rand(tests.size)].results.push(result)
+  result.save
 end
-pp param
-
-Result.create(param)
