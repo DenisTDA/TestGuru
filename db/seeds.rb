@@ -14,54 +14,48 @@ Result.delete_all
 User.delete_all
 
 param = []
-
+users_a = []
+tests_a = []
+questions_a = []
+answers_a = []
+categories_a = []
 8.times do |index|
   param << { name: "Bob#{index}", email: "bob#{index}@mail.org" }
 end
-
-users = User.create(param)
+users_a = User.create!(param)
 p "Created #{User.count} Users"
 
 param = []
 5.times { |index| param << { title: "Topic_#{index}" } }
-
-categories = Category.create(param)
+categories_a = Category.create!(param)
 p "Created #{Category.count} Categories"
 
 10.times do |index|
-  test = Test.new(title: "Theme_#{index}", level: rand(5))
-  categories[rand(categories.size - 1)].tests.push(test)
-  users[rand(2..4)].tests.push(test)
-  test.save
+  Test.create!(title: "Theme_#{index}",
+               level: rand(5),
+               category: categories_a[rand(categories_a.size - 1)],
+               author: users_a[rand(2..4)])
 end
 p "Created #{Test.count} Tests"
 
-tests = Test.all
-tests.each do |test|
-  5.times do |index|
-    question = Question.create(body: "Text_body_question__#{test.id}_#{index}")
-    test.questions.push(question)
-    question.save
-  end
+50.times do |index|
+  tests_a = Test.all.to_a if tests_a.empty?
+  Question.create!(body: "Text_body_question_#{tests_a.last.id}_#{index}",
+                   test: tests_a.pop)
 end
 p "Created #{Question.count} Questions"
 
-questions = Question.all
-questions.each do |question|
-  4.times do |index|
-    answer = Answer.new({ body: "Text_body_answer_#{question.id}_#{index}",
-                          correct: (index == 3) })
-    question.answers.push(answer)
-    answer.save
-  end
+200.times do |index|
+  questions_a = Question.all.to_a if questions_a.empty?
+  Answer.create!(body: "Text_body_answer_#{questions_a.last.id}_#{index}",
+                 correct: (index % 3 == 0),
+                 question: questions_a.pop)
 end
 p "Created #{Answer.count} Answers"
 
-users = User.all
-tests = Test.all
+users_a = User.all
+tests_a = Test.all
 20.times do |_index|
-  result = Result.new
-  users[rand(users.size)].results.push(result)
-  tests[rand(tests.size)].results.push(result)
-  result.save
+  Result.create!(user: users_a[rand(users_a.size)],
+                 test: tests_a[rand(tests_a.size)])
 end
