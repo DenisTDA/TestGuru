@@ -31,32 +31,31 @@ tests_a = Test.create!([{ title: 'Theme_1',
                 category: categories_a[0],
                 author: users_a[1] },
               { title: 'Theme_2',
-                level: 2,
+                level: 1,
                 category: categories_a[1],
                 author: users_a[2] },
               { title: 'Theme_3',
-                level: 2,
+                level: 0,
                 category: categories_a[3],
                 author: users_a[2] },
               { title: 'Theme_4',
-                level: 2,
+                level: 3,
                 category: categories_a[2],
                 author: users_a[2] },
               { title: 'Theme_5',
-                level: 2,
+                level: 3,
                 category: categories_a[2],
                 author: users_a[1] },
               { title: 'Theme_6',
-                level: 2,
+                level: 1,
                 category: categories_a[1],
                 author: users_a[2] },
               { title: 'Theme_7',
-                level: 2,
+                level: 3,
                 category: categories_a[3],
                 author: users_a[1] }])
 p "Created #{Test.count} Tests"
 
-tests_a = Test.all
 questions_a = Question.create!([{ body: 'Text_body_question_1',
                     test: tests_a[0] },
                   { body: 'Text_body_question_2',
@@ -121,15 +120,3 @@ Answer.create!([{ body: 'Text_body_answer_1',
                   correct: true,
                   question: questions_a[5] }])
 p "Created #{Answer.count} Answers"
-=begin 
-users_a = User.all
-tests_a = Test.all
-
-Result.create!([{ user: users_a[1], test: tests_a[4] },
-                { user: users_a[3], test: tests_a[1] },
-                { user: users_a[5], test: tests_a[2] },
-                { user: users_a[2], test: tests_a[5] },
-                { user: users_a[2], test: tests_a[2] },
-                { user: users_a[5], test: tests_a[4] },
-                { user: users_a[3], test: tests_a[3] }])
-=end
