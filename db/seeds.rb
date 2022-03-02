@@ -14,11 +14,7 @@ Result.delete_all
 User.delete_all
 
 param = []
-users_a = []
-tests_a = []
-questions_a = []
-answers_a = []
-categories_a = []
+
 8.times do |index|
   param << { name: "Bob#{index}", email: "bob#{index}@mail.org" }
 end
@@ -30,32 +26,109 @@ param = []
 categories_a = Category.create!(param)
 p "Created #{Category.count} Categories"
 
-10.times do |index|
-  Test.create!(title: "Theme_#{index}",
-               level: rand(5),
-               category: categories_a[rand(categories_a.size - 1)],
-               author: users_a[rand(2..4)])
-end
+Test.create!([{ title: 'Theme_1',
+                level: 2,
+                category: categories_a[0],
+                author: users_a[1] },
+              { title: 'Theme_2',
+                level: 2,
+                category: categories_a[1],
+                author: users_a[2] },
+              { title: 'Theme_3',
+                level: 2,
+                category: categories_a[3],
+                author: users_a[2] },
+              { title: 'Theme_4',
+                level: 2,
+                category: categories_a[2],
+                author: users_a[2] },
+              { title: 'Theme_5',
+                level: 2,
+                category: categories_a[2],
+                author: users_a[1] },
+              { title: 'Theme_6',
+                level: 2,
+                category: categories_a[1],
+                author: users_a[2] },
+              { title: 'Theme_7',
+                level: 2,
+                category: categories_a[3],
+                author: users_a[1] }])
 p "Created #{Test.count} Tests"
 
-50.times do |index|
-  tests_a = Test.all.to_a if tests_a.empty?
-  Question.create!(body: "Text_body_question_#{tests_a.last.id}_#{index}",
-                   test: tests_a.pop)
-end
+tests_a = Test.all
+Question.create!([{ body: 'Text_body_question_1',
+                    test: tests_a[0] },
+                  { body: 'Text_body_question_2',
+                    test: tests_a[0] },
+                  { body: 'Text_body_question_3',
+                    test: tests_a[0] },
+                  { body: 'Text_body_question_4',
+                    test: tests_a[1] },
+                  { body: 'Text_body_question_5',
+                    test: tests_a[1] },
+                  { body: 'Text_body_question_6',
+                    test: tests_a[2] },
+                  { body: 'Text_body_question_7',
+                    test: tests_a[3] },
+                  { body: 'Text_body_question_8',
+                    test: tests_a[2] },
+                  { body: 'Text_body_question_9',
+                    test: tests_a[3] },
+                  { body: 'Text_body_question_10',
+                    test: tests_a[4] },
+                  { body: 'Text_body_question_11',
+                    test: tests_a[4] },
+                  { body: 'Text_body_question_12',
+                    test: tests_a[5] },
+                  { body: 'Text_body_question_13',
+                    test: tests_a[5] },
+                  { body: 'Text_body_question_14',
+                    test: tests_a[6] }])
+
 p "Created #{Question.count} Questions"
 
-200.times do |index|
-  questions_a = Question.all.to_a if questions_a.empty?
-  Answer.create!(body: "Text_body_answer_#{questions_a.last.id}_#{index}",
-                 correct: (index % 3 == 0),
-                 question: questions_a.pop)
-end
+questions_a = Question.all
+Answer.create!([{ body: 'Text_body_answer_1',
+                  question: questions_a[0] },
+                { body: 'Text_body_answer_1',
+                  question: questions_a[0] },
+                { body: 'Text_body_answer_2',
+                  question: questions_a[0] },
+                { body: 'Text_body_answer_3',
+                  correct: true,
+                  question: questions_a[1] },
+                { body: 'Text_body_answer_4',
+                  question: questions_a[1] },
+                { body: 'Text_body_answer_5',
+                  correct: true,
+                  question: questions_a[1] },
+                { body: 'Text_body_answer_6',
+                  question: questions_a[2] },
+                { body: 'Text_body_answer_6',
+                  correct: true,
+                  question: questions_a[2] },
+                { body: 'Text_body_answer_7',
+                  question: questions_a[3] },
+                { body: 'Text_body_answer_8',
+                  question: questions_a[3] },
+                { body: 'Text_body_answer_9',
+                  correct: true,
+                  question: questions_a[4] },
+                { body: 'Text_body_answer_10',
+                  correct: true,
+                  question: questions_a[4] },
+                { body: 'Text_body_answer_11',
+                  correct: true,
+                  question: questions_a[5] }])
 p "Created #{Answer.count} Answers"
 
 users_a = User.all
 tests_a = Test.all
-20.times do |_index|
-  Result.create!(user: users_a[rand(users_a.size)],
-                 test: tests_a[rand(tests_a.size)])
-end
+Result.create!([{ user: users_a[1], test: tests_a[4] },
+                { user: users_a[3], test: tests_a[1] },
+                { user: users_a[5], test: tests_a[2] },
+                { user: users_a[2], test: tests_a[5] },
+                { user: users_a[2], test: tests_a[2] },
+                { user: users_a[5], test: tests_a[4] },
+                { user: users_a[3], test: tests_a[3] }])
