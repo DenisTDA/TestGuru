@@ -26,7 +26,7 @@ param = []
 categories_a = Category.create!(param)
 p "Created #{Category.count} Categories"
 
-Test.create!([{ title: 'Theme_1',
+tests_a = Test.create!([{ title: 'Theme_1',
                 level: 2,
                 category: categories_a[0],
                 author: users_a[1] },
@@ -57,7 +57,7 @@ Test.create!([{ title: 'Theme_1',
 p "Created #{Test.count} Tests"
 
 tests_a = Test.all
-Question.create!([{ body: 'Text_body_question_1',
+questions_a = Question.create!([{ body: 'Text_body_question_1',
                     test: tests_a[0] },
                   { body: 'Text_body_question_2',
                     test: tests_a[0] },
@@ -88,7 +88,6 @@ Question.create!([{ body: 'Text_body_question_1',
 
 p "Created #{Question.count} Questions"
 
-questions_a = Question.all
 Answer.create!([{ body: 'Text_body_answer_1',
                   question: questions_a[0] },
                 { body: 'Text_body_answer_1',
@@ -122,9 +121,10 @@ Answer.create!([{ body: 'Text_body_answer_1',
                   correct: true,
                   question: questions_a[5] }])
 p "Created #{Answer.count} Answers"
-
+=begin 
 users_a = User.all
 tests_a = Test.all
+
 Result.create!([{ user: users_a[1], test: tests_a[4] },
                 { user: users_a[3], test: tests_a[1] },
                 { user: users_a[5], test: tests_a[2] },
@@ -132,3 +132,4 @@ Result.create!([{ user: users_a[1], test: tests_a[4] },
                 { user: users_a[2], test: tests_a[2] },
                 { user: users_a[5], test: tests_a[4] },
                 { user: users_a[3], test: tests_a[3] }])
+=end
