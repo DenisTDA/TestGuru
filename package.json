@@ -1,5 +1,7 @@
 {
   "name": "TestGuru",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "@rails/ujs": "^7.0.2-3"
+  }
 }
