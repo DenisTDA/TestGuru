@@ -1,9 +1,9 @@
 <h1>Create new question</h1>
-<form action="/tests/3/questions" method="post">
+<form action="/tests/<%=params[:test_id]%>/questions" method="post">
   <input name="authenticity_token>" value="<%= form_authenticity_token %>" type="hidden">
 
   <p>
-  Create Qestion for Test № 3
+  Create Qestion for Test № <%= @test.id %>
   </p><br>
 
   <p>
