@@ -1,17 +1,15 @@
 class QuestionsController < ApplicationController
-  before_action :set_test, only: %i[index create new]
-  before_action :set_question, only: %i[show destroy]
+  before_action :set_test, only: %i[index create new ]
+  before_action :set_question, only: %i[show update destroy edit]
 
   rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_question_not_found
 
   def index
-    list_questions = @test.questions.inspect
-    render plain: list_questions.split('#').join("\n")
+    @questions = @test.questions
   end
 
   def show
-    render inline: "<p> <%= @question.inspect %> </p>
-    <%= button_to 'delete', @question, :method => 'delete' %>"
+    @test = @question.test
   end
 
   def new
@@ -24,6 +22,21 @@ class QuestionsController < ApplicationController
       redirect_to @question
     else
       render :new
+    end
+  end
+
+  def edit
+    @test = @question.test
+  end
+
+  def update
+    @test = @question.test
+    @question = @test.questions.find(params[:id])
+
+    if @question.update(question_params)
+      redirect_to test_questions_path(@test)
+    else
+      render :edit
     end
   end
 

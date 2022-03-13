@@ -1,0 +1,15 @@
+<h1>List Test "<%= @test.title%>" Questions</h1>
+<p><strong>level of difficulty: <%= @test.level%> </strong></p>
+
+<table>
+  <tr> <td>Question body</td> <td colspan = "3" align = "center"> Action </tr>
+<% @questions.each do |question|%>
+  <tr>
+    <td><%= question.body %></td>
+    <td><%= link_to "Show", question_path(question) %> </td>
+    <td><%= link_to "Edit", edit_question_path(question) %> </td>
+    <td><%= link_to "Delete", question_path(question), method: "delete", data: {confirm: 'Are you shure?'} %> </td>
+  </tr>
+<% end %>
+</table>
+<p><%= link_to "Create New", new_test_question_path %> | <%= link_to "List Tests", tests_path %></p>

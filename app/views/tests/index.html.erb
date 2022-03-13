@@ -1,0 +1,10 @@
+<h1>List of Tests</h1>
+<table>
+  <tr><td>Title </td><td> Count of Questions </td><td> Level </td><td> Action </td></tr>
+  <% @tests.each do |test|%>
+  <tr>
+    <td><%= "#{test.title}" %></td> <td align = 'center'> <%= " #{test.questions.count}" %></td> <td align = 'right'><%= " #{test.level}" %></td> <td>
+    <td><%= link_to "Show", test_questions_path(test) %> </td> 
+  </tr>
+  <% end %>
+</table>
