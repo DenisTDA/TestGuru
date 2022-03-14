@@ -1,10 +1,26 @@
 <h1>List of Tests</h1>
+ 
 <table>
-  <tr><td>Title </td><td> Count of Questions </td><td> Level </td><td> Action </td></tr>
-  <% @tests.each do |test|%>
   <tr>
-    <td><%= "#{test.title}" %></td> <td align = 'center'> <%= " #{test.questions.count}" %></td> <td align = 'right'><%= " #{test.level}" %></td> <td>
-    <td><%= link_to "Show", test_questions_path(test) %> </td> 
+    <td width='100'>Title</td>
+    <td width='150'>Count of Questions</td>
+    <td width='20' align='right'>Level</td>
+    <td width='200' align='center' colspan = '3'> Action </td>
+  </tr> 
+
+  <tr>
+  <% @tests.each do |test| %>
+    <td><%= "#{test.title}" %></td> 
+    <td align = 'center'> <%= " #{test.questions.count}" %></td> 
+    <td align = 'right'><%= " #{test.level}" %>
+
+    <td align='right' width='20'><%= link_to "Show", test_path(test) %> </td> 
+    <td align='right' width='20'>| <%= link_to "Edit", edit_test_path(test) %> </td> 
+    <td align='right' width='20'>| <%= link_to "Delete", test_path(test), method: 'delete', data: {confirm: 'Are you shure?'} %> </td> 
   </tr>
+
   <% end %>
 </table>
+<p>
+<%= link_to 'Create new Test', new_test_path%> 
+</p>
