@@ -26,8 +26,8 @@ class TestsController < ApplicationController
 
   def update
     if @test.update(params_test)
-      redirect_to @test
       flash[:notice] = "Test '#{@test.title}' was updated"
+      redirect_to @test
     else
       render :edit
     end
@@ -37,8 +37,8 @@ class TestsController < ApplicationController
 
   def destroy
     @test.destroy
-    redirect_to action: :index
     flash[:notice] = "Test '#{@test.title}' was deleted"
+    redirect_to action: :index
   end
 
   private

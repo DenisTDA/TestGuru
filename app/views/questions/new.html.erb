@@ -1,9 +1,3 @@
-<h1> <%= question_header(@test) %></h1>
-<%= form_with model: [@test, @question], local: true do |form| %>
-  <%= render 'shared/errors', resurce: @question%>
-  <%= form.label :body, "body" %>
-  <%= form.text_field :body %>
-  <%= form.submit %>  
-<% end %>
-
+<h1> <%= question_header(@test, @question) %></h1>
+<%= render 'form', path: [@test, @question] %>
 <%= link_to "List Test's questions", test_path(@test) %>

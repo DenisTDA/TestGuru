@@ -1,8 +1,8 @@
 module QuestionsHelper
-  def question_header(test)
+  def question_header(test, question)
     header = " #{test.title.capitalize} Question"
-    header.insert(0, 'Create New') if test.new_record?
-    header.insert(0, 'Edit') if test.persisted?
+    header.insert(0, 'Create New') if question.new_record?
+    header.insert(0, 'Edit') if question.persisted?
     header
   end
 

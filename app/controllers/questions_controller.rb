@@ -30,8 +30,8 @@ class QuestionsController < ApplicationController
     @test = @question.test
 
     if @question.update(question_params)
-      redirect_to test_questions_path(@test)
       flash[:notice] = "Question '#{@question.body}' was udated"
+      redirect_to @question
     else
       render :edit
     end
@@ -39,8 +39,8 @@ class QuestionsController < ApplicationController
 
   def destroy
     @question.destroy
-    redirect_to test_path(@question.test_id)
     flash[:notice] = "Question '#{@question.body}' was deleted"
+    redirect_to test_path(@question.test_id)
   end
 
   private
