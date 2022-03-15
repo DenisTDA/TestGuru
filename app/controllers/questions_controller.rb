@@ -16,6 +16,7 @@ class QuestionsController < ApplicationController
     @question = @test.questions.build(question_params)
     if @question.save
       redirect_to @question
+      flash[:notice] = "Question '#{@question.body}' was saved successfully"
     else
       render :new
     end
@@ -30,6 +31,7 @@ class QuestionsController < ApplicationController
 
     if @question.update(question_params)
       redirect_to test_questions_path(@test)
+      flash[:notice] = "Question '#{@question.body}' was udated"
     else
       render :edit
     end
@@ -38,6 +40,7 @@ class QuestionsController < ApplicationController
   def destroy
     @question.destroy
     redirect_to test_path(@question.test_id)
+    flash[:notice] = "Question '#{@question.body}' was deleted"
   end
 
   private

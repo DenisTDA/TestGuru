@@ -13,13 +13,11 @@
  *= require_tree .
  *= require_self
  */
-.content
-{
+.content {
   padding-bottom: 90px;
 }
 
-.footer
-{
+.footer {
   position: absolute;
   left: 0;
   bottom: 0;
@@ -27,9 +25,61 @@
   height: 45px;
 }
 
-.footer-text
-{
+.footer-text {
   background: #c0c0c0;
   margin-left: 10px;
   margin-top: 10px;
+}
+
+.flash{
+  width: max-content;
+  height: max-content;
+  margin-left: 5px;
+  margin-top: 5px;
+  padding: 5px 5px;
+  border-radius: 10px;
+  border-spacing: 0;
+  background: #f1c28c;
+}
+
+table {
+  font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+  font-size: 14px;
+  border-radius: 10px;
+  border-spacing: 0;
+  text-align: center;
+}
+th {
+  background: #BCEBDD;
+  color: white;
+  text-shadow: 0 1px 1px #2D2020;
+  padding: 10px 20px;
+}
+th, td {
+  border-style: solid;
+  border-width: 0 1px 1px 0;
+  border-color: white;
+}
+th:first-child, td:first-child {
+  text-align: left;
+}
+th:first-child {
+  border-top-left-radius: 10px;
+}
+th:last-child {
+  border-top-right-radius: 10px;
+  border-right: none;
+}
+td {
+  padding: 10px 20px;
+  background: #F8E391;
+}
+tr:last-child td:first-child {
+  border-radius: 0 0 0 10px;
+}
+tr:last-child td:last-child {
+  border-radius: 0 0 10px 0;
+}
+tr td:last-child {
+  border-right: none;
 }

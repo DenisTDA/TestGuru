@@ -1,13 +1,13 @@
 module QuestionsHelper
   def question_header(test)
     header = " #{test.title.capitalize} Question"
-    header.insert(0,"Create New")  if params[:action] == 'new'
-    header.insert(0,"Edit") if params[:action] == 'edit' 
+    header.insert(0, 'Create New') if test.new_record?
+    header.insert(0, 'Edit') if test.persisted?
     header
   end
 
   def date_year
-    year = Date.current.year
+    Date.current.year
   end
 
   def github_url(author, repo)
