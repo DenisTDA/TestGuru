@@ -83,3 +83,18 @@ tr:last-child td:last-child {
 tr td:last-child {
   border-right: none;
 }
+
+.nav {
+  width: max-content;
+  height: max-content;
+  margin-left: 5px;
+  margin-top: 30px;
+  padding: 5px 5px;
+  border-radius: 6px;
+  border-spacing: 5pt;
+}
+
+.nav a {
+  display:   inline-block;
+    margin:    0px 5px;
+}

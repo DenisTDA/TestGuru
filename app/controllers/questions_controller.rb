@@ -25,8 +25,6 @@ class QuestionsController < ApplicationController
   def edit; end
 
   def update
-    @test = @question.test
-
     if @question.update(question_params)
       flash[:notice] = "Question '#{@question.body}' was udated"
       redirect_to @question
