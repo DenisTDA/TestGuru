@@ -1,0 +1,23 @@
+<p>
+  <%= form_with model: @test, local: true do |form|%>
+  <%= render 'shared/errors', resurce: @test%>
+  <p>
+    <%= form.label :title %>
+    <%= form.text_field :title%>
+  </p>
+  <p>
+    <%= form.label :level%>
+    <%= form.number_field :level, min: '0'%>
+  </p>
+  <p>
+    <%= form.label :category_id %>
+    <%= form.collection_select :category_id, Category.all, :id, :title, promt: true %>
+  </p>
+  <p>
+    <%= form.label :author_id %>
+    <%= form.collection_select :author_id, User.all, :id, :name, promt: true %>
+
+  </p>
+    <%= form.submit %>
+  <% end %>
+</p>

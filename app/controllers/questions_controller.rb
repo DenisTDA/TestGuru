@@ -1,17 +1,11 @@
 class QuestionsController < ApplicationController
-  before_action :set_test, only: %i[index create new]
-  before_action :set_question, only: %i[show destroy]
+  before_action :set_test, only: %i[create new]
+  before_action :set_question, only: %i[show update destroy edit]
 
   rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_question_not_found
 
-  def index
-    list_questions = @test.questions.inspect
-    render plain: list_questions.split('#').join("\n")
-  end
-
   def show
-    render inline: "<p> <%= @question.inspect %> </p>
-    <%= button_to 'delete', @question, :method => 'delete' %>"
+    @test = @question.test
   end
 
   def new
@@ -21,15 +15,28 @@ class QuestionsController < ApplicationController
   def create
     @question = @test.questions.build(question_params)
     if @question.save
+      flash[:notice] = "Question '#{@question.body}' was saved successfully"
       redirect_to @question
     else
       render :new
     end
   end
 
+  def edit; end
+
+  def update
+    if @question.update(question_params)
+      flash[:notice] = "Question '#{@question.body}' was udated"
+      redirect_to @question
+    else
+      render :edit
+    end
+  end
+
   def destroy
     @question.destroy
-    redirect_to action: :index, test_id: @question.test_id
+    flash[:notice] = "Question '#{@question.body}' was deleted"
+    redirect_to test_path(@question.test_id)
   end
 
   private
