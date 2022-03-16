@@ -15,16 +15,14 @@ class QuestionsController < ApplicationController
   def create
     @question = @test.questions.build(question_params)
     if @question.save
-      redirect_to @question
       flash[:notice] = "Question '#{@question.body}' was saved successfully"
+      redirect_to @question
     else
       render :new
     end
   end
 
-  def edit
-    @test = @question.test
-  end
+  def edit; end
 
   def update
     @test = @question.test

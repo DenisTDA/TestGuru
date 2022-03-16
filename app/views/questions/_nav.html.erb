@@ -1,4 +1,4 @@
 <p></p>
 <%= link_to "Edit", edit_question_path(@question) %> |
 <%= link_to 'Delete', @question, method: 'delete' %> |
-<%= link_to 'List', test_path(@test) %>
+<%= link_to 'List', test_path(@question.test) %>

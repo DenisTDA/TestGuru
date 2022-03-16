@@ -15,8 +15,8 @@ class TestsController < ApplicationController
     @test = Test.new(params_test)
 
     if @test.save
-      redirect_to @test
       flash[:notice] = "Test '#{@test.title}' was saved successfully"
+      redirect_to @test
     else
       render :new
     end
