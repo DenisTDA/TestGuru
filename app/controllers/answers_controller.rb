@@ -1,16 +1,14 @@
 class AnswersController < ApplicationController
   before_action :find_question, only: %i[new create]
   before_action :set_answer, only: %i[show edit update destroy]
-  
-  def show
-  end
+
+  def show; end
 
   def new
     @answer = Answer.new
   end
 
-  def edit
-  end
+  def edit; end
 
   def create
     @answer = @question.answers.build(answer_params)
@@ -28,7 +26,7 @@ class AnswersController < ApplicationController
       flash[:notice] = "Answer '#{@answer.body[0..30]}' was updated"
       redirect_to @answer
     else
-      render :edit  
+      render :edit
     end
   end
 
@@ -41,7 +39,7 @@ class AnswersController < ApplicationController
   private
 
   def find_question
-    @question = Question.find(params[:question_id]) 
+    @question = Question.find(params[:question_id])
   end
 
   def set_answer
@@ -49,6 +47,6 @@ class AnswersController < ApplicationController
   end
 
   def answer_params
-    params.require(:answer).permit(:body,:correct)
+    params.require(:answer).permit(:body, :correct)
   end
 end
