@@ -17,10 +17,10 @@ class Test < ApplicationRecord
   scope :by_category_title, lambda { |category_title|
                               joins(:category)
                                 .where(categories: { title: category_title })
-                                .order(title: :desc)                                
+                                .order(title: :desc)
                             }
 
   def self.list_by_category_title(category_title)
-    by_category_title(category_title).pluck(:title) 
-  end                            
+    by_category_title(category_title).pluck(:title)
+  end
 end

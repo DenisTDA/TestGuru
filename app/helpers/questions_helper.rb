@@ -10,6 +10,6 @@ module QuestionsHelper
   end
 
   def github_url(author, repo)
-    link_to "#{author}, #{repo}", 'https://github.com/DenisTDA/TestGuru', rel: 'nofollow' 'noopener', target: '_blank'
+    link_to "#{author}, #{repo}", 'https://github.com/DenisTDA/TestGuru', rel: 'nofollow noopener', target: '_blank'
   end
 end

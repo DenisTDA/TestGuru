@@ -1,11 +1,12 @@
-<%= render 'shared/flash' %>
-<h1>List Test "<%= @test.title%>" Questions</h1>
+ <%=render 'shared/flash' %>
+<strong>Test "<%= @test.title%>" Questions<strong>
 <p><strong>level of difficulty: <%= @test.level%> </strong></p>
 <p> Author: <%= User.find(@test.author_id).name  %> </p> 
-
+<%= link_to "Create New Question", new_test_question_path(@test) %>
+<p></p>
 <table>
   <tr> <td>Question body</td> <td colspan = "3" align = "center"> Action </tr>
   <%= render @test.questions %>
 </table>
 
-<p><%= link_to "Create New Question", new_test_question_path(@test) %> | <%= link_to "List Tests", tests_path %></p>
+<%= render 'nav' %>
