@@ -1,13 +1,13 @@
 <p>
-  <%= form_with model: @test, local: true do |form|%>
-  <%= render 'shared/errors', resource: @test%>
+  <%= form_with model: @test, local: true do |form| %>
+  <%= render 'shared/errors', resource: @test %>
   <p>
     <%= form.label :title %>
-    <%= form.text_field :title%>
+    <%= form.text_field :title %>
   </p>
   <p>
-    <%= form.label :level%>
-    <%= form.number_field :level, min: '0'%>
+    <%= form.label :level %>
+    <%= form.number_field :level, min: '0' %>
   </p>
   <p>
     <%= form.label :category_id %>
