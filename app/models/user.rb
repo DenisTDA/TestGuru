@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  EMAIL_FORMAT = (/\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i).freeze
+  EMAIL_FORMAT = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i.freeze
 
   has_many :results, dependent: :destroy
   has_many :tests, through: :results

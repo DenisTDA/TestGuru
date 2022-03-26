@@ -7,7 +7,8 @@ class ApplicationController < ActionController::Base
   private
 
   def authenticate_user!
-    redirect_to signup_path, alert: 'Sign Up, login or verify your email and password please' unless current_user
+    cookies[:init_path] = request.original_fullpath
+    redirect_to login_path, alert: 'Sign Up, login or verify your email and password please' unless current_user
   end
 
   def current_user
