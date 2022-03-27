@@ -31,17 +31,6 @@
   margin-top: 10px;
 }
 
-.flash{
-  width: max-content;
-  height: max-content;
-  margin-left: 5px;
-  margin-top: 5px;
-  padding: 5px 5px;
-  border-radius: 10px;
-  border-spacing: 0;
-  background: #f1c28c;
-}
-
 table {
   font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
   font-size: 14px;
