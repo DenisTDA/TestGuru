@@ -1,10 +1,8 @@
 module ApplicationHelper
-  def show_flash(flash)
-    form_flash = ''
-    flash.each do |type, msg|
-      form_flash = "<div class = 'flash'><div class = 'flash #{type.to_str}'>#{msg}<\/div><\/div>" if flash[type]
-    end
+  def show_flash(type)
+    return unless flash[type]
 
+    form_flash = "<div class = 'flash'><div class = 'flash #{type}'>#{flash[type]}<\/div><\/div>"
     form_flash.html_safe
   end
 end
