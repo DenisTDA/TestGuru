@@ -1,16 +1,16 @@
 <div class = 'aut_nav'>
-    <%= link_to "Project TetsGuru", tests_path %>
-    <% if logged_in?%>
-      <%= link_to "Sign up", signup_path %> |
-      <%= link_to "Log in", login_path %> |
-      <%= link_to "Log out", logout_path, method: :delete %>
-    <% else %>
-      <%= link_to "Sign in", signup_path %> |
-      <%= link_to "Log in", login_path %> 
-    <% end %>
-  </div>
-
   <% if logged_in? %>
-    <div class = 'welcome user' > Welcome, <b><%= current_user.name.capitalize %></b> Guru!<br></div>    
-  <% end %><br>
-  <p></p>
+    <div class = 'welcome user' > Welcome, <b><%= current_user.name.capitalize %></b> Guru!</div>    
+  <% end %>
+
+  <%= link_to "Project TetsGuru", tests_path %>
+  <% if logged_in?%>
+    <%= link_to "Sign up", signup_path %> |
+    <%= link_to "Log in", login_path %> |
+    <%= link_to "Log out", logout_path, method: :delete %>
+  <% else %>
+    <%= link_to "Sign in", signup_path %> |
+    <%= link_to "Log in", login_path %> 
+  <% end %>
+</div>
+<p></p>
