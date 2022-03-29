@@ -9,6 +9,6 @@ class Answer < ApplicationRecord
   private
 
   def validate_range
-    errors.add(:base, 'Have to contain 1 - 4 answers') if question.answers.count >= 4
+    errors.add(:base, 'Must be only 1 - 4 answers') if question.answers.count >= 4
   end
 end

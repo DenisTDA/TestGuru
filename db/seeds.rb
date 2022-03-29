@@ -16,7 +16,7 @@ User.delete_all
 param = []
 
 8.times do |index|
-  param << { name: "Bob#{index}", email: "bob#{index}@mail.org" }
+  param << { name: "Bob#{index}", email: "bob#{index}@mail.org", password: '111111' }
 end
 users_a = User.create!(param)
 p "Created #{User.count} Users"

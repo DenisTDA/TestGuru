@@ -1,4 +1,12 @@
 class User < ApplicationRecord
+  devise  :database_authenticatable, 
+          :registerable,
+          :recoverable, 
+          :rememberable, 
+          :validatable,
+          :trackable,
+          :confirmable
+        
   EMAIL_FORMAT = URI::MailTo::EMAIL_REGEXP
 
   has_many :results, dependent: :destroy
@@ -7,8 +15,6 @@ class User < ApplicationRecord
 
   validates :email, presence: true
   validates :email, format: EMAIL_FORMAT
-
-  has_secure_password
 
   def test_passage(test)
     results.order(id: :desc).find_by(test_id: test.id)
