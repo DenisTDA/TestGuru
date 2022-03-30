@@ -1,12 +1,12 @@
 class User < ApplicationRecord
-  devise  :database_authenticatable, 
+  devise  :database_authenticatable,
           :registerable,
-          :recoverable, 
-          :rememberable, 
+          :recoverable,
+          :rememberable,
           :validatable,
           :trackable,
           :confirmable
-        
+
   EMAIL_FORMAT = URI::MailTo::EMAIL_REGEXP
 
   has_many :results, dependent: :destroy

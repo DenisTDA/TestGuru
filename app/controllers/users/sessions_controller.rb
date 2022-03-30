@@ -5,14 +5,14 @@ class Users::SessionsController < Devise::SessionsController
 
   # GET /resource/sign_in
   def new
-    flash[:alert] = "Please, verify your email and password"
+    flash[:alert] = 'Please, verify your email and password'
     super
   end
 
   # POST /resource/sign_in
   def create
     super
-    flash[:notice] = "Wellcome,  #{@user.name.capitalize} in the TestGuru World"
+    flash[:notice] = "Привет, #{@user.name.capitalize}!"
   end
 
   # DELETE /resource/sign_out
