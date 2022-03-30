@@ -7,8 +7,8 @@ Rails.application.routes.draw do
   #  devise_for :users, path: :gurus, path_names: { sign_in: :login, sign_out: :logout }
 
   resources :tests, only: :index do
-    resources :questions, shallow: true, except: %i[index] do
-      resources :answers, shallow: true, except: %i[index]
+    resources :questions, shallow: true, only: :show do
+      resources :answers, shallow: true, only: :show
     end
 
     member do
@@ -23,6 +23,10 @@ Rails.application.routes.draw do
   end
 
   namespace :admin do
-    resources :tests
+    resources :tests do
+      resources :questions, shallow: true, except: %i[index] do
+        resources :answers, shallow: true, except: %i[index]
+      end
+    end
   end
 end

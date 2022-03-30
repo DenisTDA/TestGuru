@@ -16,7 +16,7 @@ class Admin::TestsController < Admin::BaseController
 
     if @test.save
       flash[:notice] = "Test '#{@test.title}' was saved successfully"
-      redirect_to @test
+      redirect_to admin_test_path(@test)
     else
       render :new
     end
@@ -27,7 +27,7 @@ class Admin::TestsController < Admin::BaseController
   def update
     if @test.update(params_test)
       flash[:notice] = "Test '#{@test.title}' was updated"
-      redirect_to @test
+      redirect_to admin_test_path(@test)
     else
       render :edit
     end

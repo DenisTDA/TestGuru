@@ -3,9 +3,10 @@
 <p> Author: <%= User.find(@test.author_id).name  %> </p> 
 <%= link_to "Create New Question", new_admin_test_question_path(@test) %>
 <p></p>
+
 <table>
   <tr> <td>Question body</td> <td colspan = "3" align = "center"> Action </tr>
-  <%= render partial: 'questions/question' , collection: @test.questions %>
+  <%= render partial: 'admin/questions/question' , collection: @test.questions %>
 </table>
 
 <%= render 'nav' %>
