@@ -3,7 +3,7 @@
     <div class = 'welcome user'> Welcome, <b><%= current_user.name.capitalize %></b> Guru! </div>    
   <% end %>
 
-  <div class = 'aut_nav'>
+  <div class = 'aut-nav'>
     <%= link_to "Project TetsGuru", tests_path %> |
     <% if user_signed_in? %>
       <%= link_to "Logout", destroy_user_session_path, method: :delete %>

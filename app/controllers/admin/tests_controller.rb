@@ -1,5 +1,5 @@
 class Admin::TestsController < Admin::BaseController
-  before_action :set_test, only: %i[show edit destroy update start]
+  before_action :set_test, only: %i[show edit destroy update]
 
   rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_test_not_found
 
@@ -13,6 +13,7 @@ class Admin::TestsController < Admin::BaseController
 
   def create
     @test = Test.new(params_test)
+    @test[:author_id] = current_user.id
 
     if @test.save
       flash[:notice] = "Test '#{@test.title}' was saved successfully"
@@ -41,7 +42,7 @@ class Admin::TestsController < Admin::BaseController
     redirect_to action: :index
   end
 
-  def start
+  def set_author
     current_user.tests.push(@test)
     redirect_to current_user.test_passage(@test)
   end

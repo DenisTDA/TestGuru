@@ -4,8 +4,8 @@ class Users::SessionsController < Devise::SessionsController
   # before_action :configure_sign_in_params, only: [:create]
   # GET /resource/sign_in
   def new
-    flash[:alert] = 'Please, verify your email and password'
     super
+    flash.now[:alert] = "Please, verify your email and password"     
   end
 
   # POST /resource/sign_in
