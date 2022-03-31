@@ -13,7 +13,7 @@ class Admin::TestsController < Admin::BaseController
 
   def create
     @test = Test.new(params_test)
-    @test[:author_id] = current_user.id
+    @test.author = current_user
 
     if @test.save
       flash[:notice] = "Test '#{@test.title}' was saved successfully"
@@ -42,11 +42,6 @@ class Admin::TestsController < Admin::BaseController
     redirect_to action: :index
   end
 
-  def set_author
-    current_user.tests.push(@test)
-    redirect_to current_user.test_passage(@test)
-  end
-
   private
 
   def set_test
@@ -54,7 +49,7 @@ class Admin::TestsController < Admin::BaseController
   end
 
   def params_test
-    params.require(:test).permit(:title, :category_id, :level, :author_id)
+    params.require(:test).permit(:title, :category_id, :level)
   end
 
   def rescue_with_test_not_found

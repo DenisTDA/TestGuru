@@ -5,7 +5,7 @@ class Users::SessionsController < Devise::SessionsController
   # GET /resource/sign_in
   def new
     super
-    flash.now[:alert] = "Please, verify your email and password"     
+    flash.now[:alert] = 'Please, verify your email and password'
   end
 
   # POST /resource/sign_in
