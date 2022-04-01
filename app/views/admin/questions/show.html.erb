@@ -1,0 +1,11 @@
+<p> Question: "<%= @question.body %>"</p>
+
+<h2>Answer</h2>
+<%= link_to  "New answer", new_admin_question_answer_path(@question) %>
+
+<ol>
+  <%= render partial: 'admin/answers/answer', collection: @question.answers %>
+
+</ol>
+
+<%= render "nav" %>

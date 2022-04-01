@@ -11,9 +11,11 @@
 
   <body>
   <%= render 'shared/tip' %>
+  <%= render 'shared/flash', type: :alert %>
   <div class = 'content'>
     <%= yield %>
   </div>  
+  <%= render 'shared/flash', type: :notice %>
   </body>
 
   <div class = 'footer'>

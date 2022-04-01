@@ -1,13 +1,39 @@
-.aut_nav {
-  width: 80%;
-  text-align: right;
+.tip {
+  display: flex;
+  flex-flow: row wrap;
+  padding-left: 8pt;
+  padding-right: 8pt;
   background-color: rgb(244, 245, 187);
 }
 
-.welcome.user {
+.out-nav {
+  margin-left: auto;
   display:   inline-block;
-  width: 70%;
-  text-align: left;
+}
+
+.welcome.user {
+  margin-right: auto;
+  display:   inline-block;
   color: rgb(0, 140, 255);
+  font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; 
+}
+
+.tip-admin {
+  height: 25px;
+  display: flex;
+  flex-flow: row wrap;
+  padding-left: 8pt;
+  padding-right: 8pt;
+  background-color: rgb(131, 190, 238);
+}
+
+.out_nav-admin {
+  margin-left: auto;
+  display:   inline-block;
+}
+
+.welcome.admin {
+  margin-right: auto;
+  display:   inline-block;
   font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; 
 }

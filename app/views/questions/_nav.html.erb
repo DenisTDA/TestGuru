@@ -1,5 +1,0 @@
-<div class = 'nav'>
-  <%= link_to "Edit", edit_question_path(@question) unless params[:action] == 'edit'%> 
-  <%= link_to 'Delete', @question, method: 'delete', data: {confirm: "Are you shure?"} %> 
-  <%= link_to 'List questions', test_path(@question.test) %>
-</div>

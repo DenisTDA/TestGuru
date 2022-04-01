@@ -1,0 +1,18 @@
+
+<div class = 'tip-admin'>
+  <span div = class 'nav-admin title'> TestGuru Admin Panel</span>  |
+  <% if user_signed_in? %>
+    <div class = 'welcome admin'> Welcome, your magesty <b><%= current_user.name.capitalize %></b> ! </div>    
+  <% end %>
+
+  <div class = 'aut_nav-admin'>
+    <%= link_to "Project TetsGuru", admin_tests_path %> |
+    <% if user_signed_in? %>
+      <%= link_to "Logout", destroy_user_session_path, method: :delete %>
+    <% else %>
+      <%= link_to "Sign up", new_user_registration_path %> |
+      <%= link_to "Log in", new_user_session_path %> 
+    <% end %>
+  </div>
+</div>
+<p></p>

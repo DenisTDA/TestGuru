@@ -1,0 +1,5 @@
+<div class = 'nav'>
+  <%= link_to "Edit", edit_admin_test_path(@test) unless params[:action] == 'edit'%> 
+  <%= link_to 'Delete', admin_test_path(@test), method: 'delete', data: {confirm: "Are you shure?"} %> 
+  <%= link_to 'List tests', admin_tests_path %>
+</div>
