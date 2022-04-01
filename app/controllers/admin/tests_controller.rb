@@ -12,8 +12,7 @@ class Admin::TestsController < Admin::BaseController
   end
 
   def create
-    @test = Test.new(params_test)
-    @test.author = current_user
+    @test = current_user.examinations.build(params_test)
 
     if @test.save
       flash[:notice] = "Test '#{@test.title}' was saved successfully"
