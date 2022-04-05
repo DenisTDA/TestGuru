@@ -93,3 +93,11 @@ ru:
     tip:
       panel: "Панель администратора ТестГуру"
       welcome: "Приветствую, Ваше Величество, %{admin}"
+
+  category:
+    Oceans: "Океаны"
+    Mountains: "Горы"
+    Desert: "Пустыни"
+    Rivers: "Реки"
+    Forests: "Леса"
+    Countries: "Страны"

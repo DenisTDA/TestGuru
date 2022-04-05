@@ -60,7 +60,7 @@ en:
         edit: "Edit"
         del: "Delete"
       new:
-        header: "Создать новый тест"
+        header: "Create new Test"
         list_tests: "List Tests"
       show:
         header: "Test's <%{title}> questions"
@@ -91,3 +91,11 @@ en:
     tip:
       panel: "TestGuru Admin Panel"
       welcome: "Welcome, your magesty, %{admin}"
+
+  category:
+    Oceans: "Oceans"
+    Mountains: "Mountains"
+    Desert: "Desert"
+    Rivers: "Rivers"
+    Forests: "Forests"
+    Countries: "Countries"

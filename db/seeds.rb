@@ -22,9 +22,9 @@ users_a = User.create!(param)
 p "Created #{User.count} Users"
 
 categories_a = Category.create!([{ title: 'Oceans' },
-                                 { title: 'Mountins' },
+                                 { title: 'Mountains' },
                                  { title: 'Desert' },
-                                 { title: 'Revers' },
+                                 { title: 'Rivers' },
                                  { title: 'Forests' },
                                  { title: 'Countries' }])
 p "Created #{Category.count} Categories"
