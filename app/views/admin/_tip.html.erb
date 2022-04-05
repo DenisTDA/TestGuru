@@ -1,8 +1,8 @@
 
 <div class = 'tip-admin'>
-  <span div = class 'nav-admin title'> TestGuru Admin Panel</span>  |
+  <span div = class 'nav-admin title'> <%= t('.panel')  %></span>  |
   <% if user_signed_in? %>
-    <div class = 'welcome admin'> Welcome, your magesty <b><%= current_user.name.capitalize %></b> ! </div>    
+    <div class = 'welcome admin'> <b><%= t(".welcome", admin: current_user.name.capitalize) %></b> ! </div>    
   <% end %>
 
   <div class = 'aut_nav-admin'>

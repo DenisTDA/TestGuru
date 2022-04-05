@@ -1,0 +1,17 @@
+en:
+  activerecord:
+    models:
+      test: "Test"
+
+    attributes:
+      test:
+        title: "Title"
+        author: "Author"
+        category: "Cotegoty"
+
+    errors:
+      messages:
+        blank: "can't be blank"
+        presence: "must be presence"
+        numericality: "must be number"
+        

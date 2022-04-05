@@ -11,11 +11,7 @@
   </p>
   <p>
     <%= form.label :category_id %>
-    <%= form.collection_select :category_id, Category.all, :id, :title, promt: true %>
-  </p>
-  <p>
-    <%#= form.label :author_id %>
-    <%#= form.collection_select :author_id, User.all, :id, :name, promt: true %>
+    <%= form.collection_select :category_id, Category.all, :id, :translate_title, promt: true %>
   </p>
     <%= form.submit %>
   <% end %>

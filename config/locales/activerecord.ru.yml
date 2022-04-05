@@ -1,0 +1,17 @@
+ru:
+  activerecord:
+    models:
+      test: "Тест"
+
+    attributes:
+      test:
+        title: "Название"
+        author: "Автор"
+        category: "Категория"
+
+
+    errors:
+      messages:
+        blank: "не может быть пустым"
+        presence: "атрибут должен быть указан"
+        numericality: "должно быть число"

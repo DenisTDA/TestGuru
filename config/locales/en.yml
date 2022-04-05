@@ -1,33 +1,101 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t 'hello'
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t('hello') %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# The following keys must be escaped otherwise they will not be retrieved by
-# the default I18n backend:
-#
-# true, false, on, off, yes, no
-#
-# Instead, surround them with single quotes.
-#
-# en:
-#   'true': 'foo'
-#
-# To learn more, please read the Rails Internationalization guide
-# available at http://guides.rubyonrails.org/i18n.html.
-
 en:
   hello: "Hello world"
+
+  helpers:
+    submit:
+      test:
+        create: "Create Test"
+        update: "Update Test"
+      user:
+        create: "Sign Up"
+    label:
+      test:
+        title: "Title"
+        category_id: "Category"
+        level: "Level difficulty"
+      user:
+        name: "Nmae"
+        last_name: "Last name"
+        email: "E-mail"
+        password: "Password"
+        password_confirmation: "Confirm password"
+        remember_me: "Remember me"
+
+  tests:
+    index:
+      header: "Tricky Tests"
+      title: "Title"
+      level: "Level"
+      questions: "Questions"
+      action: "Start the Test"
+      test:
+        start: "Start"
+
+  shared:
+    tip:
+      welcome: "Welcome, %{user} Guru!"
+
+  results:
+    show:
+      header: "Passing the %{title} Test"  
+      questions: "Count of test's questions: %{count}"
+      question: "Question № %{number} :"
+      list: "List Tests"
+      next: 'Next'
+    result:
+      header: "The %{title} Test was Completed!"
+      list: "List Tests"
+
+  admin:
+    tests:
+      index:
+        header: "Tricky Tests"
+        title: "Title"
+        level: "Level"
+        questions: "Questions"
+        action: "Start the Test"
+        create_test: "Create new test"
+      test:        
+        show: "Show"
+        edit: "Edit"
+        del: "Delete"
+      new:
+        header: "Create new Test"
+        list_tests: "List Tests"
+      show:
+        header: "Test's <%{title}> questions"
+        body: "Question body"
+        level: "Level of difficulty: "
+        create: "Create New Question"
+        author: "Author: " 
+        action: "Actions"
+      edit:
+        header: "Edit Test"
+      nav:
+        edit: "Edit"
+        del: "Delete"
+        list: "List tests"
+      create: 
+        success: "Test %{test} was saved successfully"
+      update:
+        success: "Test %{test} was updated successfully"
+      destroy:  
+        success: "Test %{test} was deleted"
+    questions:
+      show:
+      question:        
+        show: "Show"
+        edit: "Edit"
+        del: "Delete"
+
+    tip:
+      panel: "TestGuru Admin Panel"
+      welcome: "Welcome, your magesty, %{admin}"
+
+  category:
+    Oceans: "Oceans"
+    Mountains: "Mountains"
+    Desert: "Desert"
+    Rivers: "Rivers"
+    Forests: "Forests"
+    Countries: "Countries"
