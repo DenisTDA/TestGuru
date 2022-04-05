@@ -1,13 +1,13 @@
-<h1>Passing the <%= @result.test.title %> Test</h1>
+<h1><%= t('.header', title: @result.test.title) %></h1>
 <b><strong>
-  Namber of test's questions: <%= @result.test.questions.count %>
+  <%= t('.questions', count: @result.test.questions.count) %>
 </b></strong>
 
 <p>
-  <b><u>
-    Question № <%= @result.number_question %><br>
-    <%= @result.current_question.body %>
-  </b></u>
+  <b>
+    <%= t('.question', number: @result.number_question) %><br>
+    <i><%= @result.current_question.body %></i>
+  </b>
 </p>
 
 <%= form_with url: result_path(@result), local: true, method: :put do |form| %>
@@ -17,9 +17,9 @@
       <%= b.label %>
     </p>
   <% end %>
-  <p><%= form.submit 'Next' %></p>
+  <p><%= form.submit t('.next')%></p>
 <% end %>
 
 <p>
-  <%= link_to "List Tests", tests_path %>  
+  <%= link_to t('.list'), tests_path %>  
 </p>

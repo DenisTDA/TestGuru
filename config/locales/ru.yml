@@ -1,3 +1,95 @@
 ru:
   hello: "Привет из Ебурга!"
+
+  helpers:
+    submit:
+      test:
+        create: "Создать Тест"
+        update: "Обновить Тест"
+      user:
+        create: "Войти"
+    label:
+      test:
+        title: "Название"
+        category_id: "Категория"
+        level: "Уровень сложности"
+      user:
+        name: "Имя"
+        last_name: "Фамилия"
+        email: "Электронная почта"
+        password: "Пароль"
+        password_confirmation: "Подтверждение пароля"
+        remember_me: "Запомнить меня"
+
+  tests:
+    index:
+      header: "Доступные Тесты"
+      title: "Название"
+      level: "Уровень"
+      questions: "Кол. впросов"
+      action: "Пройти Тест"
+      test:
+        start: "Начать"
+
+  shared:
+    tip:
+      welcome: "Добро пожаловать, мастер %{user}!"
+
+  results:
+    show:
+      header: "Вы проходите %{title} Тест"  
+      questions: "Количество вопросов в тесте: %{count}"
+      question: "Вопрос № %{number} :"
+      list: "Список тестов"
+      next: 'Следующий'
+    result:
+      header: "Тест %{title} завершён!"
+      list: "Список Тестов"
+
+
+  admin:
+    tests:
+      index:
+        header: "Доступные Тесты"
+        title: "Название"
+        level: "Уровень"
+        questions: "Кол. впросов"
+        action: "Пройти Тест"
+        create_test: "Создать новый тест"
+      test:        
+        show: "Показать"
+        edit: "Редактировать"
+        del: "Удалить"
+      new:
+        header: "Создать новый тест"
+        list_tests: "Список тестов"
+      show:
+        header: "Вопросы <%{title}> Теста"
+        body: "Суть вопроса"
+        level: "Уровень сложности: "
+        create: "Создать новый Вопрос"
+        author: "Автор: " 
+        action: "Действия"
+      edit:
+        header: "Изменить Тест"
+      nav:
+        edit: "Редактировать"
+        del: "Удалить"
+        list: "Список тестов"
+      create: 
+        success: "Тест %{test} был успешно сохранен"
+      update:
+        success: "Тест %{test} был успешно обновлен"
+      destroy:  
+        success: "Тест %{test} был удален"
   
+    questions:
+      show:
+      question:        
+        show: "Показать"
+        edit: "Редактировать"
+        del: "Удалить"
+
+    tip:
+      panel: "Панель администратора ТестГуру"
+      welcome: "Приветствую, Ваше Величество, %{admin}"

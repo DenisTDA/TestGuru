@@ -1,11 +1,11 @@
-<strong>Test "<%= @test.title%>" Questions<strong>
-<p><strong>level of difficulty: <%= @test.level%> </strong></p>
-<p> Author: <%= User.find(@test.author_id).name  %> </p> 
-<%= link_to "Create New Question", new_admin_test_question_path(@test) %>
+<strong><%= t('.header', title: @test.title) %></strong>
+<p><strong><%= t('.level') %> <%= @test.level %> </strong></p>
+<p> <%= t('.author') %><%= User.find(@test.author_id).name %> </p> 
+<%= link_to t(".create"), new_admin_test_question_path(@test) %>
 <p></p>
 
 <table>
-  <tr> <td>Question body</td> <td colspan = "3" align = "center"> Action </tr>
+  <tr> <th><%= t(".body") %></th> <th colspan = "3" align = "center"> <%= t('.action')%></th></tr>
   <%= render partial: 'admin/questions/question' , collection: @test.questions %>
 </table>
 

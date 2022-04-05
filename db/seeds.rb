@@ -21,9 +21,12 @@ end
 users_a = User.create!(param)
 p "Created #{User.count} Users"
 
-param = []
-5.times { |index| param << { title: "Topic_#{index}" } }
-categories_a = Category.create!(param)
+categories_a = Category.create!([{ title: 'Oceans' },
+                                 { title: 'Mountins' },
+                                 { title: 'Desert' },
+                                 { title: 'Revers' },
+                                 { title: 'Forests' },
+                                 { title: 'Countries' }])
 p "Created #{Category.count} Categories"
 
 tests_a = Test.create!([{ title: 'Theme_1',

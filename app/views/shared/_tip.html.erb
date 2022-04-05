@@ -1,6 +1,6 @@
 <div class = 'tip'>
   <% if user_signed_in? %>
-    <div class = 'welcome user'> Welcome, <b><%= current_user.name.capitalize %></b> Guru! </div>    
+    <div class = 'welcome user'> <%= t('.welcome', user: current_user.name.capitalize) %></div>    
   <% end %>
 
   <div class = 'aut-nav'>

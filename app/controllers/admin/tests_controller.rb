@@ -15,8 +15,7 @@ class Admin::TestsController < Admin::BaseController
     @test = current_user.examinations.build(params_test)
 
     if @test.save
-      flash[:notice] = "Test '#{@test.title}' was saved successfully"
-      redirect_to admin_test_path(@test)
+      redirect_to admin_test_path(@test), notice: t('.success', test: @test.title)
     else
       render :new
     end
@@ -26,7 +25,7 @@ class Admin::TestsController < Admin::BaseController
 
   def update
     if @test.update(params_test)
-      flash[:notice] = "Test '#{@test.title}' was updated"
+      flash[:notice] = t('.success', test: @test.title)
       redirect_to admin_test_path(@test)
     else
       render :edit
@@ -37,7 +36,7 @@ class Admin::TestsController < Admin::BaseController
 
   def destroy
     @test.destroy
-    flash[:notice] = "Test '#{@test.title}' was deleted"
+    flash[:notice] = t('.success', test: @test.title)
     redirect_to action: :index
   end
 
