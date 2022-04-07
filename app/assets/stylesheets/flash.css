@@ -2,12 +2,12 @@
   width: max-content;
   height: max-content;
   padding: 5px 5px;
-  border-radius: 10px;
+  border-radius: 5px;
 }
 
 .flash.alert {
   margin: -5px;
-  background: #eb8e43;  
+  background: #ecbe99;  
   border-style: solid;
   border-color: #ee2727;
 }

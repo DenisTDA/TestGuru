@@ -3,6 +3,8 @@ class Admin::BaseController < ApplicationController
   before_action :authenticate_user!
   before_action :admin_required!
 
+  add_flash_types :danger, :success
+
   private
 
   def admin_required!

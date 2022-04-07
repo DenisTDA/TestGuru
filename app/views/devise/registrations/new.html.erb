@@ -1,7 +1,9 @@
 <h2><%= t('.header') %></h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
+  <div class="alert alert-danger" role="alert">
+    <%= render "devise/shared/error_messages", resource: resource %>
+  </div>
 
   <div class="field">
     <%= f.label :name %><br />

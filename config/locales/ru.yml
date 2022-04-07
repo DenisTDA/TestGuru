@@ -26,7 +26,7 @@ ru:
       header: "Доступные Тесты"
       title: "Название"
       level: "Уровень"
-      questions: "Кол. впросов"
+      questions: "Кол. вопросов"
       action: "Пройти Тест"
       test:
         start: "Начать"
@@ -53,8 +53,8 @@ ru:
         header: "Доступные Тесты"
         title: "Название"
         level: "Уровень"
-        questions: "Кол. впросов"
-        action: "Пройти Тест"
+        questions: "Кол. вопросов"
+        action: "Действия"
         create_test: "Создать новый тест"
       test:        
         show: "Показать"

@@ -1,7 +1,6 @@
 <tr>
   <td><%= "#{test.title}" %></td> 
-  <td><%= " #{test_level(test)}" %></td>
-  <td> <%= " #{test.questions.count}" %></td> 
-  
-  <td><%= button_to t('tests.index.test.start'), start_test_path(test) %></td> 
+  <td class="text-center"><%= " #{test_level(test)}" %></td>
+  <td class="text-center"> <%= " #{test.questions.count}" %></td> 
+  <td><%= button_to t('tests.index.test.start'), start_test_path(test), class: "btn btn-outline-primary btn-sm mt-1" %></td> 
 </tr>

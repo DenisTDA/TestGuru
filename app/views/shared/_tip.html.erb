@@ -1,16 +1,12 @@
-<div class = 'tip'>
-  <% if user_signed_in? %>
-    <div class = 'welcome user'> <%= t('.welcome', user: current_user.name.capitalize) %></div>    
-  <% end %>
-
-  <div class = 'aut-nav'>
-    <%= link_to "Project TetsGuru", tests_path %> |
+<nav class = 'navbar navbar-light bg-light px-3'>
+  <%= link_to "Project TetsGuru", root_path, class: 'navbar-brand' %> 
+  <span class="navbar-text">
     <% if user_signed_in? %>
+      <%= t('.welcome', user: current_user.name.capitalize) %>
       <%= link_to "Logout", destroy_user_session_path, method: :delete %>
     <% else %>
       <%= link_to "Sign up", new_user_registration_path %> |
       <%= link_to "Log in", new_user_session_path %> 
     <% end %>
-  </div>
-</div>
-<p></p>
+  </span>
+</nav>
