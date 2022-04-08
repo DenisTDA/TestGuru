@@ -1,12 +1,60 @@
-<nav class = 'navbar navbar-light bg-light px-3'>
-  <%= link_to "Project TetsGuru", root_path, class: 'navbar-brand' %> 
-  <span class="navbar-text">
-    <% if user_signed_in? %>
-      <%= t('.welcome', user: current_user.name.capitalize) %>
-      <%= link_to "Logout", destroy_user_session_path, method: :delete %>
-    <% else %>
-      <%= link_to "Sign up", new_user_registration_path %> |
-      <%= link_to "Log in", new_user_session_path %> 
-    <% end %>
-  </span>
+<nav class="navbar navbar-expand-sm navbar-info bg-light">
+  <div class="container-fluid">
+    <%= link_to "Project TetsGuru", root_path, class: 'navbar-brand' %> 
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarID"
+        aria-controls="navbarID" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+  <% if user_signed_in? %>
+    <div class="collapse navbar-collapse" id="navbarID">
+      <ul class="navbar-nav">
+      <% if current_user.admin? %>
+        <li class="nav-item">
+          <a class="nav-link" href=<%= admin_tests_path %>><%= t('.list') %></a>
+        </li>
+      <% else %>    
+        <li class="nav-item">
+          <a class="nav-link" href=<%= tests_path %>><%= t('.list') %></a>
+        </li>
+      <% end %>      
+      </ul>  
+    </div>
+
+    <div class="container col-4 text-center bg-light">
+      Pass the Test
+    </div>
+
+    <div class="container text-end col-3">
+      <%= t('.welcome', user: current_user.name.capitalize )%>           
+    </div>
+    
+    <div class="container position-relative col-1">
+      <ul class="navbar-nav justify-content-end">   
+        <li class="nav-item<%= " active" if I18n.locale == :ru %>" >
+          <%= link_to "Рус", { lang: :ru }, class: "nav-link" %>     
+        </li>
+        <li class="nav-item<%= " active" if I18n.locale == :en %>" >
+          <%= link_to "En", { lang: :en }, class: "nav-link" %>     
+        </li>
+        <li class="nav-item">
+          <%= link_to t('.logout'), destroy_user_session_path, class: "nav-link", method: :delete %>
+        </li>
+  <% else %>
+        <li class="nav-item<%= " active" if I18n.locale == :ru %>" >
+          <%= link_to "Рус", { lang: :ru }, class: "nav-link" %>     
+        </li>
+        <li class="nav-item<%= " active" if I18n.locale == :en %>" >
+          <%= link_to "En", { lang: :en }, class: "nav-link" %>     
+        </li>
+        <li class="nav-item">
+          <%= link_to t('.signup'), new_user_registration_path, class: "nav-link" %> 
+        </li>
+        <li class="nav-item">
+          <%= link_to t('.signin'), new_user_session_path, class: "nav-link" %> 
+        </li>
+      </ul>
+    <div>
+  <% end %>  
+  </div>
 </nav>
