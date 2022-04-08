@@ -49,7 +49,7 @@ ru:
       new:
         header: "Стань Гуру!"
     sessions:
-      new: 
+      new:
         header: "Путь к совершенству"
       signed_in: "Вход в систему выполнен."
       signed_out: "Выход из системы выполнен."

@@ -26,7 +26,7 @@ ru:
       header: "Доступные Тесты"
       title: "Название"
       level: "Уровень"
-      questions: "Кол. впросов"
+      questions: "Кол. вопросов"
       action: "Пройти Тест"
       test:
         start: "Начать"
@@ -46,15 +46,14 @@ ru:
       header: "Тест %{title} завершён!"
       list: "Список Тестов"
 
-
   admin:
     tests:
       index:
         header: "Доступные Тесты"
         title: "Название"
         level: "Уровень"
-        questions: "Кол. впросов"
-        action: "Пройти Тест"
+        questions: "Кол. вопросов"
+        action: "Действия"
         create_test: "Создать новый тест"
       test:        
         show: "Показать"
@@ -82,17 +81,30 @@ ru:
         success: "Тест %{test} был успешно обновлен"
       destroy:  
         success: "Тест %{test} был удален"
-  
     questions:
       show:
       question:        
         show: "Показать"
         edit: "Редактировать"
         del: "Удалить"
-
     tip:
       panel: "Панель администратора ТестГуру"
-      welcome: "Приветствую, Ваше Величество, %{admin}"
+      welcome: "Приветствую, Ваше Величество, %{user}"
+      signup: "Зарегистрироваться"
+      signin: "Войти"
+      list: "Список Тестов"
+      create: "Создать Тест"
+      logout: "Выйти"
+
+  shared:
+    tip:
+      panel: "Панель администратора ТестГуру"
+      welcome: "Приветствую, Ваше Величество, %{user}"
+      signup: "Зарегистрироваться"
+      signin: "Войти"
+      list: "Список Тестов"
+      create: "Создать Тест"
+      logout: "Выйти"
 
   category:
     Oceans: "Океаны"

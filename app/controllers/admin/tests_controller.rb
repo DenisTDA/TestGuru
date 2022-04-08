@@ -25,7 +25,7 @@ class Admin::TestsController < Admin::BaseController
 
   def update
     if @test.update(params_test)
-      flash[:notice] = t('.success', test: @test.title)
+      flash[:success] = t('.success', test: @test.title)
       redirect_to admin_test_path(@test)
     else
       render :edit

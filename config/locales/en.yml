@@ -53,7 +53,7 @@ en:
         title: "Title"
         level: "Level"
         questions: "Questions"
-        action: "Start the Test"
+        action: "Actions"
         create_test: "Create new test"
       test:        
         show: "Show"
@@ -87,10 +87,24 @@ en:
         show: "Show"
         edit: "Edit"
         del: "Delete"
-
     tip:
       panel: "TestGuru Admin Panel"
-      welcome: "Welcome, your magesty, %{admin}"
+      welcome: "Welcome, your magesty, %{user}"
+      signup: "Sign Up"
+      signin: "Sign In"
+      list: "List Tests"
+      create: "Create Test"
+      logout: "Log Out"    
+
+  shared:
+    tip:
+      panel: "TestGuru Admin Panel"
+      welcome: "Welcome, your magesty, %{user}"
+      signup: "Sign Up"
+      signin: "Sign In"
+      list: "List Tests"
+      create: "Create Test"
+      logout: "Log Out"
 
   category:
     Oceans: "Oceans"

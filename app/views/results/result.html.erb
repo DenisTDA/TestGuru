@@ -1,9 +1,5 @@
 <h1> <%= t('.header', title: @result.test.title) %></h1>
   
-<div class = "result_test" >
+<div class = "row" >
   <%= output_result(@result) %> 
 </div>
-
-<p>
-  <%= link_to "List Tests", tests_path %>  
-</p>

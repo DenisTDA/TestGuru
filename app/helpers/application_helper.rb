@@ -2,7 +2,11 @@ module ApplicationHelper
   def show_flash(type)
     return unless flash[type]
 
-    content_tag(:p, content_tag(:p, flash[type], class: "flash #{type}"), class: 'flash').html_safe
+    content_tag(:div, flash[type], class: "alert alert-#{get_type_flash(type)}").html_safe
+  end
+
+  def get_type_flash(type)
+    { alert: 'warning', notice: 'info' }[type] || type.to_s
   end
 
   def date_year

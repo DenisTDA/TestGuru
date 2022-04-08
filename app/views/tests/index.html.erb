@@ -1,12 +1,19 @@
-<h1><%= t('.header') %></h1>
- 
-<table>
-  <tr>
-    <th><%= t('.title') %></th>
-    <th><%= t('.level') %></th>
-    <th><%= t('.questions') %></th>    
-    <th><%= t('.action') %></th>
-  </tr> 
+<div class='row text-center'>
+  <div class='col-12'>
+    <h1 class="text-center"><%= t('.header') %></h1>
 
-  <%= render @tests %>
-</table>
+    <table class="table table-secondary table-striped table-sm" >
+      <thead class="table-dark">
+        <tr class="text-center">
+          <th scope="col" style="width: 60%"><%= t('.title') %></th>
+          <th scope="col" style="width: 10%"><%= t('.level') %></th>
+          <th scope="col" style="width: 10%"><%= t('.questions') %></th>    
+          <th scope="col" style="width: 15%"><%= t('.action') %></th>
+        </tr> 
+      </thead>  
+          <%= render @tests %>
+    </table>
+
+  </div>
+</div>
+
