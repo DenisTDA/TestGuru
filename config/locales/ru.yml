@@ -45,6 +45,10 @@ ru:
     result:
       header: "Тест %{title} завершён!"
       list: "Список Тестов"
+    gist: 
+      success: "Gist сохранен успешно"
+      failure: "При сохранении Gist произошла ошибка"
+
 
   admin:
     tests:

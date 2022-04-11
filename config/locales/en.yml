@@ -45,6 +45,9 @@ en:
     result:
       header: "The %{title} Test was Completed!"
       list: "List Tests"
+    gist: 
+      success: "Gist was saved successful"
+      failure: "Gist has failure to save"
 
   admin:
     tests:
