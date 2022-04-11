@@ -46,7 +46,7 @@ ru:
       header: "Тест %{title} завершён!"
       list: "Список Тестов"
     gist: 
-      success: "Gist сохранен успешно"
+      success: "Gist сохранен успешно! Расположен по адресу URL: %{url_gist}"
       failure: "При сохранении Gist произошла ошибка"
 
 
