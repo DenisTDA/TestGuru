@@ -101,6 +101,14 @@ ru:
       list: "Список Тестов"
       create: "Создать Тест"
       logout: "Выйти"
+      gists: "Gists"  
+    gists:
+      index:
+        header: "Таблица Gists"
+        question: "Вопрос"
+        url: "URL адрес Gist"
+        user: "Электронная почта создателя"
+
 
   shared:
     tip:

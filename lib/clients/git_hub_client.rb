@@ -1,6 +1,6 @@
 class GitHubClient
   ROOT_ENDPOINT = 'https://api.github.com'.freeze
-  ACCESS_TOKEN = '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'.freeze
+  ACCESS_TOKEN = ENV['ACCESS_TOKEN_TESTGURU']
 
   def initialize
     @http_client = setup_http_client    
@@ -8,6 +8,10 @@ class GitHubClient
 
   def create_gist(params)
     @http_client.create_gist(params) 
+  end
+
+  def list_gists
+    @http_client.gists
   end
 
   private

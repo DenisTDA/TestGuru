@@ -36,6 +36,9 @@ gem 'jquery-rails'
 #http-client octokit
 gem "octokit", "~> 4.0"
 
+#Environment
+gem 'dotenv-rails', groups: [:development, :test]
+
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 
