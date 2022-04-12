@@ -48,7 +48,9 @@ ru:
     gist: 
       success: "Gist сохранен успешно! Расположен по адресу URL: %{url_gist}"
       failure: "При сохранении Gist произошла ошибка"
-
+  
+  gistquestionservice:    
+    description: "Вопрос из теста %{test_title} приложения TestGuru"
 
   admin:
     tests:

@@ -49,6 +49,10 @@ en:
       success: "Gist was saved successful! The URL: %{url_gist}"
       failure: "Gist has failure to save"
 
+  gistquestionservice:    
+    description: "A question about %{test_title}  from TestGuru"
+
+
   admin:
     tests:
       index:

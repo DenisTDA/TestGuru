@@ -19,7 +19,7 @@ class ResultsController < ApplicationController
 
   def gist
     result = GistQuestionService.new(@result.current_question).call
-    byebug
+
     flash_options = if result
       {notice: t('.success', url_gist: result[:html_url]) }
     else
