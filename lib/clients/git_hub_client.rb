@@ -3,11 +3,11 @@ class GitHubClient
   ACCESS_TOKEN = ENV['ACCESS_TOKEN_TESTGURU']
 
   def initialize
-    @http_client = setup_http_client    
+    @http_client = setup_http_client
   end
 
   def create_gist(params)
-    @http_client.create_gist(params) 
+    @http_client.create_gist(params)
   end
 
   def list_gists
