@@ -1,8 +1,10 @@
 class GistQuestionService
-  def initialize(question, client: nil)
+  GITHUB_GIST_TOKEN = ENV['ACCESS_TOKEN_TESTGURU']
+
+  def initialize(question, client = default_client)
     @question = question
     @test = @question.test
-    @client = client || GitHubClient.new
+    @client = client
   end
 
   def call
@@ -23,8 +25,10 @@ class GistQuestionService
   end
 
   def gist_content
-    content = [@question.body]
-    content += @question.answers.pluck(:body)
-    content.join("\n")
+    [@question.body, *@question.answers.pluck(:body)].join("\n")
+  end
+
+  def default_client
+    Octokit::Client.new(access_token: GITHUB_GIST_TOKEN) if ENV.fetch('ACCESS_TOKEN_TESTGURU')
   end
 end

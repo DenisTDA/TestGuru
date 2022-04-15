@@ -52,6 +52,13 @@ ru:
   gistquestionservice:    
     description: "Вопрос из теста %{test_title} приложения TestGuru"
 
+  gists:
+    index:
+      header: "Таблица Gists"
+      question: "Вопрос"
+      url: "URL адрес Gist"
+      user: "Электронная почта создателя"
+
   admin:
     tests:
       index:
@@ -102,13 +109,6 @@ ru:
       create: "Создать Тест"
       logout: "Выйти"
       gists: "Gists"  
-    gists:
-      index:
-        header: "Таблица Gists"
-        question: "Вопрос"
-        url: "URL адрес Gist"
-        user: "Электронная почта создателя"
-
 
   shared:
     tip:

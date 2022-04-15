@@ -52,6 +52,13 @@ en:
   gistquestionservice:    
     description: "A question about %{test_title}  from TestGuru"
 
+  gists:
+    index:
+      header: "Gists Table"
+      question: "Question"
+      url: "URL Gist"
+      user: "User e-mail"
+
 
   admin:
     tests:
@@ -103,12 +110,6 @@ en:
       create: "Create Test"
       logout: "Log Out"
       gists: "Gists"  
-    gists:
-      index:
-        header: "Gists Table"
-        question: "Question"
-        url: "URL Gist"
-        user: "User e-mail"
 
   shared:
     tip:
