@@ -11,11 +11,10 @@ class GistsController < ApplicationController
     @user = User.find(params[:user])
 
     result_gist = GistQuestionService.new(@question).call
-
-    gist = Gist.new(html_url: result_gist[:gist].url, question_id: @question.id, user_id: @user.id)
+    gist = Gist.new(html_url: result_gist[:url], question_id: @question.id, user_id: @user.id)
 
     flash_options = if result_gist[:success?] && gist.save!
-                      { notice: t('.success', url_gist: result_gist[:gist][:html_url]) }
+                      { notice: t('.success', url_gist: result_gist[:url]) }
                     else
                       { alert: t('.failure') }
                     end

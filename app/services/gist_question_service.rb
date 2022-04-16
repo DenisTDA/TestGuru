@@ -10,6 +10,7 @@ class GistQuestionService
   def call
     gist = @client.create_gist(gist_params)
     { gist: gist,
+      url: gist.url,
       success?: success?(gist) }
   end
 
@@ -35,7 +36,6 @@ class GistQuestionService
   end
 
   def default_client
-    byebug
     Octokit::Client.new(access_token: ENV.fetch('ACCESS_TOKEN_GITHUB_GISTS'))
   end
 end
