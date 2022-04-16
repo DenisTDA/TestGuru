@@ -45,11 +45,8 @@ ru:
     result:
       header: "Тест %{title} завершён!"
       list: "Список Тестов"
-    gist: 
-      success: "Gist сохранен успешно! Расположен по адресу URL: %{url_gist}"
-      failure: "При сохранении Gist произошла ошибка"
   
-  gistquestionservice:    
+  gistquestionservice:      
     description: "Вопрос из теста %{test_title} приложения TestGuru"
 
   gists:
@@ -58,6 +55,9 @@ ru:
       question: "Вопрос"
       url: "URL адрес Gist"
       user: "Электронная почта создателя"
+    create:
+      success: "Gist сохранен успешно! Расположен по адресу URL: %{url_gist}"
+      failure: "При сохранении Gist произошла ошибка"
 
   admin:
     tests:

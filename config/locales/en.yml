@@ -45,9 +45,6 @@ en:
     result:
       header: "The %{title} Test was Completed!"
       list: "List Tests"
-    gist: 
-      success: "Gist was saved successful! The URL: %{url_gist}"
-      failure: "Gist has failure to save"
 
   gistquestionservice:    
     description: "A question about %{test_title}  from TestGuru"
@@ -58,6 +55,9 @@ en:
       question: "Question"
       url: "URL Gist"
       user: "User e-mail"
+    create: 
+      success: "Gist was saved successful! The URL: %{url_gist}"
+      failure: "Gist has failure to save"
 
 
   admin:

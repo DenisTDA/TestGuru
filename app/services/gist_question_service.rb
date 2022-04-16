@@ -1,5 +1,5 @@
 class GistQuestionService
-  GITHUB_GIST_TOKEN = ENV['ACCESS_TOKEN_TESTGURU']
+  API_ENDPOINT = 'api.github.com'.freeze
 
   def initialize(question, client = default_client)
     @question = question
@@ -8,10 +8,16 @@ class GistQuestionService
   end
 
   def call
-    @client.create_gist(gist_params)
+    gist = @client.create_gist(gist_params)
+    { gist: gist,
+      success?: success?(gist) }
   end
 
   private
+
+  def success?(gist)
+    gist.url.include?(API_ENDPOINT)
+  end
 
   def gist_params
     {
@@ -29,6 +35,7 @@ class GistQuestionService
   end
 
   def default_client
-    Octokit::Client.new(access_token: GITHUB_GIST_TOKEN) if ENV.fetch('ACCESS_TOKEN_TESTGURU')
+    byebug
+    Octokit::Client.new(access_token: ENV.fetch('ACCESS_TOKEN_GITHUB_GISTS'))
   end
 end
