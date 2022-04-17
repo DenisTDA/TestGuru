@@ -22,7 +22,7 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :gists, only: %i[index create]
+  resources :gists, only: :create
 
   namespace :admin do
     resources :tests do
@@ -30,5 +30,6 @@ Rails.application.routes.draw do
         resources :answers, shallow: true, except: %i[index]
       end
     end
+    resources :gists, only: :index
   end
 end

@@ -50,11 +50,6 @@ en:
     description: "A question about %{test_title}  from TestGuru"
 
   gists:
-    index:
-      header: "Gists Table"
-      question: "Question"
-      url: "URL Gist"
-      user: "User e-mail"
     create: 
       success: "Gist was saved successful! The URL: %{url_gist}"
       failure: "Gist has failure to save"
@@ -110,6 +105,12 @@ en:
       create: "Create Test"
       logout: "Log Out"
       gists: "Gists"  
+    gists:
+      index:
+        header: "Gists Table"
+        question: "Question"
+        url: "URL Gist"
+        user: "User e-mail"
 
   shared:
     tip:

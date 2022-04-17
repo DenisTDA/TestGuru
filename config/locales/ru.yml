@@ -50,11 +50,6 @@ ru:
     description: "Вопрос из теста %{test_title} приложения TestGuru"
 
   gists:
-    index:
-      header: "Таблица Gists"
-      question: "Вопрос"
-      url: "URL адрес Gist"
-      user: "Электронная почта создателя"
     create:
       success: "Gist сохранен успешно! Расположен по адресу URL: %{url_gist}"
       failure: "При сохранении Gist произошла ошибка"
@@ -108,8 +103,14 @@ ru:
       list: "Список Тестов"
       create: "Создать Тест"
       logout: "Выйти"
-      gists: "Gists"  
-
+      gists: "Gists" 
+    gists:
+      index:
+        header: "Таблица Gists"
+        question: "Вопрос"
+        url: "URL адрес Gist"
+        user: "Электронная почта создателя"
+ 
   shared:
     tip:
       panel: "Панель администратора ТестГуру"
