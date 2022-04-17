@@ -8,13 +8,14 @@ class GistsController < ApplicationController
   def create
     @result = Result.find(params[:result])
     @question = @result.current_question
-    @user = User.find(params[:user])
 
     result_gist = GistQuestionService.new(@question).call
-    gist = Gist.new(html_url: result_gist[:url], question_id: @question.id, user_id: @user.id)
+    gist = Gist.new(html_url: result_gist[:url], question_id: @question.id, user_id: current_user.id)
 
-    flash_options = if result_gist[:success?] && gist.save!
-                      { notice: t('.success', url_gist: result_gist[:url]) }
+    flash_options = if result_gist[:success?]
+                      gist.save!
+                      { notice: t('.success', url_gist: view_context.link_to(result_gist[:url], result_gist[:url],
+                                  rel: 'nofollow noopener', target: '_blank')) }
                     else
                       { alert: t('.failure') }
                     end

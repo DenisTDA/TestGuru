@@ -1,5 +1,5 @@
 class GistQuestionService
-  API_ENDPOINT = 'api.github.com'.freeze
+  URL_GIST = 'gist.github.com'.freeze
 
   def initialize(question, client = default_client)
     @question = question
@@ -10,14 +10,14 @@ class GistQuestionService
   def call
     gist = @client.create_gist(gist_params)
     { gist: gist,
-      url: gist.url,
+      url: gist.html_url,
       success?: success?(gist) }
   end
 
   private
 
   def success?(gist)
-    gist.url.include?(API_ENDPOINT)
+    gist.html_url.include?(URL_GIST)
   end
 
   def gist_params

@@ -18,6 +18,6 @@
     </p>
   <% end %>
 
-  <p><%= link_to  "Gist Question", "/gists?user=#{current_user.id}&result=#{@result.id}", method: :post %></p>
+  <p><%= link_to  "Gist Question", gists_path(result: @result.id), method: :post %></p>
   <p><%= form.submit t('.next')%></p>
 <% end %>
