@@ -33,6 +33,9 @@ gem 'rails-i18n', '~> 5.1'
 gem 'bootstrap', '~> 5.1.3'
 gem 'jquery-rails'
 
+# http-client octokit
+gem 'octokit', '~> 4.0'
+
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 
@@ -48,6 +51,8 @@ gem 'bootsnap', '>= 1.1.0', require: false
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
+  # Environment
+  gem 'dotenv-rails'
 end
 
 group :development do

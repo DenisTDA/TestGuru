@@ -35,3 +35,4 @@
 .ruby-gemset
 .ruby-version.03.01.2022-09:11:10
 .rubocop.yml
+.env

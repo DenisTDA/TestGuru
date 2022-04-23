@@ -46,6 +46,15 @@ en:
       header: "The %{title} Test was Completed!"
       list: "List Tests"
 
+  gistquestionservice:    
+    description: "A question about %{test_title}  from TestGuru"
+
+  gists:
+    create: 
+      success: "Gist was saved successful! The URL: %{url_gist}"
+      failure: "Gist has failure to save"
+
+
   admin:
     tests:
       index:
@@ -94,7 +103,14 @@ en:
       signin: "Sign In"
       list: "List Tests"
       create: "Create Test"
-      logout: "Log Out"    
+      logout: "Log Out"
+      gists: "Gists"  
+    gists:
+      index:
+        header: "Gists Table"
+        question: "Question"
+        url: "URL Gist"
+        user: "User e-mail"
 
   shared:
     tip:
