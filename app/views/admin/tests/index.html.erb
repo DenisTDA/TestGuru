@@ -2,19 +2,28 @@
   <div class='col-12'>
     <h1 class="text-center"><%= t('.header') %></h1>
 
-    <table class="table table-success table-striped table-sm">
-      <tr class="table-dark text-center">
-        <th scope="col" style="width: 60%" class="sort-by-title pointer">
-          <%= t('.title') %>
-          <%= octicon 'chevron-up', class: 'text-success hide' %>
-          <%= octicon 'chevron-down', class: 'text-success hide' %>
-        </th>
-        <th scope="col" style="width: 10%"><%= t('.level') %></th>
-        <th scope="col" style="width: 10%"><%= t('.questions') %></th>    
-        <th colspan = '3' scope="col" style="width: 15%"><%= t('.action') %></th>
-      </tr>  
-      <%= render @tests %>
+    <table class="table table-success table-striped  table-sm">
+      <thead>
+        <tr class="table-dark text-center">
+          <th scope="col" style="width: 60%" class="sort-by-title pointer">
+            <%= t('.title') %>
+            <%= octicon 'chevron-up', height:24, class: 'text-light hide' %>
+            <%= octicon 'chevron-down', height:24,  class: 'text-light hide' %>
+          </th>
+          <th scope="col" style="width: 10%"><%= t('.level') %></th>
+          <th scope="col" style="width: 10%" class="sort-by-ques pointer">
+            <%= t('.questions') %>
+            <%= octicon 'fold-up', height:24, class: 'text-light hide' %>
+            <%= octicon 'fold-down', height:24,  class: 'text-light hide' %>
+          </th>    
+          <th colspan = '3' scope="col" style="width: 15%"><%= t('.action') %></th>
+        </tr>  
+      </thead>      
+
+      <tbody>
+        <%= render @tests %>
+      </tbody>
     </table>
-     
+
   </div>
 </div>

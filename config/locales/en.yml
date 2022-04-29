@@ -13,6 +13,8 @@ en:
         title: "Title"
         category_id: "Category"
         level: "Level difficulty"
+      answer: 
+        correct: 'correct'  
       user:
         name: "Nmae"
         last_name: "Last name"
@@ -20,6 +22,10 @@ en:
         password: "Password"
         password_confirmation: "Confirm password"
         remember_me: "Remember me"
+    questions_helper:
+      question: "Question"
+      create: "Create New"
+      edit: "Edit"
 
   tests:
     index:
@@ -54,7 +60,6 @@ en:
       success: "Gist was saved successful! The URL: %{url_gist}"
       failure: "Gist has failure to save"
 
-
   admin:
     tests:
       index:
@@ -64,13 +69,8 @@ en:
         questions: "Questions"
         action: "Actions"
         create_test: "Create new test"
-      test:        
-        show: "Show"
-        edit: "Edit"
-        del: "Delete"
       new:
         header: "Create new Test"
-        list_tests: "List Tests"
       show:
         header: "Test's <%{title}> questions"
         body: "Question body"
@@ -80,10 +80,6 @@ en:
         action: "Actions"
       edit:
         header: "Edit Test"
-      nav:
-        edit: "Edit"
-        del: "Delete"
-        list: "List tests"
       create: 
         success: "Test %{test} was saved successfully"
       update:
@@ -92,15 +88,24 @@ en:
         success: "Test %{test} was deleted"
     questions:
       show:
-      question:        
-        show: "Show"
-        edit: "Edit"
-        del: "Delete"
+        question: "Question"
+        answer: "Answer: "
+        create: "Create new Answer"
+      new: 
+        list: "List Test's questions"
+      form:  
+        body: "Question body: "
+        save: "Save question"
+    answers:
+      new: 
+        new: "Create new Answer"
+        question: "Question " 
+      show:
+        question: "Question "
+        answer: "Answer:"
     tip:
       panel: "TestGuru Admin Panel"
       welcome: "Welcome, your magesty, %{user}"
-      signup: "Sign Up"
-      signin: "Sign In"
       list: "List Tests"
       create: "Create Test"
       logout: "Log Out"
@@ -114,13 +119,11 @@ en:
 
   shared:
     tip:
-      panel: "TestGuru Admin Panel"
       welcome: "Welcome, your magesty, %{user}"
-      signup: "Sign Up"
-      signin: "Sign In"
       list: "List Tests"
-      create: "Create Test"
       logout: "Log Out"
+      signup: "Sign Up"
+      login: "Login"
 
   category:
     Oceans: "Oceans"
@@ -129,3 +132,11 @@ en:
     Rivers: "Rivers"
     Forests: "Forests"
     Countries: "Countries"
+  
+  nav:
+    show: "Show"
+    edit: "Edit"
+    del: "Delete"
+    list_t: "List Tests"
+    list_q: "List Questions"  
+    back: "Back"

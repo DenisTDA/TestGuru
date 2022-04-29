@@ -1,8 +1,8 @@
 <li>
   <%= answer.body %><br>
-  <%= link_to 'Show', admin_answer_path(answer) %>
-  <%= link_to 'Edit', edit_admin_answer_path(answer) %>
-  <%= link_to 'Delete', 
+  <%= link_to t('nav.show'), admin_answer_path(answer) %>
+  <%= link_to t('nav.edit'), edit_admin_answer_path(answer) %>
+  <%= link_to t('nav.del'), 
               admin_answer_path(answer), 
               method: :delete, 
               data: { confirm: 'Are you sure?' } %>

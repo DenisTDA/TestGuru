@@ -3,7 +3,7 @@
   <td class="text-center"><%= " #{test_level(test)}" %></td>
   <td class="text-center"> <%= " #{test.questions.count}" %></td> 
   
-  <td><%= link_to t('.show'), admin_test_path(test) %></td> 
-  <td><%= link_to t('.edit'), edit_admin_test_path(test) %></td> 
-  <td><%= link_to t('.del'), admin_test_path(test), method: 'delete', data: { confirm: 'Are you sure?' } %></td> 
+  <td><%= link_to t('nav.show'), admin_test_path(test) %></td> 
+  <td><%= link_to t('nav.edit'), edit_admin_test_path(test) %></td> 
+  <td><%= link_to t('nav.del'), admin_test_path(test), method: 'delete', data: { confirm: 'Are you sure?' } %></td> 
 </tr>

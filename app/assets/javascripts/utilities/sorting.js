@@ -1,57 +1,60 @@
-document.addEventListener('turbolinks:load', function(){
-  var control = document.querySelector('.sort-by-title')
-  if (control) { control.addEventListener('click', sortRowsByTitle) }
-})
+class SortTable {
+  constructor(table, selector, iconsClass) {
+    this.table = table
+    this.cellTh = selector
+    this.iconsClass =  iconsClass
 
-function sortRowsByTitle() {
-  var table = document.querySelector('table')
-  var nameClass = table.className
-  
-
-  var rows = table.querySelectorAll('tr')
-  var sortedRows = []
-  
-  for (var i = 1; i< rows.length; i++) {
-    sortedRows.push(rows[i])
+    this.verify()
   }
-  
-  if (this.querySelector('.octicon-chevron-up').classList.contains('hide')) {
-    sortedRows.sort(compareRowsAsc)
-    this.querySelector('.octicon-chevron-up').classList.remove('hide')
-    this.querySelector('.octicon-chevron-down').classList.add('hide')
-  } else {
-    sortedRows.sort(compareRowsDesc)
-    this.querySelector('.octicon-chevron-down').classList.remove('hide')
-    this.querySelector('.octicon-chevron-up').classList.add('hide')
-  } 
+
+  verify() {
+    this.cellTh.addEventListener('click', event=> {
+      this.sortRowsByTitle()
+    })
+  }
+
+  sortRowsByTitle() {
+    const tbody = this.table.querySelector('tbody')
+    const rows = tbody.querySelectorAll('tr')
+    const sortedRows = []
     
-  var sortedTable = document.createElement('table')
-
-  sortedTable.className = nameClass
-  sortedTable.appendChild(rows[0])
-  console.log(rows[0])
-
-  for (var i = 0; i <  sortedRows.length; i++) {
-    sortedTable.appendChild(sortedRows[i])
+    for (let i = 0; i< rows.length; i++) {
+      sortedRows.push(rows[i])
+    }
+    
+    if (this.table.querySelector(this.iconsClass.up).classList.contains('hide')) {
+      sortedRows.sort(this.compareRowsAsc)
+      this.cellTh.querySelector(this.iconsClass.up).classList.remove('hide')
+      this.cellTh.querySelector(this.iconsClass.down).classList.add('hide')
+    } else {
+      sortedRows.sort(this.compareRowsDesc)
+      this.cellTh.querySelector(this.iconsClass.down).classList.remove('hide')
+      this.cellTh.querySelector(this.iconsClass.up).classList.add('hide')
+    } 
+    
+    this.table.removeChild(tbody)
+    for (let i = 0; i <  sortedRows.length; i++) {
+      tbody.appendChild(sortedRows[i])
+    }
+    this.table.appendChild(tbody)
   }
-
-  table.parentNode.replaceChild(sortedTable,table)
-}
-
-function compareRowsAsc(row1, row2) {
-  var testTiitle1 = row1.querySelector('td').textContent
-  var testTiitle2 = row2.querySelector('td').textContent
   
-  if (testTiitle1 < testTiitle2) { return -1 }
-  if (testTiitle1 > testTiitle2) { return 1 }
-  return 0
+  compareRowsAsc(row1, row2) {
+    const testTiitle1 = row1.querySelector('td').textContent
+    const testTiitle2 = row2.querySelector('td').textContent
+    return testTiitle1 < testTiitle2 ?  -1 : 1 
+  }
+  
+  compareRowsDesc(row1, row2) {
+    const testTiitle1 = row1.querySelector('td').textContent
+    const testTiitle2 = row2.querySelector('td').textContent
+    return testTiitle1 > testTiitle2 ?  -1 : 1 
+  }
 }
 
-function compareRowsDesc(row1, row2) {
-  var testTiitle1 = row1.querySelector('td').textContent
-  var testTiitle2 = row2.querySelector('td').textContent
-  
-  if (testTiitle1 < testTiitle2) { return 1 }
-  if (testTiitle1 > testTiitle2) { return -1 }
-  return 0
-}
+document.addEventListener('turbolinks:load', function(){
+  const iconsClass = { up : '.octicon-chevron-up', down : '.octicon-chevron-down' }
+  const table = document.querySelector('table')
+  const cellTh = table.querySelector('.sort-by-title')
+  if (table) { new SortTable(table, cellTh, iconsClass) }
+})

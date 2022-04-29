@@ -1,36 +1,40 @@
+class CheckPasswordConfirm {
+  constructor(form){
+    this.form = form
+    this.password = form.elements.user_password
+    this.password_confirmation = form.elements.user_password_confirmation
+
+    this.verify()
+  }
+
+  verify(){
+    this.form.addEventListener('input', event => {
+      this.checkConfirmPasswordFild() 
+    })
+  }
+
+  checkConfirmPasswordFild() {
+    let text1 = this.password.value
+    let text2 = this.password_confirmation.value
+    
+    if (text1 === '' || text2 === '') {
+      if (!this.form.querySelector('.octicon-shield-check').classList.contains('hide')) { 
+        this.form.querySelector('.octicon-shield-check').classList.add('hide')
+      }
+      if (!this.form.querySelector('.octicon-shield-x').classList.contains('hide')) { 
+        this.form.querySelector('.octicon-shield-x').classList.add('hide')
+      }
+    } else if (text1 !== text2) {
+      this.form.querySelector('.octicon-shield-check').classList.add('hide')
+      this.form.querySelector('.octicon-shield-x').classList.remove('hide')
+    } else {
+      this.form.querySelector('.octicon-shield-check').classList.remove('hide')
+      this.form.querySelector('.octicon-shield-x').classList.add('hide')
+    }
+  }
+}
+
 document.addEventListener('turbolinks:load', function() {
-  var control = document.querySelector('.check-password')
-  if (control) { control.addEventListener('input', checkConfirmPasswordFild) }
+  const form = document.getElementById('new_user')  
+  if(form) {new CheckPasswordConfirm(form)}  
 })
-
-function checkConfirmPasswordFild() {
-  var form = document.querySelector('form')
-  var fieldsInput = form.querySelectorAll('input')
-
-  var textPassword = getValueInput(fieldsInput,'user_password')
-  var textConfirmPassword = getValueInput(fieldsInput,'user_password_confirmation')
-
-  
-  if (textConfirmPassword === '') {
-    if (!document.querySelector('.octicon-shield-check').classList.contains('hide')) { 
-      document.querySelector('.octicon-shield-check').classList.add('hide')
-    }
-    if (!document.querySelector('.octicon-shield-x').classList.contains('hide')) { 
-      document.querySelector('.octicon-shield-x').classList.add('hide')
-    }
-  } else if (textConfirmPassword !== textPassword) {
-    document.querySelector('.octicon-shield-check').classList.add('hide')
-    document.querySelector('.octicon-shield-x').classList.remove('hide')
-  } else {
-    document.querySelector('.octicon-shield-check').classList.remove('hide')
-    document.querySelector('.octicon-shield-x').classList.add('hide')
-  }
-}
-
-function getValueInput(fields, id = '') {
-  for (var i =0; i < fields.length; i++) {
-    if (fields[i].id === id) {
-      return fields[i].value
-    }
-  }
-}

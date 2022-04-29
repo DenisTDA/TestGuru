@@ -1,8 +1,8 @@
 <ul class = 'nav nav-pills justify-content-left'>
   <li class="nav-item">
-    <div class='nav-link'><%= link_to t('.edit'), edit_admin_test_path(@test) unless params[:action] == 'edit' %> </div>
+    <div class='nav-link'><%= link_to t('nav.edit'), edit_admin_test_path(@test) unless params[:action] == 'edit' %> </div>
   </li>
   <li class="nav-item">
-    <div class='nav-link'><%= link_to t('.del'), admin_test_path(@test), method: 'delete', data: {confirm: "Are you shure?"} %> </div>
+    <div class='nav-link'><%= link_to t('nav.del'), admin_test_path(@test), method: 'delete', data: {confirm: "Are you shure?"} %> </div>
   </li>
 </ul>
