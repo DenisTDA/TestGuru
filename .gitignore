@@ -36,3 +36,10 @@
 .ruby-version.03.01.2022-09:11:10
 .rubocop.yml
 .env
+
+/public/packs
+/public/packs-test
+/node_modules
+/yarn-error.log
+yarn-debug.log*
+.yarn-integrity

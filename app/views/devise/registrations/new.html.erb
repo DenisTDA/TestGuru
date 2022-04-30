@@ -40,16 +40,19 @@
             <p>
               <%= f.label :password_confirmation %><br />
               <%= f.password_field :password_confirmation, autocomplete: "new-password", class: 'check-password form-control' %>
-              <%= octicon 'shield-check', height: 24, class: 'text-success hide' %>
-              <%= octicon 'shield-x', height: 24, class: 'text-danger hide' %>
             </p>
 
             <div class="actions">
               <%= f.submit class: 'btn btn-primary mt-2' %>
+              <%= octicon 'shield-check', height: 24, class: 'text-success hide' %>
+              <%= octicon 'shield-x', height: 24, class: 'text-danger hide' %>
+              
             </div>
 
           </div>  
+          
         <% end %>
+        
       </div>
     </div>
 
