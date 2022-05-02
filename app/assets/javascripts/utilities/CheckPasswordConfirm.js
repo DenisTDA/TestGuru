@@ -1,5 +1,3 @@
-
-//export 
 class CheckPasswordConfirm {
   constructor(form) {
     this.form = form;
@@ -20,13 +18,12 @@ class CheckPasswordConfirm {
     let text2 = this.password_confirmation.value;
 
     if (text1 === '' || text2 === '') {
-      if (!this.form.querySelector('.octicon-shield-check').classList.contains('hide')) {
-        this.form.querySelector('.octicon-shield-check').classList.add('hide');
-      }
-      if (!this.form.querySelector('.octicon-shield-x').classList.contains('hide')) {
-        this.form.querySelector('.octicon-shield-x').classList.add('hide');
-      }
-    } else if (text1 !== text2) {
+      this.form.querySelector('.octicon-shield-check').classList.add('hide');
+      this.form.querySelector('.octicon-shield-x').classList.add('hide');
+      return;
+    } 
+     
+    if (text1 !== text2) {
       this.form.querySelector('.octicon-shield-check').classList.add('hide');
       this.form.querySelector('.octicon-shield-x').classList.remove('hide');
     } else {

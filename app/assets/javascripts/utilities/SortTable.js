@@ -1,5 +1,3 @@
-
-//export 
 class SortTable {
   constructor(table, selector, iconsClass) {
     this.table = table
