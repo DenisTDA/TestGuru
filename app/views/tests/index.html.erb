@@ -3,15 +3,22 @@
     <h1 class="text-center"><%= t('.header') %></h1>
 
     <table class="table table-secondary table-striped table-sm" >
-      <thead class="table-dark">
-        <tr class="text-center">
-          <th scope="col" style="width: 60%"><%= t('.title') %></th>
+      <thead>
+        <tr class="table-dark text-center">
+          <th scope="col" style="width: 60%" class="sort-by-title pointer">
+            <%= t('.title') %>
+            <%= octicon 'chevron-up', height:24, class: 'text-light hide' %>
+            <%= octicon 'chevron-down', height:24,  class: 'text-light hide' %>
+          </th>
           <th scope="col" style="width: 10%"><%= t('.level') %></th>
           <th scope="col" style="width: 10%"><%= t('.questions') %></th>    
           <th scope="col" style="width: 15%"><%= t('.action') %></th>
         </tr> 
-      </thead>  
-          <%= render @tests %>
+      </thead>
+
+      <tbody>
+        <%= render @tests %>
+      </tbody>
     </table>
 
   </div>

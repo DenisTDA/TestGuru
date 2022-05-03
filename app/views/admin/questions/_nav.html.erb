@@ -1,5 +1,12 @@
-<div class = 'nav'>
-  <%= link_to "Edit", edit_admin_question_path(@question) unless params[:action] == 'edit'%> 
-  <%= link_to 'Delete', admin_question_path(@question), method: 'delete', data: {confirm: "Are you shure?"} %> 
-  <%= link_to 'List questions', admin_test_path(@question.test) %>
-</div>
+
+<ul class = 'nav nav-pills justify-content-left'>
+  <li class="nav-item">
+    <div class='nav-link'>  <%= link_to t('nav.edit'), edit_admin_question_path(@question) unless params[:action] == 'edit'%></div>
+  </li>
+  <li class="nav-item">
+    <div class='nav-link'><%= link_to t('nav.del'), admin_question_path(@question), method: 'delete', data: {confirm: "Are you shure?"} %>  </div>
+  </li>
+  <li class="nav-item">
+    <div class='nav-link'><%= link_to t('nav.list_q'), admin_test_path(@question.test) %></div>
+  </li>
+</ul>

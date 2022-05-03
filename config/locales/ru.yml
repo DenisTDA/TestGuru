@@ -13,6 +13,8 @@ ru:
         title: "Название"
         category_id: "Категория"
         level: "Уровень сложности"
+      answer: 
+        correct: "верный"  
       user:
         name: "Имя"
         last_name: "Фамилия"
@@ -20,6 +22,10 @@ ru:
         password: "Пароль"
         password_confirmation: "Подтверждение пароля"
         remember_me: "Запомнить меня"
+    questions_helper:
+      question: "тему"
+      create: "Создйте новый вопрос на "
+      edit: "Редактируйте вопрос на "
 
   tests:
     index:
@@ -63,13 +69,8 @@ ru:
         questions: "Кол. вопросов"
         action: "Действия"
         create_test: "Создать новый тест"
-      test:        
-        show: "Показать"
-        edit: "Редактировать"
-        del: "Удалить"
       new:
         header: "Создать новый тест"
-        list_tests: "Список тестов"
       show:
         header: "Вопросы <%{title}> Теста"
         body: "Суть вопроса"
@@ -79,10 +80,6 @@ ru:
         action: "Действия"
       edit:
         header: "Изменить Тест"
-      nav:
-        edit: "Редактировать"
-        del: "Удалить"
-        list: "Список тестов"
       create: 
         success: "Тест %{test} был успешно сохранен"
       update:
@@ -91,15 +88,29 @@ ru:
         success: "Тест %{test} был удален"
     questions:
       show:
+        question: "Вопрос"
+        answer: "Ответ: "
+        create: "Создать новый Ответ"
+      new: 
+        list: "Список вопросов Теста"
+      form:  
+        body: "Суть вопроса: "
+        save: "Сохранить вопрос"
       question:        
         show: "Показать"
         edit: "Редактировать"
         del: "Удалить"
+    answers:
+      new: 
+        new: "Создать Новый Ответ"
+        question: "К вопросу " 
+      show:
+        question: "Вопрос "
+        answer: "Ответ:"
+
     tip:
       panel: "Панель администратора ТестГуру"
       welcome: "Приветствую, Ваше Величество, %{user}"
-      signup: "Зарегистрироваться"
-      signin: "Войти"
       list: "Список Тестов"
       create: "Создать Тест"
       logout: "Выйти"
@@ -113,13 +124,11 @@ ru:
  
   shared:
     tip:
-      panel: "Панель администратора ТестГуру"
       welcome: "Приветствую, Ваше Величество, %{user}"
-      signup: "Зарегистрироваться"
-      signin: "Войти"
       list: "Список Тестов"
-      create: "Создать Тест"
       logout: "Выйти"
+      signup: "Зарегистрироваться"
+      login: "Войти"
 
   category:
     Oceans: "Океаны"
@@ -128,3 +137,11 @@ ru:
     Rivers: "Реки"
     Forests: "Леса"
     Countries: "Страны"
+
+  nav:
+    show: "Показать"
+    edit: "Редактировать"
+    del: "Удалить"
+    list_t: "Список Тестов"
+    list_q: "Список Вопросов"  
+    back: "Назад"

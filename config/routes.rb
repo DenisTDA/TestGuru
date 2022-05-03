@@ -2,6 +2,11 @@
 Rails.application.routes.draw do
   devise_for :users, controllers: { registrations: 'users/registrations', sessions: 'users/sessions' }
 
+  devise_scope :user do
+    get '/users', to: 'devise/registrations#new'
+    get '/users/password', to: 'devise/passwords#new'
+  end
+
   root 'tests#index'
 
   # devise_for :users, path: :gurus, path_names: { sign_in: :login, sign_out: :logout }

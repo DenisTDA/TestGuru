@@ -32,6 +32,7 @@ gem 'rails-i18n', '~> 5.1'
 # UI
 gem 'bootstrap', '~> 5.1.3'
 gem 'jquery-rails'
+gem 'octicons_helper'
 
 # http-client octokit
 gem 'octokit', '~> 4.0'
@@ -53,6 +54,8 @@ group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
   # Environment
   gem 'dotenv-rails'
+  # Manage JavaScript, CSS, and static assets
+  gem 'webpacker'
 end
 
 group :development do
