@@ -2,7 +2,9 @@
   <div class='col-12'>
     <h1 class="text-center"><%= t('.header') %></h1>
 
-    <table class="table table-success table-striped  table-sm">
+    <%= render 'shared/errors', resource: @test %>
+
+    <table data-table="tests" class="table table-success table-striped  table-sm" >
       <thead>
         <tr class="table-dark text-center">
           <th scope="col" style="width: 60%" class="sort-by-title pointer">

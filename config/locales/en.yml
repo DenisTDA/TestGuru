@@ -86,6 +86,10 @@ en:
         success: "Test %{test} was updated successfully"
       destroy:  
         success: "Test %{test} was deleted"
+      form_inline:
+        submit: "OK"
+      update_inline:
+        title_inline: "Title test %{test} was updated successfully"
     questions:
       show:
         question: "Question"

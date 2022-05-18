@@ -21,3 +21,7 @@
   <p><%= link_to  "Gist Question", gists_path(result: @result.id), method: :post %></p>
   <p><%= form.submit t('.next')%></p>
 <% end %>
+
+<div class="conteiner-bar">
+  <div class="progressbar"><%= (@result.number_question - 1)  * 100 /  @result.test.questions.count %>% </div>
+</div>

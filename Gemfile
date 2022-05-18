@@ -55,7 +55,6 @@ group :development, :test do
   # Environment
   gem 'dotenv-rails'
   # Manage JavaScript, CSS, and static assets
-  gem 'webpacker'
 end
 
 group :development do
