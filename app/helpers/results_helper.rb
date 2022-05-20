@@ -9,4 +9,8 @@ module ResultsHelper
                end
     html_str.concat(result.percentage_result.to_s, "<\/div>", ' %').html_safe
   end
+
+  def get_progress(result)
+    (result.number_question - 1)  * 100 /  result.test.questions.count 
+  end
 end

@@ -23,5 +23,5 @@
 <% end %>
 
 <div class="conteiner-bar">
-  <div class="progressbar"><%= (@result.number_question - 1)  * 100 /  @result.test.questions.count %>% </div>
+  <div class="progressbar"><%= get_progress(@result) %>% </div>
 </div>
