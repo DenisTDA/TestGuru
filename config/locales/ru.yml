@@ -86,6 +86,10 @@ ru:
         success: "Тест %{test} был успешно обновлен"
       destroy:  
         success: "Тест %{test} был удален"
+      form_inline:
+        submit: "Готово"
+      update_inline:
+        title_inline: "Название Теста %{test} было успешно обновлено"
     questions:
       show:
         question: "Вопрос"
