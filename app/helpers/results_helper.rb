@@ -11,6 +11,6 @@ module ResultsHelper
   end
 
   def get_progress(result)
-    (result.number_question - 1)  * 100 /  result.test.questions.count 
+    (result.number_question - 1) * 100 / result.test.questions.count
   end
 end
