@@ -65,7 +65,7 @@ Rails.application.configure do
   # config.active_job.queue_name_prefix = "TestGuru_#{Rails.env}"
 
   config.action_mailer.perform_caching = false
-  config.action_mailer.default_url_options = { host: 'stormy-meadow-36726.herokuapp.com' }
+  config.action_mailer.default_url_options = { host: 'guru-den.herokuapp.com' }
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
     address: 'smtp.gmail.com',
