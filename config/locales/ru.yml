@@ -10,20 +10,29 @@ ru:
         create: "Войти"
       feedback: 
         create: "Отправить"
+      question:
+        create: "Создать вопрос"
+        update: "Обновить вопрос"
+      answer:
+        create: "Создать ответ"
+        update: "Обновить ответ"
+
     label:
       test:
         title: "Название"
         category_id: "Категория"
         level: "Уровень сложности"
+      question:
+        body: "Суть вопроса: "  
       answer: 
-        correct: "верный"  
+        correct: "верный"
+        body: "Текст ответа"  
       user:
         name: "Имя"
         last_name: "Фамилия"
         email: "Электронная почта"
         password: "Пароль"
         password_confirmation: "Подтверждение пароля"
-        remember_me: "Запомнить меня"
       feedback: 
         body: "Текст сообщения"
 
@@ -107,9 +116,6 @@ ru:
         create: "Создать новый Ответ"
       new: 
         list: "Список вопросов Теста"
-      form:  
-        body: "Суть вопроса: "
-        save: "Сохранить вопрос"
       question:        
         show: "Показать"
         edit: "Редактировать"
@@ -121,9 +127,13 @@ ru:
       show:
         question: "Вопрос "
         answer: "Ответ:"
+        correct: "Верный"
+      edit:
+        back: "Вернуться"
+        header: "Редактирование Ответа"
 
     tip:
-      panel: "Панель администратора ТестГуру"
+      panel: "Панель администратора"
       welcome: "Приветствую, Ваше Величество, %{user}"
       list: "Список Тестов"
       create: "Создать Тест"
@@ -161,3 +171,4 @@ ru:
     list_t: "Список Тестов"
     list_q: "Список Вопросов"  
     back: "Назад"
+    create: "Создать"

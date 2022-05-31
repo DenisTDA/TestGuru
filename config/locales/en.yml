@@ -10,21 +10,29 @@ en:
         create: "Sign Up"
       feedback: 
         create: "Send"
+      question:
+        create: "Create Question"
+        update: "Update Question"
+      answer:
+        create: "Create Answer"
+        update: "Update Answer"
 
     label:
       test:
         title: "Title"
         category_id: "Category"
         level: "Level difficulty"
+      question:
+        body: "Question body: "  
       answer: 
         correct: 'correct'  
+        body: "Answer's text"  
       user:
         name: "Nmae"
         last_name: "Last name"
         email: "E-mail"
         password: "Password"
         password_confirmation: "Confirm password"
-        remember_me: "Remember me"
       feedback: 
         body: "Text of message"
 
@@ -107,9 +115,6 @@ en:
         create: "Create new Answer"
       new: 
         list: "List Test's questions"
-      form:  
-        body: "Question body: "
-        save: "Save question"
     answers:
       new: 
         new: "Create new Answer"
@@ -117,6 +122,11 @@ en:
       show:
         question: "Question "
         answer: "Answer:"
+        correct: "Correct"
+      edit:
+        back: "Back"  
+        header: "Editing Answer"
+
     tip:
       panel: "TestGuru Admin Panel"
       welcome: "Welcome, your magesty, %{user}"
@@ -155,3 +165,4 @@ en:
     list_t: "List Tests"
     list_q: "List Questions"  
     back: "Back"
+    create: "Create new"
