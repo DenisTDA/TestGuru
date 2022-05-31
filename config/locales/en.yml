@@ -8,6 +8,9 @@ en:
         update: "Update Test"
       user:
         create: "Sign Up"
+      feedback: 
+        create: "Send"
+
     label:
       test:
         title: "Title"
@@ -22,6 +25,9 @@ en:
         password: "Password"
         password_confirmation: "Confirm password"
         remember_me: "Remember me"
+      feedback: 
+        body: "Text of message"
+
     questions_helper:
       question: "Question"
       create: "Create New"
@@ -36,10 +42,6 @@ en:
       action: "Start the Test"
       test:
         start: "Start"
-
-  shared:
-    tip:
-      welcome: "Welcome, %{user} Guru!"
 
   results:
     show:
@@ -59,6 +61,14 @@ en:
     create: 
       success: "Gist was saved successful! The URL: %{url_gist}"
       failure: "Gist has failure to save"
+
+  feedbacks:
+    new:
+      header: "You can create feedback to an administrator"
+      back: "Return to previous page"
+    create:
+      feedback_success: "The latter was sent"
+      feedback_faild: "An error occurred while sending. The letter was not sent."  
 
   admin:
     tests:
@@ -123,11 +133,12 @@ en:
 
   shared:
     tip:
-      welcome: "Welcome, your magesty, %{user}"
+      welcome: "Welcome, Master %{user}"
       list: "List Tests"
       logout: "Log Out"
       signup: "Sign Up"
       login: "Login"
+      feedback: "Feedback"
 
   category:
     Oceans: "Oceans"

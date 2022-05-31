@@ -8,6 +8,8 @@ ru:
         update: "Обновить Тест"
       user:
         create: "Войти"
+      feedback: 
+        create: "Отправить"
     label:
       test:
         title: "Название"
@@ -22,6 +24,9 @@ ru:
         password: "Пароль"
         password_confirmation: "Подтверждение пароля"
         remember_me: "Запомнить меня"
+      feedback: 
+        body: "Текст сообщения"
+
     questions_helper:
       question: "тему"
       create: "Создйте новый вопрос на "
@@ -36,10 +41,6 @@ ru:
       action: "Пройти Тест"
       test:
         start: "Начать"
-
-  shared:
-    tip:
-      welcome: "Добро пожаловать, мастер %{user}!"
 
   results:
     show:
@@ -59,6 +60,15 @@ ru:
     create:
       success: "Gist сохранен успешно! Расположен по адресу URL: %{url_gist}"
       failure: "При сохранении Gist произошла ошибка"
+
+  feedbacks:
+    new:
+      header: "Вы можете оставить сообщение для администратора."
+      back: "Вернутся на предыдущую страницу"
+    create:
+      feedback_success: "Письмо отправлено"
+      feedback_faild: "При отправке произошла ошибка. Письмо не отправлено."  
+    
 
   admin:
     tests:
@@ -128,11 +138,13 @@ ru:
  
   shared:
     tip:
-      welcome: "Приветствую, Ваше Величество, %{user}"
+      welcome: "Приветствую, Мастер %{user}"
       list: "Список Тестов"
       logout: "Выйти"
       signup: "Зарегистрироваться"
       login: "Войти"
+      feedback: "Обратная связь"      
+
 
   category:
     Oceans: "Океаны"
