@@ -8,6 +8,7 @@ class SortTable {
   }
 
   verify() {
+    this.sortRowsByTitle()
     this.cellTh.addEventListener('click', event=> {
       this.sortRowsByTitle()
     })
