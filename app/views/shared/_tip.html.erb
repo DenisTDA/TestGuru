@@ -19,6 +19,9 @@
             <li class="nav-item">
               <a class="nav-link" href=<%= tests_path %>><%= t('.list') %></a>
             </li>
+            <li class="nav-item">
+              <a class="nav-link" href=<%= new_feedbacks_path %>><%= t('.feedback') %></a>
+            </li>
           <% end %>
         </ul>  
         
@@ -29,18 +32,18 @@
     <div class="container d-inline-flex justify-content-end col-4">
       <% if user_signed_in? %>
         <strong class="position-absolute top-50 translate-middle col-2">
-        <%= t('.welcome', user: current_user.name.capitalize )%> |
+        <%= t('.welcome', user: current_user.name.capitalize ) %> |
         </strong>
       <% end %>
 
       <ul class="navbar-nav">   
-        <li class="nav-item<%= " active" if I18n.locale == :ru %>" >
+        <li class="nav-item <%= " active" if I18n.locale == :ru %>" >
           <%= link_to "Рус", { lang: :ru }, class: "nav-link" %>     
         </li>
         <li class="nav-item <%= " active" if I18n.locale == :en %>" >
           <%= link_to "En", { lang: :en }, class: "nav-link" %>     
         </li>
-        <% if user_signed_in?%>
+        <% if user_signed_in? %>
           <li class="nav-item">
             <%= link_to t('.logout'), destroy_user_session_path, class: "nav-link", method: :delete %>
           </li>

@@ -1,0 +1,20 @@
+<%= form_with model: [@feedback], local: true do |form| %>
+  <% if @feedback.present? && @feedback.errors.present? %>
+    <%= content_tag :div, class: 'alert alert-danger resource-errors', data: { feedback: @feedback.body } do %>
+      <h2><%= pluralize(@feedback.errors.count, 'error') %> detected </h2>
+      <ul>
+        <% @feedback.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>      
+    <% end %>
+  <% end %>
+
+  <p>
+    <%= form.label :body %><br>
+    <%= form.text_area :body, rows: 10, cols:80 %>
+  </p>
+
+  <%= hidden_field_tag :previous_request, request.referer %>
+  <%= form.submit %>
+<% end %>

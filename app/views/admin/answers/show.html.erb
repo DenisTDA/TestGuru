@@ -1,5 +1,6 @@
 <h1><%= t('.question') %></h1>
 
+
 <p>
   <%= @answer.question.body%>
 </p>
@@ -10,9 +11,10 @@
 </p>
 
 <p>
-  <b>Correct:</b>
+  <b><%= t('.correct')%> :</b>
   <%= @answer.correct%>
 </p>
 
+<%= link_to t('nav.create'), new_admin_question_answer_path(@answer.question) %> |
 <%= link_to t('nav.edit'), edit_admin_answer_path(@answer) %> |
 <%= link_to t('nav.back'), admin_question_path(@answer.question) %>

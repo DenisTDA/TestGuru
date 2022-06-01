@@ -8,20 +8,34 @@ en:
         update: "Update Test"
       user:
         create: "Sign Up"
+      feedback: 
+        create: "Send"
+      question:
+        create: "Create Question"
+        update: "Update Question"
+      answer:
+        create: "Create Answer"
+        update: "Update Answer"
+
     label:
       test:
         title: "Title"
         category_id: "Category"
         level: "Level difficulty"
+      question:
+        body: "Question body: "  
       answer: 
         correct: 'correct'  
+        body: "Answer's text"  
       user:
         name: "Nmae"
         last_name: "Last name"
         email: "E-mail"
         password: "Password"
         password_confirmation: "Confirm password"
-        remember_me: "Remember me"
+      feedback: 
+        body: "Text of message"
+
     questions_helper:
       question: "Question"
       create: "Create New"
@@ -36,10 +50,6 @@ en:
       action: "Start the Test"
       test:
         start: "Start"
-
-  shared:
-    tip:
-      welcome: "Welcome, %{user} Guru!"
 
   results:
     show:
@@ -59,6 +69,14 @@ en:
     create: 
       success: "Gist was saved successful! The URL: %{url_gist}"
       failure: "Gist has failure to save"
+
+  feedbacks:
+    new:
+      header: "You can create feedback to an administrator"
+      back: "Return to previous page"
+    create:
+      feedback_success: "The latter was sent"
+      feedback_faild: "An error occurred while sending. The letter was not sent."  
 
   admin:
     tests:
@@ -97,9 +115,6 @@ en:
         create: "Create new Answer"
       new: 
         list: "List Test's questions"
-      form:  
-        body: "Question body: "
-        save: "Save question"
     answers:
       new: 
         new: "Create new Answer"
@@ -107,6 +122,11 @@ en:
       show:
         question: "Question "
         answer: "Answer:"
+        correct: "Correct"
+      edit:
+        back: "Back"  
+        header: "Editing Answer"
+
     tip:
       panel: "TestGuru Admin Panel"
       welcome: "Welcome, your magesty, %{user}"
@@ -123,11 +143,12 @@ en:
 
   shared:
     tip:
-      welcome: "Welcome, your magesty, %{user}"
+      welcome: "Welcome, Master %{user}"
       list: "List Tests"
       logout: "Log Out"
       signup: "Sign Up"
       login: "Login"
+      feedback: "Feedback"
 
   category:
     Oceans: "Oceans"
@@ -144,3 +165,4 @@ en:
     list_t: "List Tests"
     list_q: "List Questions"  
     back: "Back"
+    create: "Create new"

@@ -2,9 +2,9 @@
   <div class="col col-md-4">
     <h2><%= t('.header') %></h2>
 
-    <div class='card border-primary'>
+    <div class='card border-primary signup'>
       <div class='card-body'>  
-        <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+        <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { class: "new_guru", id: "new_guru" }) do |f| %>
           <div class="form-group">
 
             <% if resource.errors.any? %>

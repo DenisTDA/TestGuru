@@ -1,8 +1,8 @@
-<div class='row text-center'>
+<div class='row justify-content-center'>
   <div class='col-12'>
     <h1 class="text-center"><%= t('.header') %></h1>
 
-    <table class="table table-secondary table-striped table-sm" >
+    <table data-table="tests" class="table table-secondary table-striped  table-sm" >
       <thead>
         <tr class="table-dark text-center">
           <th scope="col" style="width: 60%" class="sort-by-title pointer">
@@ -11,7 +11,11 @@
             <%= octicon 'chevron-down', height:24,  class: 'text-light hide' %>
           </th>
           <th scope="col" style="width: 10%"><%= t('.level') %></th>
-          <th scope="col" style="width: 10%"><%= t('.questions') %></th>    
+          <th scope="col" style="width: 10%" class="sort-by-ques pointer">
+            <%= t('.questions') %>
+            <%= octicon 'fold-up', height:24, class: 'text-light hide' %>
+            <%= octicon 'fold-down', height:24,  class: 'text-light hide' %>
+          </th>    
           <th scope="col" style="width: 15%"><%= t('.action') %></th>
         </tr> 
       </thead>
