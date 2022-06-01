@@ -4,7 +4,7 @@
     
     <div class='card border-primary'>
       <div class='card-body'>  
-        <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: "new_visiter", id: "new_visiter" }) do |f| %>
+        <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
           <div class="form-group">
             <p>
               <%= f.label :email %>
