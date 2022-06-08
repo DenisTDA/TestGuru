@@ -3,3 +3,7 @@
 @import "typography/icons";
 @import "global";
 @import "bootstrap";
+.modal-body {
+  max-height: 80%;
+  overflow: auto;
+}

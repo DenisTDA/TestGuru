@@ -1,0 +1,18 @@
+<tr>
+  <td class="d-flex flex-row align-middle">
+    <%= image_tag(badge.picture, size: "50x50", class: "rounded-circle border border-2 border-info bg-warning") %>
+    <%= badge.picture %> 
+  </td> 
+  <td class="text-center align-middle"><%= badge.name %></td>
+  <td class="text-center align-middle"> <%= @rules[badge.rule] %></td> 
+
+  <td class="align-middle">
+    <%= link_to t('nav.edit'), edit_admin_badge_path(badge) %>
+  </td> 
+  <td class="align-middle">
+    <%= link_to t('nav.del'), admin_badge_path(badge), method: 'delete', data: { confirm: 'Are you sure?' } %>
+  </td> 
+
+</tr>
+
+
