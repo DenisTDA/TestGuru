@@ -1,0 +1,21 @@
+<div class='row text-center'>
+  <div class='col-12'>
+    <h1 class="text-center">Achievements</h1>
+
+    <table class="table table-success table-striped table-sm" >
+      <thead class="table-dark">
+        <tr class="text-center">
+          <th scope="col" style="width: 30%">User</th>
+          <th scope="col" style="width: 20%">badge</th>
+          <th scope="col" style="width: 50%">description</th>
+
+          <th colspan = '1' scope="col" style="width: 15%">Action</th>
+        </tr> 
+      </thead>  
+        <%@user_achieveds = @achievements %>
+        <%= render partial: "user_achieved", collection: @user_achieveds %>
+        
+    </table>
+  </div>
+</div>
+<%= link_to "Back", admin_achievements_path %>
