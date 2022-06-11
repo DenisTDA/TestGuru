@@ -7,4 +7,6 @@ class Badge < ApplicationRecord
   validates :picture, presence: true
   validates :rule, presence: true
   validates :rule, uniqueness: true
+
+  scope :find_by_rule, ->(rule) { where(rule: rule) }
 end

@@ -1,5 +1,5 @@
 class Admin::BadgesController < Admin::BaseController
-  include Admin::Rules
+  include Rules
 
   before_action :set_badges, only: %i[index]
   before_action :set_badge, only: %i[destroy update edit]
