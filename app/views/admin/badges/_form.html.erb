@@ -3,12 +3,12 @@
 
     <div class="card bg-warning start-0" style="width: 60rem;">
       <ul class="list-group list-group-flush">
-        <li class="list-group-item d-flex flex-row"> Picture : 
+        <li class="list-group-item d-flex flex-row"> <%= t('.img') %> : 
           <%= image_tag(@badge.picture, size: "50x50", class: "rounded-circle border border-2 border-info bg-warning ms-3 me-3") %>
           <%= @badge.picture %>    
         </li>
-        <li class="list-group-item">Nmae : <%= @badge.name %></li>
-        <li class="list-group-item">Rule : <%= @badge.rule %></li>
+        <li class="list-group-item"><%= t('.name') %> :<%= @badge.name %></li>
+        <li class="list-group-item"><%= t('.rule') %> : <%= @badge.rule %></li>
       </ul>
     </div>
 
@@ -17,23 +17,22 @@
   
 
   <div class='container w-75 bg-info p-2 text-dark bg-opacity-10' >
-  <p class="pb-2"><strong class="fs-4">New parameters for a badge</strong></p>
+  <p class="pb-2"><strong class="fs-4"><%= t('.param') %></strong></p>
   
   <%= form_with model: [:admin, @badge], local: true  do |form| %>
     <%= render 'shared/errors', resource: @badge %>
 
     <p class="d-flex flex-row">
-      <%= form.label :picture, class: "form_label" %>
+      <%= form.label :picture, class: "form_label me-2" %>
       <% @empty = @free_pictures == {} ? true : false %>
       <%= form.select :picture, @free_pictures, {prompt: 'Select please' }, { disabled: @empty, class: "form-select form-select-sm w-25" } %>
-      
     </p>
     <p class="d-flex flex-row">
-      <%= form.label :name, class: "form_label" %>
+      <%= form.label :name, class: "form_label me-2" %>
       <%= form.text_field :name %>
     </p>
     <p class="d-flex flex-row">
-      <%= form.label :rule %>
+      <%= form.label :rule , class: "form_label me-2" %>
       <% @empty = @free_rules == {} ? true : false %>
       <%= form.collection_select :rule, @free_rules, :first, :last, { prompt: 'Select please' }, { disabled: @empty, class: "form-select form-select-sm w-25" } %>
     </p>

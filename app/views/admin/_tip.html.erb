@@ -14,20 +14,13 @@
           <a class="nav-link" href=<%= admin_tests_path %>><%= t('.list') %></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href=<%= new_admin_test_path %>><%= t('.create') %></a>
+          <a class="nav-link" href=<%= new_admin_test_path %> ><%= t('.create') %></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href=<%= admin_badges_path %>>Badge</a>
+          <a class="nav-link" href=<%= admin_badges_path %>><%= t('.badge') %></a>
         </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Achievements</a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href= <%=admin_achievements_path%> >Full list</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">Separated link</a></li>
-          </ul>
+        <li class="nav-item">
+          <a class="nav-link" href= <%=admin_achievements_path%>><%= t('.achieve') %></a>        
         </li>
         <li class="nav-item">
           <a class="nav-link" href=<%= admin_gists_path %>><%= t('.gists') %></a>

@@ -1,7 +1,7 @@
 <div class="position-relative">
-  <span class="text-center"><h1>Edit badge < <%= @badge.name %> ></h1></span>
+  <span class="text-center"><h1> <%= t('.header') %> < <%= @badge.name %> ></h1></span>
   <%= render 'form' %>
   <p class="text-center">
-    <%= link_to 'back', admin_badges_path%>
+    <%= link_to t('.back'), admin_badges_path%>
   </p>
 </div>

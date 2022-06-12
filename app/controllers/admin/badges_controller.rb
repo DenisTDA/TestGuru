@@ -1,11 +1,12 @@
 class Admin::BadgesController < Admin::BaseController
   include Rules
 
-  before_action :set_badges, only: %i[index]
   before_action :set_badge, only: %i[destroy update edit]
   before_action :set_rules, only: %i[index edit]
 
-  def index; end
+  def index
+    @badges = Badge.all
+  end
 
   def new
     @badge = Badge.new
@@ -26,14 +27,14 @@ class Admin::BadgesController < Admin::BaseController
   end
 
   def edit
-    @free_pictures ||= list_pictures unless list_pictures == [] || nil
-    @free_rules ||= list_rules unless list_pictures == {} || nil
+    @free_pictures = list_pictures
+    @free_rules = list_rules
     @free_pictures.insert(0, @badge.picture)
     @free_rules[@badge.rule] = @rules[@badge.rule]
   end
 
   def update
-    if @badge = @badge.update(badge_params)
+    if @badge.update(badge_params)
       flash[:notice] = 'Badge was updated'
       redirect_to admin_badge_path(@badge)
     else
@@ -57,15 +58,7 @@ class Admin::BadgesController < Admin::BaseController
     params.require(:badge).permit(:rule, :name, :picture)
   end
 
-  def set_pictures
-    @pictures = list_pictures
-  end
-
   def set_rules
     @rules = set_all_rules
-  end
-
-  def set_badges
-    @badges = Badge.all
   end
 end

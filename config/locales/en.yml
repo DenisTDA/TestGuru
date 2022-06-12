@@ -16,6 +16,8 @@ en:
       answer:
         create: "Create Answer"
         update: "Update Answer"
+      badge:
+        create: "Create badge"
 
     label:
       test:
@@ -35,6 +37,10 @@ en:
         password_confirmation: "Confirm password"
       feedback: 
         body: "Text of message"
+      badge:
+        picture: Picture"
+        name: "Title"
+        rule: "Rule"
 
     questions_helper:
       question: "Question"
@@ -69,7 +75,6 @@ en:
     create: 
       success: "Gist was saved successful! The URL: %{url_gist}"
       failure: "Gist has failure to save"
-
   feedbacks:
     new:
       header: "You can create feedback to an administrator"
@@ -77,6 +82,18 @@ en:
     create:
       feedback_success: "The latter was sent"
       feedback_faild: "An error occurred while sending. The letter was not sent."  
+  badges:
+    index:
+      header: "Available badges"
+      img: "Badge"
+      name: "Title of badge"
+      rule: "Award rule"
+  achievements:
+    index:
+      header: "Your badges for the achievements"    
+      user: "Guru"
+      badge: "Title of badge"
+      title: "Award rule"
 
   admin:
     tests:
@@ -126,7 +143,6 @@ en:
       edit:
         back: "Back"  
         header: "Editing Answer"
-
     tip:
       panel: "TestGuru Admin Panel"
       welcome: "Welcome, your magesty, %{user}"
@@ -134,12 +150,47 @@ en:
       create: "Create Test"
       logout: "Log Out"
       gists: "Gists"  
+      badge: "Badges"
+      achieve: "Achievements"
     gists:
       index:
         header: "Gists Table"
         question: "Question"
         url: "URL Gist"
         user: "User e-mail"
+    badges:
+      index:
+        header: "Available badges"
+        img: "Badge"
+        name: "Title of badge"
+        rule: "Award rule"
+        action: "Action"
+      new:
+        header: "New Badge"
+        back: "Back"
+      edit:
+        back: "Back"
+        header: "Edit badge"
+      form:  
+        param: "New parameters"
+        img: "Picture"
+        name: "Name"
+        rule: "Rule"
+
+    achievements:
+      index:
+        header: "All Achievements"    
+        user: "Guru"
+        badge: "Title of badge"
+        title: "Award rule"
+        action: "Action"
+      achievement:
+        button: "view user's achievements"
+      show_user_achieved:
+        header: "User's achievements"    
+        user: "User"
+        badge: "Badge's name"
+        title: "Rule"
 
   shared:
     tip:
@@ -149,6 +200,9 @@ en:
       signup: "Sign Up"
       login: "Login"
       feedback: "Feedback"
+      badge: "Badges"
+      achieve: "Your achievements"       
+
 
   category:
     Oceans: "Oceans"

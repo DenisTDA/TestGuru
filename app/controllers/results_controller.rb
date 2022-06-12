@@ -14,7 +14,7 @@ class ResultsController < ApplicationController
     if @result.complited?
       TestsMailer.complited_test(@result).deliver_now
       @achievements = check(@result)
-      flash[:alert] = 'Есть достижения!' unless @achievements.empty?
+      flash[:success] = 'Есть достижения!' unless @achievements.empty?
       redirect_to result_result_path(@result)
     else
       render :show
