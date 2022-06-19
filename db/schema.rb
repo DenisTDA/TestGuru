@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20_220_608_173_155) do
+ActiveRecord::Schema.define(version: 20_220_616_064_113) do
   # These are extensions that must be enabled in order to support this database
   enable_extension 'plpgsql'
 
@@ -37,9 +37,10 @@ ActiveRecord::Schema.define(version: 20_220_608_173_155) do
   create_table 'badges', force: :cascade do |t|
     t.string 'name', null: false
     t.string 'picture', null: false
-    t.string 'rule', null: false
+    t.bigint 'rule_id', null: false
     t.datetime 'created_at', null: false
     t.datetime 'updated_at', null: false
+    t.index ['rule_id'], name: 'index_badges_on_rule_id'
   end
 
   create_table 'categories', force: :cascade do |t|
@@ -73,9 +74,16 @@ ActiveRecord::Schema.define(version: 20_220_608_173_155) do
     t.datetime 'updated_at', null: false
     t.bigint 'current_question_id'
     t.integer 'correct_questions', default: 0
+    t.boolean 'success', default: false, null: false
     t.index ['current_question_id'], name: 'index_results_on_current_question_id'
     t.index ['test_id'], name: 'index_results_on_test_id'
     t.index ['user_id'], name: 'index_results_on_user_id'
+  end
+
+  create_table 'rules', force: :cascade do |t|
+    t.string 'name', null: false
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
   end
 
   create_table 'tests', force: :cascade do |t|
@@ -119,6 +127,7 @@ ActiveRecord::Schema.define(version: 20_220_608_173_155) do
   add_foreign_key 'achievements', 'tests'
   add_foreign_key 'achievements', 'users'
   add_foreign_key 'answers', 'questions'
+  add_foreign_key 'badges', 'rules'
   add_foreign_key 'gists', 'questions'
   add_foreign_key 'gists', 'users'
   add_foreign_key 'questions', 'tests'

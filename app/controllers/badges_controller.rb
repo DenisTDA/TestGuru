@@ -1,8 +1,7 @@
 class BadgesController < ApplicationController
-  include Rules
+  before_action :authenticate_user!
 
   def index
     @badges = Badge.all
-    @rules = set_all_rules
   end
 end

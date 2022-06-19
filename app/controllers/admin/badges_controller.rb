@@ -1,8 +1,7 @@
 class Admin::BadgesController < Admin::BaseController
-  include Rules
-
   before_action :set_badge, only: %i[destroy update edit]
-  before_action :set_rules, only: %i[index edit]
+  before_action :set_imgs, only: %i[new create edit update]
+  before_action :set_rules, only: %i[new create edit update]
 
   def index
     @badges = Badge.all
@@ -10,33 +9,27 @@ class Admin::BadgesController < Admin::BaseController
 
   def new
     @badge = Badge.new
-    @free_pictures = list_pictures
-    @free_rules = list_rules
   end
 
   def create
     @badge = Badge.new(badge_params)
-
     if @badge.save
       redirect_to admin_badges_path
-      flash[:notice] = "The new badge '#{@badge.name}' was created"
+      flash[:notice] = "The new badge < #{@badge.name} > was created"
     else
       render :new
-      flash[:alert] = 'Have a mistake'
     end
   end
 
   def edit
-    @free_pictures = list_pictures
-    @free_rules = list_rules
-    @free_pictures.insert(0, @badge.picture)
-    @free_rules[@badge.rule] = @rules[@badge.rule]
+    @imgs.insert(0, @badge.picture)
+    @rules << @badge.rule
   end
 
   def update
     if @badge.update(badge_params)
       flash[:notice] = 'Badge was updated'
-      redirect_to admin_badge_path(@badge)
+      redirect_to admin_badges_path
     else
       render :edit
     end
@@ -55,10 +48,14 @@ class Admin::BadgesController < Admin::BaseController
   end
 
   def badge_params
-    params.require(:badge).permit(:rule, :name, :picture)
+    params.require(:badge).permit(:rule_id, :name, :picture)
+  end
+
+  def set_imgs
+    @imgs = Badge.get_imgs_free
   end
 
   def set_rules
-    @rules = set_all_rules
+    @rules = Rule.get_rules_free.to_a
   end
 end

@@ -4,7 +4,7 @@
     <%= badge.picture %> 
   </td> 
   <td class="text-center align-middle"><%= badge.name %></td>
-  <td class="text-center align-middle"> <%= @rules[badge.rule] %></td> 
+  <td class="text-center align-middle"> <%= badge.rule.name %></td> 
 
   <td class="align-middle">
     <%= link_to t('nav.edit'), edit_admin_badge_path(badge) %>

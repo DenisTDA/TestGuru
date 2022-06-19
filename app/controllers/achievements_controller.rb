@@ -1,11 +1,7 @@
 class AchievementsController < ApplicationController
+  before_action :authenticate_user!
+
   def index
-    @achievements = set_achievements
-  end
-
-  private
-
-  def set_achievements
-    Achievement.user_achieve_badge(current_user)
+    @achievements = Achievement.by_user(current_user)
   end
 end
