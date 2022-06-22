@@ -7,8 +7,6 @@ class Result < ApplicationRecord
 
   before_validation :before_validation_set_current_question, on: %i[create update]
 
-  scope :tests_success, -> { where(success: true) }
-
   def accept!(answer_ids)
     self.correct_questions += 1 if correct_answer?(answer_ids)
     self.success = true if successful?
@@ -32,40 +30,19 @@ class Result < ApplicationRecord
     (self.correct_questions * 100 / test.questions.count.to_f).round(2)
   end
 
-  def create_achievements!
-    return unless successful?
-
-    prepare_data
-    badge_ids = get_badges
-    save_achievements!(badge_ids)
+  def test_category_id
+    test.category_id
   end
 
-  private
-
-  def save_achievements!(badge_ids)
-    badge_ids.each { |badge_id|  save_achievement!(badge_id) } unless badge_ids.empty?
-  end
-
-  def get_badges
-    badges = []
-    Badge.all.each { |badge| badges << badge.id if badge.deserved?(@data) }
-    badges
-  end
-
-  def save_achievement!(badge_id)
-    Achievement.create!(test_id: test_id, user_id: user_id, badge_id: badge_id)
-  end
-
-  def prepare_data
-    tests = user.tests
-    tests_success = list_tests_success
-    achieves = Achievement.by_user(user_id)
-    @data = { tests: tests, tests_success: tests_success, achieves: achieves, result: self }
+  def test_level
+    test.level
   end
 
   def list_tests_success
-    tests_success = user.tests.where(results: { success: true })
+    user.tests.where(results: { success: true })
   end
+
+  private
 
   def before_validation_set_current_question
     self.current_question = next_question
