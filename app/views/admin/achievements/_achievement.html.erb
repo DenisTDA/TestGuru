@@ -1,0 +1,9 @@
+<tr>
+  <td><%= achievement.user.name %>,  < <%= achievement.user.email%> > </td> 
+  <td class="text-center"><%= image_tag(achievement.badge.picture, size: "50x50", class: "rounded-circle border border-2 border-info bg-warning") %></td>
+  <td class="text-center"> <%= achievement.badge.name %></td> 
+  <td class="text-center"> <%= button_to t('.button'), 
+                                show_user_achieved_admin_achievements_path, 
+                                params: {id: achievement.id}, method: :get,
+                                class: 'btn btn-secondary btn-sm' %></td>
+</tr>

@@ -37,7 +37,19 @@ Rails.application.routes.draw do
       end
     end
     resources :gists, only: :index
+
+    resources :badges, except: %i[show]
+
+    resources :achievements, only: %i[index create new] do
+      collection do
+        get :show_user_achieved
+      end
+    end
   end
 
-  resource :feedbacks, only: %i[new create]
+  resources :badges, only: %i[index]
+
+  resources :feedbacks, only: %i[new create]
+
+  resources :achievements, only: :index
 end

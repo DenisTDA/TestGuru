@@ -9,6 +9,7 @@ class Result < ApplicationRecord
 
   def accept!(answer_ids)
     self.correct_questions += 1 if correct_answer?(answer_ids)
+    self.success = true if successful?
 
     save!
   end
@@ -27,6 +28,18 @@ class Result < ApplicationRecord
 
   def percentage_result
     (self.correct_questions * 100 / test.questions.count.to_f).round(2)
+  end
+
+  def test_category_id
+    test.category_id
+  end
+
+  def test_level
+    test.level
+  end
+
+  def list_tests_success
+    user.tests.where(results: { success: true })
   end
 
   private

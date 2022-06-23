@@ -10,6 +10,9 @@ class ResultsController < ApplicationController
     @result.accept!(params[:answer_ids])
 
     if @result.complited?
+      if @result.successful? && CheckAchievementSpecifications.new(@result).create_achievements
+        flash[:success] = t('.achieve')
+      end
       TestsMailer.complited_test(@result).deliver_now
       redirect_to result_result_path(@result)
     else

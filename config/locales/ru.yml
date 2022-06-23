@@ -16,6 +16,8 @@ ru:
       answer:
         create: "Создать ответ"
         update: "Обновить ответ"
+      badge:
+        create: "Создать медаль"
 
     label:
       test:
@@ -35,6 +37,10 @@ ru:
         password_confirmation: "Подтверждение пароля"
       feedback: 
         body: "Текст сообщения"
+      badge:
+        picture: "Изображение"
+        name: "Название"
+        rule: "Правило"
 
     questions_helper:
       question: "тему"
@@ -61,6 +67,8 @@ ru:
     result:
       header: "Тест %{title} завершён!"
       list: "Список Тестов"
+    update:
+      achieve: "У Вас есть достижения!"
   
   gistquestionservice:      
     description: "Вопрос из теста %{test_title} приложения TestGuru"
@@ -77,7 +85,20 @@ ru:
     create:
       feedback_success: "Письмо отправлено"
       feedback_faild: "При отправке произошла ошибка. Письмо не отправлено."  
-    
+
+  badges:
+    index:
+      header: "Доступные награды"
+      img: "Медаль"
+      name: "Название награды"
+      rule: "Правило награждения"
+
+  achievements:
+    index:
+      header: "Ваши награды за достижения"   
+      user: "Гуру"
+      badge: "Медаль"
+      title: "За какие заслуги"
 
   admin:
     tests:
@@ -131,7 +152,6 @@ ru:
       edit:
         back: "Вернуться"
         header: "Редактирование Ответа"
-
     tip:
       panel: "Панель администратора"
       welcome: "Приветствую, Ваше Величество, %{user}"
@@ -139,13 +159,53 @@ ru:
       create: "Создать Тест"
       logout: "Выйти"
       gists: "Gists" 
+      badge: "Медали"
+      achieve: "Достижения"
     gists:
       index:
         header: "Таблица Gists"
         question: "Вопрос"
         url: "URL адрес Gist"
         user: "Электронная почта создателя"
- 
+    badges:
+      index:
+        header: "Доступные награды"
+        img: "Медаль"
+        name: "Название награды"
+        rule: "Правило награждения"
+        action: "Действие"
+      new:
+        header: "Новая медаль"
+        back: "Назад"
+      edit:
+        back: "Назад"
+        header: "Редактировать медаль"
+      form:  
+        param: "Новые параметры"
+        img: "Изображение"
+        name: "Название"
+        rule: "Правило"
+      update: 
+        update: "Медаль успешно изменена"
+      destroy:
+        delete: "Медаль удалена"
+      create:
+        create: "Медаль < %{badge_name} > была создана"
+    achievements:
+      index:
+        header: "Все достижения"    
+        user: "Пользователь"
+        badge: "Название медали"
+        title: "Правило достижения"
+        action: "Действие"
+      achievement:
+        button: "Посмотреть достижения пользователя"
+      show_user_achieved:
+        header: "Достижения пользователя"    
+        user: "Пользователь"
+        badge: "Название медали"
+        title: "Правило достижения"
+
   shared:
     tip:
       welcome: "Приветствую, Мастер %{user}"
@@ -153,7 +213,9 @@ ru:
       logout: "Выйти"
       signup: "Зарегистрироваться"
       login: "Войти"
-      feedback: "Обратная связь"      
+      feedback: "Обратная связь"
+      badge: "Медали"
+      achieve: "Ваши достижения"       
 
 
   category:

@@ -1,0 +1,17 @@
+<div class='row text-center'>
+  <div class='col-12'>
+    <h1 class="text-center"><%= t('.header') %></h1>
+
+    <table class="table table-secondary table-striped table-sm" >
+      <thead class="table-dark">
+        <tr class="text-center">
+          <th scope="col" style="width: 15%"><%= t('.img') %></th>
+          <th scope="col" style="width: 40%"><%= t('.name') %></th>
+          <th scope="col" style="width: 45%"><%= t('.rule') %></th>    
+        </tr> 
+      </thead>  
+        <%= render @badges %>
+    </table>
+  </div>
+</div>
+

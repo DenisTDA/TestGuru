@@ -12,7 +12,9 @@ class User < ApplicationRecord
   has_many :results, dependent: :destroy
   has_many :tests, through: :results
   has_many :examinations, class_name: 'Test', foreign_key: :author_id
-  has_many :gist, dependent: :destroy
+  has_many :gists, dependent: :destroy
+  has_many :achievements, dependent: :destroy
+  has_many :badges, through: :achievements
 
   validates :email, presence: true
   validates :email, format: EMAIL_FORMAT

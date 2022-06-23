@@ -1,0 +1,19 @@
+<div class='row text-center'>
+  <div class='col-12'>
+    <h1 class="text-center"><%= t('.header') %></h1>
+
+    <table class="table table-success table-striped table-sm" >
+      <thead class="table-dark">
+        <tr class="text-center">
+          <th scope="col" style="width: 30%"><%= t('.user') %></th>
+          <th scope="col" style="width: 15%"><%= t('.badge') %></th>
+          <th scope="col" style="width: 40%"><%= t('.title') %></th>
+
+          <th scope="col" style="width: 15%"><%= t('.action') %></th>
+        </tr> 
+      </thead>  
+        <%= render @achievements %>
+    </table>
+  </div>
+</div>
+

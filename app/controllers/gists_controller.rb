@@ -1,4 +1,6 @@
 class GistsController < ApplicationController
+  before_action :authenticate_user!
+
   def create
     @result = Result.find(params[:result])
     @question = @result.current_question

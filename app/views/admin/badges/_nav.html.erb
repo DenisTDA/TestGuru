@@ -1,0 +1,8 @@
+<ul class = 'nav nav-pills justify-content-left'>
+  <li class="nav-item">
+    <div class='nav-link'><%= link_to t('nav.edit'), edit_admin_badge_path(@badge) unless params[:action] == 'edit' %> </div>
+  </li>
+  <li class="nav-item">
+    <div class='nav-link'><%= link_to t('nav.del'), admin_badge_path(@badge), method: 'delete', data: {confirm: "Are you shure?"} %> </div>
+  </li>
+</ul>

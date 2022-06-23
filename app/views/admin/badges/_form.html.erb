@@ -1,0 +1,41 @@
+  <% unless @badge.new_record? %>
+  <div class="container pt-2  pb-5 w-75 p-2 text-dark">
+
+    <div class="card bg-warning start-0" style="width: 60rem;">
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item d-flex flex-row"> <%= t('.img') %> : 
+          <%= image_tag(@badge.picture, size: "50x50", class: "rounded-circle border border-2 border-info bg-warning ms-3 me-3") %>
+          <%= @badge.picture %>    
+        </li>
+        <li class="list-group-item"><%= t('.name') %> :<%= @badge.name %></li>
+        <li class="list-group-item"><%= t('.rule') %> : <%= @badge.rule.name %></li>
+      </ul>
+    </div>
+
+  </div>
+  <% end %>
+  
+
+  <div class='container w-75 bg-info p-2 text-dark bg-opacity-10' >
+  <p class="pb-2"><strong class="fs-4"><%= t('.param') %></strong></p>
+  
+  <%= form_with model: [:admin, @badge], local: true  do |form| %>
+    <%= render 'shared/errors', resource: @badge %>
+
+    <p class="d-flex flex-row">
+      <%= form.label :picture, class: "form_label me-2" %>
+      <% @empty = @imgs == [] ? true : false %>
+      <%= form.select :picture, @imgs, {prompt: 'Select please' }, { disabled: @empty, class: "form-select form-select-sm w-25" } %>
+    </p>
+    <p class="d-flex flex-row">
+      <%= form.label :name, class: "form_label me-2" %>
+      <%= form.text_field :name %>
+    </p>
+    <p class="d-flex flex-row">
+      <%= form.label :rule , class: "form_label me-2" %>
+      <% @empty = @rules == [] ? true : false %>
+      <%= form.collection_select :rule_id, @rules, :id, :name, { prompt: 'Select please' }, { disabled: @empty, class: "form-select form-select-sm w-25" } %>
+    </p>
+      <%= form.submit %>
+  <% end %>
+  </div>
