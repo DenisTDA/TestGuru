@@ -1,15 +1,14 @@
-class Checker
+class CheckAchievement
   def initialize(result)
     prepare_data(result)
-    @tests = [] if @tests.nil?
-    @tests_success = [] if @tests_success.nil?
+    @tests_success ||= []
     @result = result
     @category_id = @result.test_category_id
     @level = @result.test_level
   end
 
-  def active!
-    save_achievements!(achieved_badges)
+  def create_achievements
+    save_achievements(achieved_badges)
   end
 
   private
@@ -20,17 +19,15 @@ class Checker
   end
 
   def achieved_badges
-    badges = []
-    Badge.all.each { |badge| badges << badge.id if deserved?(badge.rule_name) }
-    badges
+    Badge.all.select { |badge| deserved?(badge.rule_name) }.ids
   end
 
-  def save_achievements!(badge_ids)
-    badge_ids.each { |badge_id|  save_achievement(badge_id) } unless badge_ids.empty?
+  def save_achievements(badge_ids)
+    badge_ids.each { |badge_id|  save_achievement(badge_id) }
   end
 
   def save_achievement(badge_id)
-    Achievement.create(test_id: @result.test_id, user_id: @result.user_id, badge_id: badge_id)
+    Achievement.create!(test_id: @result.test_id, user_id: @result.user_id, badge_id: badge_id)
   end
 
   def deserved?(rule_name)
