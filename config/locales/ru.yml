@@ -67,6 +67,8 @@ ru:
     result:
       header: "Тест %{title} завершён!"
       list: "Список Тестов"
+    update:
+      achieve: "У Вас есть достижения!"
   
   gistquestionservice:      
     description: "Вопрос из теста %{test_title} приложения TestGuru"
@@ -183,6 +185,12 @@ ru:
         img: "Изображение"
         name: "Название"
         rule: "Правило"
+      update: 
+        update: "Медаль успешно изменена"
+      destroy:
+        delete: "Медаль удалена"
+      create:
+        create: "Медаль < %{badge_name} > была создана"
     achievements:
       index:
         header: "Все достижения"    

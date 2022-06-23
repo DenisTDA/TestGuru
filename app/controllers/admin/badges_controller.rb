@@ -15,7 +15,7 @@ class Admin::BadgesController < Admin::BaseController
     @badge = Badge.new(badge_params)
     if @badge.save
       redirect_to admin_badges_path
-      flash[:notice] = "The new badge < #{@badge.name} > was created"
+      flash[:notice] = t('.create', badge_name: @badge.name)
     else
       render :new
     end
@@ -28,7 +28,7 @@ class Admin::BadgesController < Admin::BaseController
 
   def update
     if @badge.update(badge_params)
-      flash[:notice] = 'Badge was updated'
+      flash[:notice] = t('.update')
       redirect_to admin_badges_path
     else
       render :edit
@@ -37,7 +37,7 @@ class Admin::BadgesController < Admin::BaseController
 
   def destroy
     @badge.destroy
-    flash[:notice] = 'Badge was deleted'
+    flash[:notice] = t('.delete')
     redirect_to admin_badges_path
   end
 

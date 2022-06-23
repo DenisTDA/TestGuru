@@ -67,6 +67,8 @@ en:
     result:
       header: "The %{title} Test was Completed!"
       list: "List Tests"
+    update:
+      achieve: "You have the achievements!"
 
   gistquestionservice:    
     description: "A question about %{test_title}  from TestGuru"
@@ -176,7 +178,12 @@ en:
         img: "Picture"
         name: "Name"
         rule: "Rule"
-
+      update: 
+        success: "Badge was updated"
+      destroy:
+        delete: "Badge was deleted"
+      create:
+        create: "The badge < %{badge_name} > was created"
     achievements:
       index:
         header: "All Achievements"    
