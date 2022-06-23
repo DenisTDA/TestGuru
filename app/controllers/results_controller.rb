@@ -10,7 +10,7 @@ class ResultsController < ApplicationController
     @result.accept!(params[:answer_ids])
 
     if @result.complited?
-      if @result.successful? && CheckAchievement.new(@result).create_achievements
+      if @result.successful? && CheckAchievementSpecifications.new(@result).create_achievements
         flash[:success] =
           'You have the achievements!'
       end
