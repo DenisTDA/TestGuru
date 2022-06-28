@@ -2,6 +2,9 @@
 <p></p>
 <p><%= t('.level') %> <%= @test.level %></p>
 <p> <%= t('.author') %><%= User.find(@test.author_id).name %> </p> 
+<p> Time for test : <%= time_duration[:time_str] %></p>
+
+
 <%= link_to t(".create"), new_admin_test_question_path(@test) %>
 <p></p>
 

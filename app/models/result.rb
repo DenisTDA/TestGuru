@@ -42,6 +42,10 @@ class Result < ApplicationRecord
     user.tests.where(results: { success: true })
   end
 
+  def test_time_limit
+    test.time_limit
+  end
+
   private
 
   def before_validation_set_current_question

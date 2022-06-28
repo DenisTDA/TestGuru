@@ -2,7 +2,10 @@ class ResultsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_result, only: %i[show result update]
 
-  def show; end
+  def show
+    @timer = set_timer
+    redirect_to result_result_path(@result) if !@timer.time_limit.zero? && @timer.time_out?
+  end
 
   def result; end
 
@@ -16,11 +19,16 @@ class ResultsController < ApplicationController
       TestsMailer.complited_test(@result).deliver_now
       redirect_to result_result_path(@result)
     else
+      @timer = set_timer
       render :show
     end
   end
 
   private
+
+  def set_timer
+    TimerTest.new(@result.created_at, @result.test_time_limit)
+  end
 
   def set_result
     @result = Result.find(params[:id])

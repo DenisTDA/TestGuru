@@ -25,3 +25,17 @@
 <div class="conteiner-bar">
   <div class="progressbar"><%= get_progress(@result) %>% </div>
 </div>
+
+<% if !@timer.time_limit.zero?%>
+  <p>
+    <%= hidden_field_tag :time_left,  @timer.time_left %>
+    <%= hidden_field_tag :time_limit,  @timer.time_limit %>
+    <%= hidden_field_tag :time_left_prc,  @timer.time_left_prc %>
+    Time left:<h2><span class="badge bg-secondary countdown">00:00</span></h2>
+  </p>
+
+  <div class="progress mt-3">
+    <div class="progress-bar bg-success" style="width: 0%"><%= @timer.time_left_prc %></div>
+  </div>
+<% end %>
+
