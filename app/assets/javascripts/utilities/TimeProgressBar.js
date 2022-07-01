@@ -3,7 +3,6 @@ class TimeProgressBar {
     this.elem = elem
     this.time_limit = time_limit
     this.progress = time_left * 100 / time_limit
-    this.href = document.querySelector('form')?.action + "/result"
   }
 
   updateProgressBar(){

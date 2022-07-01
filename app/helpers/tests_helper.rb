@@ -13,10 +13,10 @@ module TestsHelper
     end
   end
 
-  def limit
-    hours = @test.time_limit / 3600
-    minutes = (@test.time_limit % 3600) / 60
-    seconds = (@test.time_limit % 3600) % 60
+  def limit(test)
+    hours = test.time_limit / 3600
+    minutes = (test.time_limit % 3600) / 60
+    seconds = (test.time_limit % 3600) % 60
     { hours: hours, min: minutes, sec: seconds }
   end
 end
