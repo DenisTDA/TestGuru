@@ -17,14 +17,14 @@
   <p>
     <%= form.label :time_limit %></br>
     <%= form.label :hours %>
-    <%= select_hour time_duration[:hours], prefix: :time_limit %>
-    <%= form.label :minutes %>    
-    <%= select_minute time_duration[:minutes], prefix: :time_limit %>
+    <%= select_hour limit[:hours] , prefix: :time_limit %>
+    <%= form.label  :minutes %>    
+    <%= select_minute limit[:min], prefix: :time_limit %>
     <%= form.label :seconds %>    
-    <%= select_second time_duration[:seconds], prefix: :time_limit %>
+    <%= select_second limit[:sec], prefix: :time_limit %>
   </p>
 
-    <%= form.submit %>
+  <%= form.submit %>
   <% end %>
 
 </p>

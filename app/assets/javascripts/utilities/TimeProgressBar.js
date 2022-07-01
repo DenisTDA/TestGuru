@@ -1,15 +1,15 @@
 class TimeProgressBar {
-  constructor(elem, time_limit, progress, href) {
+  constructor(elem, time_limit, time_left) {
     this.elem = elem
     this.time_limit = time_limit
-    this.progress = progress
-    this.href = href
+    this.progress = time_left * 100 / time_limit
+    this.href = document.querySelector('form')?.action + "/result"
   }
 
   updateProgressBar(){
     if(this.progress < 0) {
+      document.querySelector('.result').submit()
       this.progress = 100
-      window.location.href = this.href
     } else {
       this.elem.style.width = this.progress + "%"
       this.elem.textContent = Math.round(this.progress) + "%"

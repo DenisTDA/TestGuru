@@ -93,7 +93,7 @@ ActiveRecord::Schema.define(version: 20_220_628_104_630) do
     t.bigint 'author_id', null: false
     t.datetime 'created_at', null: false
     t.datetime 'updated_at', null: false
-    t.string 'time_limit', default: 'PT0H0M0S'
+    t.bigint 'time_limit', default: 0
     t.index ['author_id'], name: 'index_tests_on_author_id'
     t.index ['category_id'], name: 'index_tests_on_category_id'
     t.index %w[title level], name: 'index_tests_on_title_and_level', unique: true

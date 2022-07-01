@@ -67,7 +67,7 @@ class Admin::TestsController < Admin::BaseController
     return if params[:time_limit].nil?
 
     params[:test][:time_limit] =
-      "PT#{params[:time_limit][:hour]}H#{params[:time_limit][:minute]}M#{params[:time_limit][:second]}S"
+      params[:time_limit][:hour].to_i * 3600 + params[:time_limit][:minute].to_i * 60 + params[:time_limit][:second].to_i
   end
 
   def rescue_with_test_not_found
