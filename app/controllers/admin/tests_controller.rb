@@ -59,7 +59,15 @@ class Admin::TestsController < Admin::BaseController
   end
 
   def params_test
-    params.require(:test).permit(:title, :category_id, :level)
+    params_add_time
+    params.require(:test).permit(:title, :category_id, :level, :test_level, :time_limit)
+  end
+
+  def params_add_time
+    return if params[:time_limit].nil?
+
+    params[:test][:time_limit] =
+      params[:time_limit][:hour].to_i * 3600 + params[:time_limit][:minute].to_i * 60 + params[:time_limit][:second].to_i
   end
 
   def rescue_with_test_not_found

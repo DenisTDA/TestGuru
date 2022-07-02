@@ -4,6 +4,6 @@ class Test10TimesSpecification < BaseSpecification
 
     attempt = @tests.by_id(@result.test_id)
 
-    attempt.count == 1
+    attempt.count == 10
   end
 end

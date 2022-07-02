@@ -13,6 +13,18 @@
     <%= form.label :category_id %>
     <%= form.collection_select :category_id, Category.all, :id, :translate_title, prompt: true %>
   </p>
-    <%= form.submit %>
+
+  <p>
+    <%= form.label :time_limit %></br>
+    <%= form.label :hours %>
+    <%= select_hour limit(@test)[:hours] , prefix: :time_limit %>
+    <%= form.label  :minutes %>    
+    <%= select_minute limit(@test)[:min], prefix: :time_limit %>
+    <%= form.label :seconds %>    
+    <%= select_second limit(@test)[:sec], prefix: :time_limit %>
+  </p>
+
+  <%= form.submit %>
   <% end %>
+
 </p>

@@ -4,4 +4,19 @@ module TestsHelper
   def test_level(test)
     TEST_LEVELS[test.level] || :imposible
   end
+
+  def time_duration(test)
+    if test.time_limit.zero?
+      'Unlimited'
+    else
+      Time.at(test.time_limit).utc.strftime('%H:%M:%S')
+    end
+  end
+
+  def limit(test)
+    hours = test.time_limit / 3600
+    minutes = (test.time_limit % 3600) / 60
+    seconds = (test.time_limit % 3600) % 60
+    { hours: hours, min: minutes, sec: seconds }
+  end
 end

@@ -31,8 +31,12 @@ class Test < ApplicationRecord
     where(category_id: category_id).distinct.pluck(:id)
   end
 
-  def self.ids_by_category_level(category_id, level)
+  def self.ids_by_category_level_uniq(category_id, level)
     by_category_level(category_id, level).distinct.pluck(:id)
+  end
+
+  def self.ids_by_category_level(category_id, level)
+    by_category_level(category_id, level).pluck(:id)
   end
 
   def category_id

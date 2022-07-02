@@ -10,7 +10,7 @@
   </b>
 </p>
 
-<%= form_with url: result_path(@result), local: true, method: :put do |form| %>
+<%= form_with url: result_path(@result), local: true, method: :put, class: "result" do |form| %>
   <%= form.collection_check_boxes :answer_ids, @result.current_question.answers, :id, :body, include_hidden: false do |b| %>
     <p>
       <%= b.check_box id: "answer_ids_#{b.object.id}" %>
@@ -25,3 +25,16 @@
 <div class="conteiner-bar">
   <div class="progressbar"><%= get_progress(@result) %>% </div>
 </div>
+
+<% if !@result.time_limit.zero?%>
+  <p>
+    <%= hidden_field_tag :time_left,  @result.time_left %>
+    <%= hidden_field_tag :time_limit,  @result.time_limit %>
+    Time left:<h2><span class="badge bg-secondary countdown">00:00</span></h2>
+  </p>
+
+  <div class="progress mt-3">
+    <div class="progress-bar bg-success" style="width: 0%">100%</div>
+  </div>
+<% end %>
+

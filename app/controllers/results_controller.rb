@@ -13,7 +13,6 @@ class ResultsController < ApplicationController
       if @result.successful? && CheckAchievementSpecifications.new(@result).create_achievements
         flash[:success] = t('.achieve')
       end
-      TestsMailer.complited_test(@result).deliver_now
       redirect_to result_result_path(@result)
     else
       render :show

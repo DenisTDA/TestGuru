@@ -10,6 +10,7 @@ class Result < ApplicationRecord
   def accept!(answer_ids)
     self.correct_questions += 1 if correct_answer?(answer_ids)
     self.success = true if successful?
+    current_question = nil if time_out?
 
     save!
   end
@@ -42,6 +43,14 @@ class Result < ApplicationRecord
     user.tests.where(results: { success: true })
   end
 
+  def time_limit
+    test.time_limit
+  end
+
+  def time_left
+    (created_at - Time.current).round + test.time_limit
+  end
+
   private
 
   def before_validation_set_current_question
@@ -54,6 +63,10 @@ class Result < ApplicationRecord
 
   def correct_answers
     current_question.answers.correct
+  end
+
+  def time_out?
+    created_at + test.time_limit < Time.current
   end
 
   def next_question
