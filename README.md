@@ -8,6 +8,8 @@ What interesting tricks are used:
 * Administration is implemented through a namespace.
 * The application has the ability to save questions of interest via the GitHub API to gist
 
+The project was hosted on Heroku (before the service policy was changed)
+
 Used technologies and gems:
 * Ruby version - 2.7
 * Rails 5.2
